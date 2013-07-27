@@ -1,0 +1,15 @@
+{
+  "name": "khepri-ast",
+  "version": "1.0.0",
+  "description": "Khepri AST Nodes",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mattbierner/khepri-ast.git"
+  },
+  "keywords": [
+    'khepri'
+  ],
+  "author": "Matt Bierner",
+  "license": "MIT"
+}
