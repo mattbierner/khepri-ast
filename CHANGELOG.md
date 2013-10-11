@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 1.2.0 - Oct 10, 2013
+* Added package nodes.
+
 ## 1.1.0 - July 27, 2013
 * Added `ObjectPattern` and `ArrayPattern` pattens.
 
