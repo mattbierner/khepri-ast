@@ -1,5 +1,13 @@
 # ChangeLog #
 
+## 2.0.0 - Oct 14, 2013
+* Renamed `LetBinding` to `Binding`.
+* Removed `PackageImport` nodes and `PackageBody`.
+* Renamed `Identifier` in pattern to `IdentifierPattern` and `Ellipsis` to `EllipsisPattern`.
+* Added `SinkPattern` and `ImportPattern`.
+* Added `WithStatement`.
+* Fixed `ObjectPattern` and `ArrayPattern` not naming their children.
+
 ## 1.2.0 - Oct 10, 2013
 * Added package nodes.
 
