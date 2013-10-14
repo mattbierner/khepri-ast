@@ -1,0 +1,100 @@
+/**
+ * @fileOverview 
+ */
+package (
+    Pattern,
+    
+    IdentifierPattern,
+    EllipsisPattern,
+    SinkPattern,
+    ImportPattern,
+    ArrayPattern,
+    ObjectPattern,
+    
+    ParameterList)
+with 
+    import 'khepri_ast/node' {defineNode, Node}
+in {
+
+/**
+ * @constructor
+ */
+Pattern = function(loc) {
+    Node.call(this, loc);
+};
+Pattern.prototype = new Node;
+
+/* Instances
+ ******************************************************************************/
+/**
+ * @constructor
+ */
+IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
+    ['id'],
+    function(loc, id) {
+        Pattern.call(this, loc);
+        this.id = id;
+    });
+
+/**
+ * @constructor
+ */
+EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
+    [],
+    function(loc) {
+        Pattern.call(this, loc);
+    });
+
+/**
+ * @constructor
+ */
+SinkPattern = defineNode(Pattern, 'SinkPattern',
+    [],
+    function(loc) {
+        Pattern.call(this, loc);
+    });
+
+/**
+ * @constructor
+ */
+ImportPattern = defineNode(Node, 'ImportPattern',
+    ['from', 'pattern'],
+    function(loc, from, pattern) {
+        Node.call(this, loc);
+        this.from = from;
+        this.pattern = pattern;
+    });
+
+/**
+ * @constructor
+ */
+ArrayPattern = defineNode(Pattern, 'ArrayPattern',
+    ['id', 'elements'],
+    function(loc, id, elements) {
+        Pattern.call(this, loc);
+        this.id = (id || null);
+        this.elements = elements;
+    });
+
+/**
+ * @constructor
+ */
+ObjectPattern = defineNode(Pattern, 'ObjectPattern',
+    ['id', 'elements'],
+    function(loc, id, elements) {
+        Pattern.call(this, loc);
+        this.id = (id || null);
+        this.elements = elements;
+    });
+
+/**
+ * @constructor
+ */
+ParameterList = defineNode(Pattern, 'ParameterList',
+    ['patterns'],
+    function(loc, patterns) {
+        Pattern.call(this, loc);
+        this.patterns = patterns;
+    });
+
+}

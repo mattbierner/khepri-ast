@@ -1,0 +1,32 @@
+/**
+ * @fileOverview Khepri value AST nodes.
+ */
+package (
+    Identifier,
+    Literal)
+with 
+    import 'khepri_ast/node' {defineNode, Node}
+in {
+
+/**
+ * @constructor
+ */
+Identifier = defineNode(Node, 'Identifier',
+    [],
+    function(loc, name) {
+        Node.call(this, loc);
+        this.name = name;
+    });
+
+/**
+ * @constructor
+ */
+Literal = defineNode(Node, 'Literal',
+    [],
+    function(loc, kind, value) {
+        Node.call(this, loc);
+        this.kind = kind;
+        this.value = value;
+    });
+
+}

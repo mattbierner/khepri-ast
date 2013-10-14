@@ -1,0 +1,42 @@
+/**
+ * @fileOverview Khepri clause AST nodes.
+ */
+package (
+    Clause,
+    SwitchCase,
+    CatchClause)
+with 
+    import 'khepri_ast/node' {defineNode, Node}
+in {
+
+/**
+ * @constructor
+ */
+Clause = function() { };
+Clause.prototype = new Node;
+
+/* Instances
+ ******************************************************************************/
+/**
+ * @constructor
+ */
+SwitchCase = defineNode(Clause, 'SwitchCase',
+    ['test', 'consequent'],
+    function(loc, test, consequent) {
+        Node.call(this, loc);
+        this.test = (test || null);
+        this.consequent = consequent;
+    });
+
+/**
+ * @constructor
+ */
+CatchClause = defineNode(Clause, 'CatchClause',
+    ['param', 'body'],
+    function(loc, param, body) {
+        Node.call(this, loc);
+        this.param = param;
+        this.body = body;
+    });
+
+}

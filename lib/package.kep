@@ -1,0 +1,44 @@
+/**
+ * @fileOverview Khepri package AST nodes.
+ */
+package (
+    Package,
+    PackageExport,
+    PackageExports)
+with 
+    import 'khepri_ast/node' {defineNode, Node}
+in {
+
+/**
+ * @constructor
+ */
+PackageExport = defineNode(Node, 'PackageExport',
+    ['id', 'alias'],
+    function(loc, id, alias) {
+        Node.call(this, loc);
+        this.id = id;
+        this.alias = alias;
+    });
+
+/**
+ * @constructor
+ */
+PackageExports = defineNode(Node, 'PackageExports',
+    ['exports'],
+    function(loc, exports) {
+        Node.call(this, loc);
+        this.exports = exports;
+    });
+
+/**
+ * @constructor
+ */
+Package = defineNode(Node, 'Package',
+    ['exports', 'body'],
+    function(loc, exports, body) {
+        Node.call(this, loc);
+        this.exports = exports;
+        this.body = body;
+    });
+
+}

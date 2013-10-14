@@ -1,0 +1,77 @@
+/**
+ * @fileOverview Khepri declaration AST nodes.
+ */
+package (
+    Declaration,
+    
+    VariableDeclaration,
+    VariableDeclarator,
+    
+    Binding,
+    
+    StaticDeclaration,
+    StaticDeclarator)
+with 
+    import 'khepri_ast/node' {defineNode, Node}
+in {
+
+/**
+ * @constructor
+ */
+Declaration = function() { };
+Declaration.prototype = new Node;
+
+/**
+ * @constructor
+ */
+VariableDeclaration = defineNode(Declaration, 'VariableDeclaration',
+    ['declarations'],
+    function(loc, declarations) {
+        Node.call(this, loc);
+        this.declarations = declarations;
+    });
+
+/**
+ * VariableDeclarator
+ */
+VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
+    ['id', 'init'],
+    function(loc, id, init) {
+        Node.call(this, loc);
+        this.id = id;
+        this.init = (init || null);
+    });
+
+/**
+ * 
+ */
+Binding = defineNode(Declaration, 'Binding',
+    ['pattern', 'value'],
+    function(loc, pattern, value) {
+        Node.call(this, loc);
+        this.pattern = pattern;
+        this.value = value;
+    });
+
+/**
+ * 
+ */
+StaticDeclaration = defineNode(Declaration, 'StaticDeclaration',
+    ['declarations'],
+    function(loc, declarations) {
+        Node.call(this, loc);
+        this.declarations = declarations;
+    });
+
+/**
+ * 
+ */
+StaticDeclarator =  defineNode(Declaration, 'StaticDeclarator',
+    ['id', 'init'],
+    function(loc, id, init) {
+        Node.call(this, loc);
+        this.id = id;
+        this.init = init;
+    });
+
+}

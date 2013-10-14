@@ -1,0 +1,20 @@
+/**
+ * @fileOverview Khepri program AST nodes.
+ */
+package (
+    Program)
+with 
+    import 'khepri_ast/node' {defineNode, Node}
+in {
+
+/**
+ * @constructor
+ */
+Program = defineNode(Node, 'Program',
+    ['body'],
+    function(loc, body) {
+        Node.call(this, loc);
+        this.body = body;
+    });
+
+}
