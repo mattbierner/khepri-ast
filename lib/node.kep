@@ -64,13 +64,13 @@ construct = function(x, children) {
 
 /* Creation
  ******************************************************************************/
-defineNode = function(parent, type, children, ctor) {
+defineNode = \parent, type, children, ctor -> {
     ctor.type = type;
     ctor.children = children;
     ctor.prototype = new parent;
     ctor.prototype.constructor = ctor;
     ctor.prototype.type = ctor.type;
-    ctor.create = function(/*...*/) {
+    ctor.create = function(...) {
         return new (ctor.bind.apply(ctor, concatArgs([null], arguments)));
     };
     return ctor;
