@@ -1,5 +1,9 @@
 # ChangeLog #
 
+## 2.1.0 - Oct 14, 2013
+* Added `ObjectPatternElement` for an element in an object pattern.
+* Added `id` parameter to `EllipsisPattern`.
+
 ## 2.0.0 - Oct 14, 2013
 * Renamed `LetBinding` to `Binding`.
 * Removed `PackageImport` nodes and `PackageBody`.

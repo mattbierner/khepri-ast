@@ -15,12 +15,16 @@ with
     import 'khepri_ast/node' {defineNode, Node}
 in {
 
+/* Base
+ ******************************************************************************/
 /**
  * @constructor
  */
 Declaration = function() { };
 Declaration.prototype = new Node;
 
+/* Instances
+ ******************************************************************************/
 /**
  * @constructor
  */
@@ -32,7 +36,7 @@ VariableDeclaration = defineNode(Declaration, 'VariableDeclaration',
     });
 
 /**
- * VariableDeclarator
+ * @constructor
  */
 VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
     ['id', 'init'],
@@ -43,7 +47,7 @@ VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
     });
 
 /**
- * 
+ * @constructor
  */
 Binding = defineNode(Declaration, 'Binding',
     ['pattern', 'value'],
@@ -54,7 +58,7 @@ Binding = defineNode(Declaration, 'Binding',
     });
 
 /**
- * 
+ * @constructor
  */
 StaticDeclaration = defineNode(Declaration, 'StaticDeclaration',
     ['declarations'],

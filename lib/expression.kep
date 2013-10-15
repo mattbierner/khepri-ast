@@ -23,7 +23,7 @@ with
     import 'khepri_ast/node' {defineNode, Node}
 in {
 
-/* Nodes
+/* Base
  ******************************************************************************/
 /**
  * @constructor
@@ -31,6 +31,8 @@ in {
 Expression = function() { };
 Expression.prototype = new Node;
 
+/* Instances
+ ******************************************************************************/
 /**
  * @constructor
  */

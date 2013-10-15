@@ -9,6 +9,8 @@ with
     import 'khepri_ast/node' {defineNode, Node}
 in {
 
+/* Base
+ ******************************************************************************/
 /**
  * @constructor
  */
