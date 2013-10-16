@@ -11,8 +11,7 @@ package (
     ArrayPattern,
     ObjectPatternElement,
     ObjectPattern,
-    
-    ParameterList)
+    ArgumentsPattern)
 with 
     import 'khepri_ast/node' {defineNode, Node}
 in {
@@ -46,7 +45,7 @@ EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
     ['id'],
     function(loc, id) {
         Pattern.call(this, loc);
-        this.id = id;
+        this.id = (id || null);
     });
 
 /**
@@ -105,11 +104,12 @@ ObjectPattern = defineNode(Pattern, 'ObjectPattern',
 /**
  * @constructor
  */
-ParameterList = defineNode(Pattern, 'ParameterList',
-    ['patterns'],
-    function(loc, patterns) {
+ArgumentsPattern = defineNode(Pattern, 'ArgumentsPattern',
+    ['id', 'elements'],
+    function(loc, id, elements) {
         Pattern.call(this, loc);
-        this.patterns = patterns;
+        this.id = (id || null);
+        this.elements = elements;
     });
 
 }

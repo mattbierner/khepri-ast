@@ -18,7 +18,12 @@ package (
     ArrayExpression,
     ObjectExpression,
     
-    LetExpression)
+    LetExpression,
+    
+    CurryExpression,
+    UnaryOperatorExpression,
+    BinaryOperatorExpression,
+    TernaryOperatorExpression)
 with 
     import 'khepri_ast/node' {defineNode, Node}
 in {
@@ -176,6 +181,47 @@ LetExpression = defineNode(Expression, 'LetExpression',
         Node.call(this, loc);
         this.bindings = bindings;
         this.body = body;
+    });
+
+/** 
+ * @constructor
+ */
+CurryExpression = defineNode(Expression, 'CurryExpression',
+    ['base', 'args'],
+    function(loc, base, args) {
+        Node.call(this, loc);
+        this.base = base;
+        this.args = args;
+    });
+
+/** 
+ * @constructor
+ */
+UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
+    ['op'],
+    function(loc, op) {
+        Node.call(this, loc);
+        this.op = op;
+    });
+
+/** 
+ * @constructor
+ */
+BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
+    ['op'],
+    function(loc, op) {
+        Node.call(this, loc);
+        this.op = op;
+    });
+
+/** 
+ * @constructor
+ */
+TernaryOperatorExpression = defineNode(Expression, 'TernaryOperatorExpression',
+    ['op'],
+    function(loc, op) {
+        Node.call(this, loc);
+        this.op = op;
     });
 
 }
