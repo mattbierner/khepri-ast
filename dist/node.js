@@ -2,9 +2,11 @@
  * THIS FILE IS AUTO GENERATED from 'lib/node.kep'
  * DO NOT EDIT
 */
-define(["require", "exports"], (function(require, exports) {
+define(["require", "exports", "khepri_ast/serialization"], (function(require, exports, __o) {
     "use strict";
     var Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode;
+    var __o = __o,
+        registerNode = __o["registerNode"];
     var concatArgs = (function() {
         {
             var id = (function(x) {
@@ -136,7 +138,7 @@ define(["require", "exports"], (function(require, exports) {
             var args = arguments;
             return new(ctor.bind.apply(ctor, concatArgs([null], args)))();
         }));
-        require("khepri_ast/serialization").registerNode(type, ctor);
+        registerNode(type, ctor);
         return ctor;
     }));
     (exports.Node = Node);

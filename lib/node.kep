@@ -15,7 +15,9 @@ package (
     setData,
 
     defineNode)
-{
+with
+    import 'khepri_ast/serialization' {registerNode}
+in {
 
 var concatArgs = let id = \x -> x in
     \arr, args ->
@@ -267,7 +269,7 @@ defineNode = function(parent, type, children, attributes, ctor) {
     ctor.create = \args(...) ->
         new (ctor.bind.apply(ctor, concatArgs([null], args)));
     
-    require('khepri_ast/serialization').registerNode(type, ctor);
+    registerNode(type, ctor);
     return ctor;
 };
 
