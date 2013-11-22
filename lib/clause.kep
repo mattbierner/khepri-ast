@@ -24,6 +24,7 @@ Clause.prototype = new Node;
  */
 SwitchCase = defineNode(Clause, 'SwitchCase',
     ['test', 'consequent'],
+    [],
     function(loc, test, consequent) {
         Node.call(this, loc);
         this.test = (test || null);
@@ -35,6 +36,7 @@ SwitchCase = defineNode(Clause, 'SwitchCase',
  */
 CatchClause = defineNode(Clause, 'CatchClause',
     ['param', 'body'],
+    [],
     function(loc, param, body) {
         Node.call(this, loc);
         this.param = param;

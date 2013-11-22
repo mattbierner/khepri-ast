@@ -33,6 +33,7 @@ Pattern.prototype = new Node;
  */
 IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
     ['id'],
+    [],
     function(loc, id) {
         Pattern.call(this, loc);
         this.id = id;
@@ -43,6 +44,7 @@ IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
  */
 EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
     ['id'],
+    [],
     function(loc, id) {
         Pattern.call(this, loc);
         this.id = (id || null);
@@ -53,6 +55,7 @@ EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
  */
 SinkPattern = defineNode(Pattern, 'SinkPattern',
     [],
+    [],
     function(loc) {
         Pattern.call(this, loc);
     });
@@ -62,6 +65,7 @@ SinkPattern = defineNode(Pattern, 'SinkPattern',
  */
 ImportPattern = defineNode(Node, 'ImportPattern',
     ['from', 'pattern'],
+    [],
     function(loc, from, pattern) {
         Node.call(this, loc);
         this.from = from;
@@ -73,6 +77,7 @@ ImportPattern = defineNode(Node, 'ImportPattern',
  */
 ArrayPattern = defineNode(Pattern, 'ArrayPattern',
     ['id', 'elements'],
+    [],
     function(loc, id, elements) {
         Pattern.call(this, loc);
         this.id = (id || null);
@@ -84,6 +89,7 @@ ArrayPattern = defineNode(Pattern, 'ArrayPattern',
  */
 ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
     ['key', 'target'],
+    [],
     function(loc, key, target) {
         Pattern.call(this, loc);
         this.key = key;
@@ -95,6 +101,7 @@ ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
  */
 ObjectPattern = defineNode(Pattern, 'ObjectPattern',
     ['id', 'elements'],
+    [],
     function(loc, id, elements) {
         Pattern.call(this, loc);
         this.id = (id || null);
@@ -106,6 +113,7 @@ ObjectPattern = defineNode(Pattern, 'ObjectPattern',
  */
 ArgumentsPattern = defineNode(Pattern, 'ArgumentsPattern',
     ['id', 'elements'],
+    [],
     function(loc, id, elements) {
         Pattern.call(this, loc);
         this.id = (id || null);

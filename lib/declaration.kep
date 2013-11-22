@@ -11,7 +11,7 @@ package (
     
     StaticDeclaration,
     StaticDeclarator)
-with 
+with
     import 'khepri_ast/node' {defineNode, Node}
 in {
 
@@ -30,6 +30,7 @@ Declaration.prototype = new Node;
  */
 VariableDeclaration = defineNode(Declaration, 'VariableDeclaration',
     ['declarations'],
+    [],
     function(loc, declarations) {
         Node.call(this, loc);
         this.declarations = declarations;
@@ -40,6 +41,7 @@ VariableDeclaration = defineNode(Declaration, 'VariableDeclaration',
  */
 VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
     ['id', 'init'],
+    [],
     function(loc, id, init) {
         Node.call(this, loc);
         this.id = id;
@@ -51,6 +53,7 @@ VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
  */
 Binding = defineNode(Declaration, 'Binding',
     ['pattern', 'value'],
+    [],
     function(loc, pattern, value) {
         Node.call(this, loc);
         this.pattern = pattern;
@@ -62,6 +65,7 @@ Binding = defineNode(Declaration, 'Binding',
  */
 StaticDeclaration = defineNode(Declaration, 'StaticDeclaration',
     ['declarations'],
+    [],
     function(loc, declarations) {
         Node.call(this, loc);
         this.declarations = declarations;
@@ -72,6 +76,7 @@ StaticDeclaration = defineNode(Declaration, 'StaticDeclaration',
  */
 StaticDeclarator =  defineNode(Declaration, 'StaticDeclarator',
     ['id', 'init'],
+    [],
     function(loc, id, init) {
         Node.call(this, loc);
         this.id = id;

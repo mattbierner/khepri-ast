@@ -1,34 +1,79 @@
 /**
- * @fileOverview Ast Node
+ * @fileOverview Node serialization
  */
 package (
     Node,
+    
     construct,
+    reconstruct,
+    modify,
+    setLoc,
+    setUserData,
+
+    getData,
+    modifyData,
+    setData,
+
     defineNode)
 {
 
-var concatArgs = (function(){
-    var map = function(x) { return x; };
-    
-    return function(arr, args) {
-        return arr.concat([].map.call(args, map));
-    };
-}());
+var concatArgs = let id = \x -> x in
+    \arr, args ->
+        arr.concat([].map.call(args, id));
+
+var keys = Object.keys;
+
+var map = Function.prototype.call.bind(Array.prototype.map);
+var reduce = Function.prototype.call.bind(Array.prototype.reduce);
+
+var copy = \obj -> {
+    var out = Object.create(Object.getPrototypeOf(obj));
+    Object.getOwnPropertyNames(obj).forEach(\i -> {
+        out[i] = obj[i];
+    });
+    return out;
+};
+
+var defineProperty = \obj, prop, descriptor ->
+    Object.defineProperty(copy(obj), prop, descriptor);
 
 /* Node
  ******************************************************************************/
 /**
- * Base class for nodes.
+ * Base class for nodes
+ * 
+ * @param loc Location.
+ * @param ud UserData
  */
-Node = function(loc) {
-    this.loc = loc;
+Node = function(loc, ud) {
+    Object.defineProperties(this, {
+        'loc': {
+            'value': loc,
+            'enumerable': false
+        },
+        'ud': {
+            'value': (ud || null),
+            'enumerable': false
+        }
+    });
 };
 
-Node.prototype.toString = function() {
-    return "{" + this.type + "}";
-};
-
-construct = function(x, children) {
+/* Operations
+ ******************************************************************************/
+/**
+ * Construct a node with given attributes and children.
+ * 
+ * Nulls all undefined children.
+ * 
+ * @param proto Node prototype.
+ * @param loc Location.
+ * @param ud Userdata.
+ * @param children Object mappings keys to children values.
+ * @param attributes Object mappings keys to attribute values.
+ * 
+ * @return New node.
+ */
+construct = function(proto, loc, ud, children, attributes) {
     var properties = {};
     
     // Copy explicit children
@@ -41,39 +86,190 @@ construct = function(x, children) {
     });
     
     // Null remaining children
-    Object.keys(x.children).forEach(function(key) {
-        properties[key] = {
+    proto.children.forEach(function(key) {
+        properties[key] = (properties[key] || {
             'value': null,
+            'enumerable': true,
+            'configurable': true
+        });
+    });
+    
+    Object.keys(attributes).forEach(function(key) {
+        properties[key] = {
+            'value': attributes[key],
             'enumerable': true,
             'configurable': true
         };
     });
     
     // Shallow copy other props
-    Object.keys(x).forEach(function(key) {
-        if (!properties.hasOwnProperty(key))
-            properties[key] = {
-                'value': x[key],
-                'enumerable': true,
-                'configurable': true
-            };
+    properties.loc = {
+        'value': loc,
+        'enumerable': false
+    };
+    properties.ud = {
+        'value': ud,
+        'enumerable': false
+    };
+    
+    return Object.create(
+        proto,
+        properties);
+};
+
+/**
+ * Reconstruct a node with new attributes and children.
+ * 
+ * @param base Node to reconstruct.
+ * @param children Object mappings keys to children values.
+ * @param attributes Object mappings keys to attribute values.
+ * 
+ * @return Reconstructed node.
+ */
+reconstruct = function(base, children, attributes) {
+    return construct(
+        Object.getPrototypeOf(base),
+        base.loc,
+        base.ud,
+        children,
+        attributes);
+};
+
+/**
+ * Create a new node from a base with children and attributes included from
+ * `children` and `attributes`.
+ * 
+ * Unlike `reconstruct`, `children` and `attributes` are not the list of all
+ * properties the node will have, but difference with the current node.
+ * 
+ * @param base Base node to transform.
+ * @param children Object mappings keys to children values.
+ * @param attributes Object mappings keys to attribute values.
+ * 
+ * @return Modified node.
+ */
+modify = function(base, children, attributes) {
+    var allChildren = {},
+        allAttributes = {};
+    
+    base.children.forEach(function(key) {
+        allChildren[key] = base[key];
+    });
+    Object.keys(children).forEach(function(key) {
+        allChildren[key] = children[key];
     });
     
-    return Object.create(Object.getPrototypeOf(x), properties);
+    base.attributes.forEach(function(key) {
+        allAttributes[key] = base[key];
+    });
+    Object.keys(attributes).forEach(function(key) {
+        allAttributes[key] = attributes[key];
+    });
+    
+    return reconstruct(
+        base,
+        allChildren,
+        allAttributes);
+};
+
+/**
+ * Set the loc of a node.
+ * 
+ * @param base Base node to transform.
+ * @param loc New loc.
+ * 
+ * @return Transformed node.
+ */
+setLoc = function(base, loc) {
+    return construct(
+        Object.getPrototypeOf(base),
+        loc,
+        base.ud,
+        reduce(base.children, function(o, key) { o[key] = base[key]; return o; }, {}),
+        reduce(base.attributes, function(o, key) { o[key] = base[key]; return o; }, {}));
+};
+
+/**
+ * Set the user data of a node.
+ * 
+ * @param base Base node to transform.
+ * @param ud New user data.
+ * 
+ * @return Transformed node.
+ */
+setUserData = function(base, ud) {
+    return construct(
+        Object.getPrototypeOf(base),
+        base.loc,
+        ud,
+        reduce(base.children, function(o, key) { o[key] = base[key]; return o; }, {}),
+        reduce(base.attributes, function(o, key) { o[key] = base[key]; return o; }, {}));
+};
+
+/* User Data
+ ******************************************************************************/
+/**
+ * Get a user data entry.
+ * 
+ * @param node Node to transform.
+ * @param key Targeted user data key.
+ * 
+ * @return Value or null if none.
+ */
+getData = function(node, key) {
+    return (node.ud ?
+        node.ud[key] :
+        null);
+};
+
+/**
+ * Modifies a user data entry.
+ * 
+ * @param node Node to transform.
+ * @param key Targeted user data key.
+ * @param f Function mapping current value to new value.
+ * 
+ * @return Transformed node.
+ */
+modifyData = function(node, key, f) {
+    return setUserData(
+        node,
+        defineProperty(
+            (node.ud || {}),
+            key, {
+                'value': f(getData(node, key)),
+                'enumerable': true
+            }));
+};
+
+/**
+ * Set a user data entry.
+ * 
+ * @param node Node to transform.
+ * @param key Targeted user data key.
+ * @param value New value.
+ * 
+ * @return Transformed node.
+ */
+setData = function(node, key, value) {
+    return modifyData(node, key, function() { return value; });
 };
 
 /* Creation
  ******************************************************************************/
-defineNode = \parent, type, children, ctor -> {
+defineNode = function(parent, type, children, attributes, ctor) {
     ctor.type = type;
-    ctor.children = children;
     ctor.prototype = new parent;
     ctor.prototype.constructor = ctor;
+    ctor.prototype.children = children;
+    ctor.prototype.attributes = attributes;
     ctor.prototype.type = ctor.type;
-    ctor.create = function(...) {
-        return new (ctor.bind.apply(ctor, concatArgs([null], arguments)));
-    };
+    ctor.create = \args(...) ->
+        new (ctor.bind.apply(ctor, concatArgs([null], args)));
+    
+    require('khepri_ast/serialization').registerNode(type, ctor);
     return ctor;
 };
+
 
 }

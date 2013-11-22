@@ -17,124 +17,130 @@ package (
     CommentToken,
     WhitespaceToken,
     LineTerminatorToken)
-{
+with
+    import 'khepri_ast/node' {defineNode, Node}
+in {
 
 /**
  * @constructor
  */
 Token = function(loc, value) {
-    this.loc = loc;
+    Node.call(this, loc);
     this.value = value;
 };
+Token.prototype = new Node;
+
+/* Instances
+ ******************************************************************************/
+/**
+ * @constructor
+ */
+StringToken = defineNode(Token, 'String',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 
 /**
  * @constructor
  */
-StringToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-StringToken.prototype = new Token;
-StringToken.prototype.type = "String";
-StringToken.prototype.constructor = StringToken;
+NumberToken = defineNode(Token, 'Number',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 
 /**
  * @constructor
  */
-NumberToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-NumberToken.prototype = new Token;
-NumberToken.prototype.type = "Number";
-NumberToken.prototype.constructor = NumberToken;
+RegularExpressionToken = defineNode(Token, 'RegularExpression',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 
 /**
  * @constructor
  */
-RegularExpressionToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-RegularExpressionToken.prototype = new Token;
-RegularExpressionToken.prototype.type = "RegularExpression";
-RegularExpressionToken.prototype.constructor = RegularExpressionToken;
+BooleanToken = defineNode(Token, 'Boolean',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 
 /**
  * @constructor
  */
-BooleanToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-BooleanToken.prototype = new Token;
-BooleanToken.prototype.type = "Boolean";
-BooleanToken.prototype.constructor = BooleanToken;
+NullToken = defineNode(Token, 'Null',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
+
+/**
+ * 
+ */
+IdentifierToken = defineNode(Token, 'Identifier',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 
 /**
  * @constructor
  */
-NullToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-NullToken.prototype = new Token;
-NullToken.prototype.type = "Null";
-NullToken.prototype.constructor = NullToken;
+KeywordToken = defineNode(Token, 'Keyword',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
+
+/**
+ * 
+ */
+PunctuatorToken = defineNode(Token, 'Punctuator',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 
 /**
  * @constructor
  */
-IdentifierToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-IdentifierToken.prototype = new Token;
-IdentifierToken.prototype.type = "Identifier";
-IdentifierToken.prototype.constructor = IdentifierToken;
+CommentToken = defineNode(Token, 'Comment',
+    [],
+    ['value', 'multiline', 'linebreak'],
+    function(loc, value, multiline, linebreak) {
+        Token.call(this, loc, value);
+        this.multiline = !!multiline;
+        this.linebreak = !!linebreak;
+    });
 
 /**
  * @constructor
  */
-KeywordToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-KeywordToken.prototype = new Token;
-KeywordToken.prototype.type = "Keyword";
-KeywordToken.prototype.constructor = KeywordToken;
+WhitespaceToken = defineNode(Token, 'Whitespace',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 
 /**
  * @constructor
  */
-PunctuatorToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-PunctuatorToken.prototype = new Token;
-PunctuatorToken.prototype.type = "Punctuator";
-PunctuatorToken.prototype.constructor = PunctuatorToken;
-
-/**
- * @constructor
- */
-CommentToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-CommentToken.prototype = new Token;
-CommentToken.prototype.type = "Comment";
-CommentToken.prototype.constructor = CommentToken;
-
-/**
- * @constructor
- */
-WhitespaceToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-WhitespaceToken.prototype = new Token;
-WhitespaceToken.prototype.type = "Whitespace";
-WhitespaceToken.prototype.constructor = WhitespaceToken;
-
-/**
- * @constructor
- */
-LineTerminatorToken = function(loc, value) {
-    Token.call(this, loc, value);
-};
-LineTerminatorToken.prototype = new Token;
-LineTerminatorToken.prototype.type = "LineTerminator";
-LineTerminatorToken.prototype.constructor = LineTerminatorToken;
-
+LineTerminatorToken = defineNode(Token, 'LineTerminator',
+    [],
+    ['value'],
+    function(loc, value) {
+        Token.call(this, loc, value);
+    });
 }

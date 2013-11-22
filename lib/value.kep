@@ -3,7 +3,8 @@
  */
 package (
     Identifier,
-    Literal)
+    Literal,
+    ObjectValue)
 with 
     import 'khepri_ast/node' {defineNode, Node}
 in {
@@ -13,6 +14,7 @@ in {
  */
 Identifier = defineNode(Node, 'Identifier',
     [],
+    ['name'],
     function(loc, name) {
         Node.call(this, loc);
         this.name = name;
@@ -23,9 +25,22 @@ Identifier = defineNode(Node, 'Identifier',
  */
 Literal = defineNode(Node, 'Literal',
     [],
+    ['kind', 'value'],
     function(loc, kind, value) {
         Node.call(this, loc);
         this.kind = kind;
+        this.value = value;
+    });
+
+/**
+ * @constructor
+ */
+ObjectValue = defineNode(Node, 'ObjectValue',
+    ['key', 'value'],
+    [],
+    function(loc, key, value) {
+        Node.call(this, loc);
+        this.key = key;
         this.value = value;
     });
 

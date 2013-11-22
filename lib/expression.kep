@@ -43,6 +43,7 @@ Expression.prototype = new Node;
  */
 ThisExpression = defineNode(Expression, 'ThisExpression',
     [],
+    [],
     function(loc) {
         Node.call(this, loc);
     });
@@ -52,6 +53,7 @@ ThisExpression = defineNode(Expression, 'ThisExpression',
  */
 UnaryExpression = defineNode(Expression, 'UnaryExpression',
     ['argument'],
+    [],
     function(loc, operator, argument) {
         Node.call(this, loc);
         this.operator = operator;
@@ -63,6 +65,7 @@ UnaryExpression = defineNode(Expression, 'UnaryExpression',
  */
 BinaryExpression = defineNode(Expression, 'BinaryExpression',
     ['left', 'right'],
+    [],
     function(loc, operator, left, right) {
         Node.call(this, loc);
         this.operator = operator;
@@ -75,6 +78,7 @@ BinaryExpression = defineNode(Expression, 'BinaryExpression',
  */
 AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
     ['left', 'right'],
+    ['operator'],
     function(loc, operator, left, right) {
         Node.call(this, loc);
         this.operator = operator;
@@ -87,6 +91,7 @@ AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
  */
 LogicalExpression = defineNode(Expression, 'LogicalExpression',
     ['left', 'right'],
+    ['operator'],
     function(loc, operator, left, right) {
         Node.call(this, loc);
         this.operator = operator;
@@ -99,6 +104,7 @@ LogicalExpression = defineNode(Expression, 'LogicalExpression',
  */
 ConditionalExpression = defineNode(Expression, 'ConditionalExpression',
     ['test', 'consequent', 'alternate'],
+    [],
     function(loc, test, consequent, alternate) {
         Node.call(this, loc);
         this.test = test;
@@ -122,6 +128,7 @@ NewExpression = defineNode(Expression, 'NewExpression',
  */
 CallExpression = defineNode(Expression, 'CallExpression',
     ['callee', 'args'],
+    [],
     function(loc, callee, args) {
         Node.call(this, loc);
         this.callee = callee;
@@ -132,7 +139,8 @@ CallExpression = defineNode(Expression, 'CallExpression',
  * @constructor
  */
 MemberExpression = defineNode(Expression, 'MemberExpression',
-    ['object', 'property', 'computed'],
+    ['object', 'property'],
+    ['computed'],
     function(loc, object, property, computed) {
         Node.call(this, loc);
         this.object = object;
@@ -157,6 +165,7 @@ FunctionExpression = defineNode(Expression, 'FunctionExpression',
  */
 ArrayExpression = defineNode(Expression, 'ArrayExpression',
     ['elements'],
+    [],
     function(loc, elements) {
         Node.call(this, loc);
         this.elements = elements;
@@ -167,6 +176,7 @@ ArrayExpression = defineNode(Expression, 'ArrayExpression',
  */
 ObjectExpression = defineNode(Expression, 'ObjectExpression',
     ['properties'],
+    [],
     function(loc, properties) {
         Node.call(this, loc);
         this.properties = properties;
@@ -177,6 +187,7 @@ ObjectExpression = defineNode(Expression, 'ObjectExpression',
  */
 LetExpression = defineNode(Expression, 'LetExpression',
     ['bindings', 'body'],
+    [],
     function(loc, bindings, body) {
         Node.call(this, loc);
         this.bindings = bindings;
@@ -188,6 +199,7 @@ LetExpression = defineNode(Expression, 'LetExpression',
  */
 CurryExpression = defineNode(Expression, 'CurryExpression',
     ['base', 'args'],
+    [],
     function(loc, base, args) {
         Node.call(this, loc);
         this.base = base;
@@ -198,6 +210,7 @@ CurryExpression = defineNode(Expression, 'CurryExpression',
  * @constructor
  */
 UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
+    [],
     ['op'],
     function(loc, op) {
         Node.call(this, loc);
@@ -208,6 +221,7 @@ UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
  * @constructor
  */
 BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
+    [],
     ['op'],
     function(loc, op) {
         Node.call(this, loc);
@@ -218,6 +232,7 @@ BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
  * @constructor
  */
 TernaryOperatorExpression = defineNode(Expression, 'TernaryOperatorExpression',
+     [],
     ['op'],
     function(loc, op) {
         Node.call(this, loc);
