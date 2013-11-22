@@ -154,6 +154,7 @@ MemberExpression = defineNode(Expression, 'MemberExpression',
  */
 FunctionExpression = defineNode(Expression, 'FunctionExpression',
     ['id', 'params', 'body'],
+    [],
     function(loc, id, params, body) {
         Node.call(this, loc);
         this.id = (id || null);

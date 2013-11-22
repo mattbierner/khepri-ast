@@ -58,7 +58,7 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         (this.property = property);
         (this.computed = computed);
     })));
-    (FunctionExpression = defineNode(Expression, "FunctionExpression", ["id", "params", "body"], (function(loc, id, params, body) {
+    (FunctionExpression = defineNode(Expression, "FunctionExpression", ["id", "params", "body"], [], (function(loc, id, params, body) {
         Node.call(this, loc);
         (this.id = (id || null));
         (this.params = params);
