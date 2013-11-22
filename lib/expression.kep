@@ -117,6 +117,7 @@ ConditionalExpression = defineNode(Expression, 'ConditionalExpression',
  */
 NewExpression = defineNode(Expression, 'NewExpression',
     ['callee', 'args'],
+    [],
     function(loc, callee, args) {
         Node.call(this, loc);
         this.callee = callee;

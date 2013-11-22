@@ -42,7 +42,7 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         (this.consequent = consequent);
         (this.alternate = alternate);
     })));
-    (NewExpression = defineNode(Expression, "NewExpression", ["callee", "args"], (function(loc, callee, args) {
+    (NewExpression = defineNode(Expression, "NewExpression", ["callee", "args"], [], (function(loc, callee, args) {
         Node.call(this, loc);
         (this.callee = callee);
         (this.args = args);
