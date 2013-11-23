@@ -1,5 +1,9 @@
 # ChangeLog #
 
+# 3.0.0 - Nov 22, 2013
+* Update with `ecma_ast` features.
+* Added `ObjectValue`
+
 ## 2.2.0 - Oct 16, 2013
 * Renamed `ParameterPattern` to the more general `ArgumentsPattern`.
 * Added `CurryExpression`, and `UnaryOperatorExpression`, `BinaryOperatorExpression`,
