@@ -1,5 +1,9 @@
 # ChangeLog #
 
+# 3.1.0 - December 15, 2013
+* Removed `id` member from `ObjectPattern` and `ArrayPattern`.
+* Added `AsPattern` for generalizing this logic.
+
 # 3.0.0 - Nov 22, 2013
 * Update with `ecma_ast` features.
 * Added `ObjectValue`

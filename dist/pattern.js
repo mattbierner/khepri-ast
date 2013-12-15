@@ -4,7 +4,8 @@
 */
 define(["require", "exports", "khepri_ast/node"], (function(require, exports, __o) {
     "use strict";
-    var Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern, ObjectPatternElement, ObjectPattern, ArgumentsPattern;
+    var Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern,
+            ObjectPatternElement, ObjectPattern, ArgumentsPattern, AsPattern;
     var __o = __o,
         defineNode = __o["defineNode"],
         Node = __o["Node"];
@@ -16,7 +17,7 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         Pattern.call(this, loc);
         (this.id = id);
     })));
-    (EllipsisPattern = defineNode(Pattern, "EllipsisPattern", ["id"], [], (function(loc, id) {
+    (EllipsisPattern = defineNode(Pattern, "EllipsisPattern", [], ["id"], (function(loc, id) {
         Pattern.call(this, loc);
         (this.id = (id || null));
     })));
@@ -28,24 +29,29 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         (this.from = from);
         (this.pattern = pattern);
     })));
-    (ArrayPattern = defineNode(Pattern, "ArrayPattern", ["id", "elements"], [], (function(loc, id, elements) {
+    (ArrayPattern = defineNode(Pattern, "ArrayPattern", ["elements"], [], (function(loc, elements) {
         Pattern.call(this, loc);
-        (this.id = (id || null));
         (this.elements = elements);
     })));
-    (ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], [], (function(loc, key, target) {
+    (ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], [], (function(loc,
+        key, target) {
         Pattern.call(this, loc);
         (this.key = key);
         (this.target = (target || null));
     })));
-    (ObjectPattern = defineNode(Pattern, "ObjectPattern", ["id", "elements"], [], (function(loc, id, elements) {
+    (ObjectPattern = defineNode(Pattern, "ObjectPattern", ["elements"], [], (function(loc, elements) {
         Pattern.call(this, loc);
-        (this.id = (id || null));
         (this.elements = elements);
     })));
-    (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements"], [], (function(loc, id, elements) {
+    (AsPattern = defineNode(Pattern, "AsPattern", ["id", "target"], [], (function(loc, id, elements) {
         Pattern.call(this, loc);
-        (this.id = (id || null));
+        (this.id = id);
+        (this.elements = elements);
+    })));
+    (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements"], [], (function(loc, id,
+        elements) {
+        Pattern.call(this, loc);
+        (this.id = id);
         (this.elements = elements);
     })));
     (exports.Pattern = Pattern);
@@ -57,4 +63,5 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
     (exports.ObjectPatternElement = ObjectPatternElement);
     (exports.ObjectPattern = ObjectPattern);
     (exports.ArgumentsPattern = ArgumentsPattern);
+    (exports.AsPattern = AsPattern);
 }))

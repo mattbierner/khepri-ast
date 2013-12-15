@@ -2,8 +2,8 @@
  * @fileOverview Khepri clause AST nodes.
  */
 package (
-    Clause,
-    SwitchCase,
+    Clause
+    SwitchCase
     CatchClause)
 with 
     import 'khepri_ast/node' {defineNode, Node}

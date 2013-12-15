@@ -2,18 +2,19 @@
  * @fileOverview 
  */
 package (
-    Pattern,
+    Pattern
     
-    IdentifierPattern,
-    EllipsisPattern,
-    SinkPattern,
-    ImportPattern,
-    ArrayPattern,
-    ObjectPatternElement,
-    ObjectPattern,
-    ArgumentsPattern)
+    IdentifierPattern
+    EllipsisPattern
+    SinkPattern
+    ImportPattern
+    ArrayPattern
+    ObjectPatternElement
+    ObjectPattern
+    ArgumentsPattern,
+    AsPattern)
 with 
-    import 'khepri_ast/node' {defineNode, Node}
+    import 'khepri_ast/node' {defineNode Node}
 in {
 
 /* Base
@@ -43,8 +44,8 @@ IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
  * @constructor
  */
 EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
-    ['id'],
     [],
+    ['id'],
     function(loc, id) {
         Pattern.call(this, loc);
         this.id = (id || null);
@@ -76,11 +77,10 @@ ImportPattern = defineNode(Node, 'ImportPattern',
  * @constructor
  */
 ArrayPattern = defineNode(Pattern, 'ArrayPattern',
-    ['id', 'elements'],
+    ['elements'],
     [],
-    function(loc, id, elements) {
+    function(loc, elements) {
         Pattern.call(this, loc);
-        this.id = (id || null);
         this.elements = elements;
     });
 
@@ -100,11 +100,22 @@ ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
  * @constructor
  */
 ObjectPattern = defineNode(Pattern, 'ObjectPattern',
-    ['id', 'elements'],
+    ['elements'],
+    [],
+    function(loc, elements) {
+        Pattern.call(this, loc);
+        this.elements = elements;
+    });
+
+/**
+ * @constructor
+ */
+AsPattern = defineNode(Pattern, 'AsPattern',
+    ['id', 'target'],
     [],
     function(loc, id, elements) {
         Pattern.call(this, loc);
-        this.id = (id || null);
+        this.id = id;
         this.elements = elements;
     });
 
@@ -116,7 +127,7 @@ ArgumentsPattern = defineNode(Pattern, 'ArgumentsPattern',
     [],
     function(loc, id, elements) {
         Pattern.call(this, loc);
-        this.id = (id || null);
+        this.id = id;
         this.elements = elements;
     });
 

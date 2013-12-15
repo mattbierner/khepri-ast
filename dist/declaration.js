@@ -10,11 +10,13 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         Node = __o["Node"];
     (Declaration = (function() {}));
     (Declaration.prototype = new(Node)());
-    (VariableDeclaration = defineNode(Declaration, "VariableDeclaration", ["declarations"], [], (function(loc, declarations) {
+    (VariableDeclaration = defineNode(Declaration, "VariableDeclaration", ["declarations"], [], (function(loc,
+        declarations) {
         Node.call(this, loc);
         (this.declarations = declarations);
     })));
-    (VariableDeclarator = defineNode(Declaration, "VariableDeclarator", ["id", "init"], [], (function(loc, id, init) {
+    (VariableDeclarator = defineNode(Declaration, "VariableDeclarator", ["id", "init"], [], (function(loc, id,
+        init) {
         Node.call(this, loc);
         (this.id = id);
         (this.init = (init || null));
@@ -24,7 +26,8 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         (this.pattern = pattern);
         (this.value = value);
     })));
-    (StaticDeclaration = defineNode(Declaration, "StaticDeclaration", ["declarations"], [], (function(loc, declarations) {
+    (StaticDeclaration = defineNode(Declaration, "StaticDeclaration", ["declarations"], [], (function(loc,
+        declarations) {
         Node.call(this, loc);
         (this.declarations = declarations);
     })));

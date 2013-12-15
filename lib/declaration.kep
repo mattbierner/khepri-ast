@@ -2,17 +2,17 @@
  * @fileOverview Khepri declaration AST nodes.
  */
 package (
-    Declaration,
+    Declaration
     
-    VariableDeclaration,
-    VariableDeclarator,
+    VariableDeclaration
+    VariableDeclarator
     
-    Binding,
+    Binding
     
-    StaticDeclaration,
+    StaticDeclaration
     StaticDeclarator)
 with
-    import 'khepri_ast/node' {defineNode, Node}
+    import 'khepri_ast/node' {defineNode Node}
 in {
 
 /* Base
