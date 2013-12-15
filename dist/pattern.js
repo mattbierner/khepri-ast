@@ -43,10 +43,10 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         Pattern.call(this, loc);
         (this.elements = elements);
     })));
-    (AsPattern = defineNode(Pattern, "AsPattern", ["id", "target"], [], (function(loc, id, elements) {
+    (AsPattern = defineNode(Pattern, "AsPattern", ["id", "target"], [], (function(loc, id, target) {
         Pattern.call(this, loc);
         (this.id = id);
-        (this.elements = elements);
+        (this.target = target);
     })));
     (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements"], [], (function(loc, id,
         elements) {

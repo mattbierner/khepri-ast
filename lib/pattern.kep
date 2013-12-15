@@ -113,10 +113,10 @@ ObjectPattern = defineNode(Pattern, 'ObjectPattern',
 AsPattern = defineNode(Pattern, 'AsPattern',
     ['id', 'target'],
     [],
-    function(loc, id, elements) {
+    function(loc, id, target) {
         Pattern.call(this, loc);
         this.id = id;
-        this.elements = elements;
+        this.target = target;
     });
 
 /**
