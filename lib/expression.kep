@@ -53,7 +53,7 @@ ThisExpression = defineNode(Expression, 'ThisExpression',
  */
 UnaryExpression = defineNode(Expression, 'UnaryExpression',
     ['argument'],
-    [],
+    ['operator'],
     function(loc, operator, argument) {
         Node.call(this, loc);
         this.operator = operator;
@@ -65,7 +65,7 @@ UnaryExpression = defineNode(Expression, 'UnaryExpression',
  */
 BinaryExpression = defineNode(Expression, 'BinaryExpression',
     ['left', 'right'],
-    [],
+    ['operator'],
     function(loc, operator, left, right) {
         Node.call(this, loc);
         this.operator = operator;
