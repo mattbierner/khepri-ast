@@ -24,7 +24,7 @@ in {
 /**
  * @constructor
  */
-Token = function(loc, value) {
+Token = function \loc, value -> {
     Node.call(this, loc);
     this.value = value;
 };
@@ -38,7 +38,7 @@ Token.prototype = new Node;
 StringToken = defineNode(Token, 'String',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -48,7 +48,7 @@ StringToken = defineNode(Token, 'String',
 NumberToken = defineNode(Token, 'Number',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -58,7 +58,7 @@ NumberToken = defineNode(Token, 'Number',
 RegularExpressionToken = defineNode(Token, 'RegularExpression',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -68,7 +68,7 @@ RegularExpressionToken = defineNode(Token, 'RegularExpression',
 BooleanToken = defineNode(Token, 'Boolean',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -78,7 +78,7 @@ BooleanToken = defineNode(Token, 'Boolean',
 NullToken = defineNode(Token, 'Null',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -88,7 +88,7 @@ NullToken = defineNode(Token, 'Null',
 IdentifierToken = defineNode(Token, 'Identifier',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -98,7 +98,7 @@ IdentifierToken = defineNode(Token, 'Identifier',
 KeywordToken = defineNode(Token, 'Keyword',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -108,7 +108,7 @@ KeywordToken = defineNode(Token, 'Keyword',
 PunctuatorToken = defineNode(Token, 'Punctuator',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -118,7 +118,7 @@ PunctuatorToken = defineNode(Token, 'Punctuator',
 CommentToken = defineNode(Token, 'Comment',
     [],
     ['value', 'multiline', 'linebreak'],
-    function(loc, value, multiline, linebreak) {
+    function \loc, value, multiline, linebreak -> {
         Token.call(this, loc, value);
         this.multiline = !!multiline;
         this.linebreak = !!linebreak;
@@ -130,7 +130,7 @@ CommentToken = defineNode(Token, 'Comment',
 WhitespaceToken = defineNode(Token, 'Whitespace',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 
@@ -140,7 +140,7 @@ WhitespaceToken = defineNode(Token, 'Whitespace',
 LineTerminatorToken = defineNode(Token, 'LineTerminator',
     [],
     ['value'],
-    function(loc, value) {
+    function \loc, value -> {
         Token.call(this, loc, value);
     });
 }

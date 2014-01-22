@@ -47,7 +47,7 @@ var defineProperty = \obj, prop, descriptor ->
  * @param loc Location.
  * @param ud UserData
  */
-Node = function(loc, ud) {
+Node = function \loc, ud -> {
     Object.defineProperties(this, {
         'loc': {
             'value': loc,
@@ -75,11 +75,11 @@ Node = function(loc, ud) {
  * 
  * @return New node.
  */
-construct = function(proto, loc, ud, children, attributes) {
+construct = function \proto, loc, ud, children, attributes -> {
     var properties = {};
     
     // Copy explicit children
-    Object.keys(children).forEach(function(key) {
+    Object.keys(children).forEach(function \key -> {
         properties[key] = {
             'value': children[key],
             'enumerable': true,
@@ -88,7 +88,7 @@ construct = function(proto, loc, ud, children, attributes) {
     });
     
     // Null remaining children
-    proto.children.forEach(function(key) {
+    proto.children.forEach(function \key -> {
         properties[key] = (properties[key] || {
             'value': null,
             'enumerable': true,
@@ -96,7 +96,7 @@ construct = function(proto, loc, ud, children, attributes) {
         });
     });
     
-    Object.keys(attributes).forEach(function(key) {
+    Object.keys(attributes).forEach(function \key -> {
         properties[key] = {
             'value': attributes[key],
             'enumerable': true,
@@ -128,7 +128,7 @@ construct = function(proto, loc, ud, children, attributes) {
  * 
  * @return Reconstructed node.
  */
-reconstruct = function(base, children, attributes) {
+reconstruct = function \base, children, attributes -> {
     return construct(
         Object.getPrototypeOf(base),
         base.loc,
@@ -150,21 +150,21 @@ reconstruct = function(base, children, attributes) {
  * 
  * @return Modified node.
  */
-modify = function(base, children, attributes) {
+modify = function \base, children, attributes -> {
     var allChildren = {},
         allAttributes = {};
     
-    base.children.forEach(function(key) {
+    base.children.forEach(function \key -> {
         allChildren[key] = base[key];
     });
-    Object.keys(children).forEach(function(key) {
+    Object.keys(children).forEach(function \key -> {
         allChildren[key] = children[key];
     });
     
-    base.attributes.forEach(function(key) {
+    base.attributes.forEach(function \key -> {
         allAttributes[key] = base[key];
     });
-    Object.keys(attributes).forEach(function(key) {
+    Object.keys(attributes).forEach(function \key -> {
         allAttributes[key] = attributes[key];
     });
     
@@ -182,13 +182,13 @@ modify = function(base, children, attributes) {
  * 
  * @return Transformed node.
  */
-setLoc = function(base, loc) {
+setLoc = function \base, loc -> {
     return construct(
         Object.getPrototypeOf(base),
         loc,
         base.ud,
-        reduce(base.children, function(o, key) { o[key] = base[key]; return o; }, {}),
-        reduce(base.attributes, function(o, key) { o[key] = base[key]; return o; }, {}));
+        reduce(base.children, function \o, key -> { o[key] = base[key]; return o; }, {}),
+        reduce(base.attributes, function \o, key -> { o[key] = base[key]; return o; }, {}));
 };
 
 /**
@@ -199,13 +199,13 @@ setLoc = function(base, loc) {
  * 
  * @return Transformed node.
  */
-setUserData = function(base, ud) {
+setUserData = function \base, ud -> {
     return construct(
         Object.getPrototypeOf(base),
         base.loc,
         ud,
-        reduce(base.children, function(o, key) { o[key] = base[key]; return o; }, {}),
-        reduce(base.attributes, function(o, key) { o[key] = base[key]; return o; }, {}));
+        reduce(base.children, function \o, key -> { o[key] = base[key]; return o; }, {}),
+        reduce(base.attributes, function \o, key -> { o[key] = base[key]; return o; }, {}));
 };
 
 /* User Data
@@ -218,7 +218,7 @@ setUserData = function(base, ud) {
  * 
  * @return Value or null if none.
  */
-getData = function(node, key) {
+getData = function \node, key -> {
     return (node.ud ?
         node.ud[key] :
         null);
@@ -233,7 +233,7 @@ getData = function(node, key) {
  * 
  * @return Transformed node.
  */
-modifyData = function(node, key, f) {
+modifyData = function \node, key, f -> {
     return setUserData(
         node,
         defineProperty(
@@ -253,13 +253,13 @@ modifyData = function(node, key, f) {
  * 
  * @return Transformed node.
  */
-setData = function(node, key, value) {
-    return modifyData(node, key, function() { return value; });
+setData = function \node, key, value -> {
+    return modifyData(node, key, function \() -> { return value; });
 };
 
 /* Creation
  ******************************************************************************/
-defineNode = function(parent, type, children, attributes, ctor) {
+defineNode = function \parent, type, children, attributes, ctor -> {
     ctor.type = type;
     ctor.prototype = new parent;
     ctor.prototype.constructor = ctor;

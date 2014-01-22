@@ -13,7 +13,7 @@ in {
 Program = defineNode(Node, 'Program',
     ['body'],
     [],
-    function(loc, body) {
+    function \loc, body -> {
         Node.call(this, loc);
         this.body = body;
     });

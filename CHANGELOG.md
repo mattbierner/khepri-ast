@@ -1,5 +1,10 @@
 # ChangeLog #
 
+# 3.2.0 - January 22, 2014
+* Renamed `ArgumentsPattern` to `SubPattern`.
+* Added `self` value to new `ArgumentsPattern`.
+* Added node package.
+
 # 3.1.0 - December 15, 2013
 * Removed `id` member from `ObjectPattern` and `ArrayPattern`.
 * Added `AsPattern` for generalizing this logic.

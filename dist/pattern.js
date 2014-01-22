@@ -5,7 +5,7 @@
 define(["require", "exports", "khepri_ast/node"], (function(require, exports, __o) {
     "use strict";
     var Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern,
-            ObjectPatternElement, ObjectPattern, ArgumentsPattern, AsPattern;
+            ObjectPatternElement, ObjectPattern, ArgumentsPattern, SubPattern, AsPattern;
     var __o = __o,
         defineNode = __o["defineNode"],
         Node = __o["Node"];
@@ -48,11 +48,17 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         (this.id = id);
         (this.target = target);
     })));
-    (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements"], [], (function(loc, id,
-        elements) {
+    (SubPattern = defineNode(Pattern, "SubPattern", ["id", "elements"], [], (function(loc, id, elements) {
         Pattern.call(this, loc);
         (this.id = id);
         (this.elements = elements);
+    })));
+    (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements", "self"], [], (function(loc,
+        id, elements, self) {
+        Pattern.call(this, loc);
+        (this.id = id);
+        (this.elements = elements);
+        (this.self = self);
     })));
     (exports.Pattern = Pattern);
     (exports.IdentifierPattern = IdentifierPattern);
@@ -63,5 +69,6 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
     (exports.ObjectPatternElement = ObjectPatternElement);
     (exports.ObjectPattern = ObjectPattern);
     (exports.ArgumentsPattern = ArgumentsPattern);
+    (exports.SubPattern = SubPattern);
     (exports.AsPattern = AsPattern);
 }))

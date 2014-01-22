@@ -14,7 +14,7 @@ in {
 /**
  * @constructor
  */
-Clause = function() { };
+Clause = function \() -> { };
 Clause.prototype = new Node;
 
 /* Instances
@@ -25,7 +25,7 @@ Clause.prototype = new Node;
 SwitchCase = defineNode(Clause, 'SwitchCase',
     ['test', 'consequent'],
     [],
-    function(loc, test, consequent) {
+    function \loc, test, consequent -> {
         Node.call(this, loc);
         this.test = (test || null);
         this.consequent = consequent;
@@ -37,7 +37,7 @@ SwitchCase = defineNode(Clause, 'SwitchCase',
 CatchClause = defineNode(Clause, 'CatchClause',
     ['param', 'body'],
     [],
-    function(loc, param, body) {
+    function \loc, param, body -> {
         Node.call(this, loc);
         this.param = param;
         this.body = body;

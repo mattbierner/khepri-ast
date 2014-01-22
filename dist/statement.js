@@ -4,7 +4,9 @@
 */
 define(["require", "exports", "khepri_ast/node"], (function(require, exports, __o) {
     "use strict";
-    var Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement, IfStatement, BreakStatement, ContinueStatement, SwitchStatement, ReturnStatement, ThrowStatement, TryStatement, WhileStatement, DoWhileStatement, ForStatement;
+    var Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement,
+            IfStatement, BreakStatement, ContinueStatement, SwitchStatement, ReturnStatement, ThrowStatement,
+            TryStatement, WhileStatement, DoWhileStatement, ForStatement;
     var __o = __o,
         defineNode = __o["defineNode"],
         Node = __o["Node"];
@@ -20,17 +22,20 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         Node.call(this, loc);
         (this.body = body);
     })));
-    (ExpressionStatement = defineNode(Statement, "ExpressionStatement", ["expression"], [], (function(loc, expression) {
+    (ExpressionStatement = defineNode(Statement, "ExpressionStatement", ["expression"], [], (function(loc,
+        expression) {
         Node.call(this, loc);
         (this.expression = expression);
     })));
-    (IfStatement = defineNode(Statement, "IfStatement", ["test", "consequent", "alternate"], [], (function(loc, test, consequent, alternate) {
+    (IfStatement = defineNode(Statement, "IfStatement", ["test", "consequent", "alternate"], [], (function(loc,
+        test, consequent, alternate) {
         Node.call(this, loc);
         (this.test = test);
         (this.consequent = consequent);
         (this.alternate = (alternate || null));
     })));
-    (WithStatement = defineNode(Statement, "WithStatement", ["bindings", "body"], [], (function(loc, bindings, body) {
+    (WithStatement = defineNode(Statement, "WithStatement", ["bindings", "body"], [], (function(loc, bindings,
+        body) {
         Node.call(this, loc);
         (this.bindings = bindings);
         (this.body = body);
@@ -41,7 +46,8 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
     (ContinueStatement = defineNode(Statement, "ContinueStatement", [], [], (function(loc) {
         Node.call(this, loc);
     })));
-    (SwitchStatement = defineNode(Statement, "SwitchStatement", ["discriminant", "cases"], [], (function(loc, discriminant, cases) {
+    (SwitchStatement = defineNode(Statement, "SwitchStatement", ["discriminant", "cases"], [], (function(loc,
+        discriminant, cases) {
         Node.call(this, loc);
         (this.discriminant = discriminant);
         (this.cases = cases);
@@ -54,7 +60,8 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         Node.call(this, loc);
         (this.argument = argument);
     })));
-    (TryStatement = defineNode(Statement, "TryStatement", ["block", "handler", "finalizer"], [], (function(loc, block, handler, finalizer) {
+    (TryStatement = defineNode(Statement, "TryStatement", ["block", "handler", "finalizer"], [], (function(loc,
+        block, handler, finalizer) {
         Node.call(this, loc);
         (this.block = block);
         (this.handler = handler);
@@ -65,12 +72,14 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
         (this.test = test);
         (this.body = body);
     })));
-    (DoWhileStatement = defineNode(Statement, "DoWhileStatement", ["body", "test"], [], (function(loc, body, test) {
+    (DoWhileStatement = defineNode(Statement, "DoWhileStatement", ["body", "test"], [], (function(loc, body,
+        test) {
         Node.call(this, loc);
         (this.test = test);
         (this.body = body);
     })));
-    (ForStatement = defineNode(Statement, "ForStatement", ["init", "test", "update", "body"], [], (function(loc, init, test, update, body) {
+    (ForStatement = defineNode(Statement, "ForStatement", ["init", "test", "update", "body"], [], (function(loc,
+        init, test, update, body) {
         Node.call(this, loc);
         (this.init = (init || null));
         (this.test = (test || null));

@@ -4,7 +4,8 @@
 */
 define(["require", "exports", "khepri_ast/node"], (function(require, exports, __o) {
     "use strict";
-    var Token, StringToken, NumberToken, RegularExpressionToken, BooleanToken, NullToken, IdentifierToken, KeywordToken, PunctuatorToken, CommentToken, WhitespaceToken, LineTerminatorToken;
+    var Token, StringToken, NumberToken, RegularExpressionToken, BooleanToken, NullToken, IdentifierToken,
+            KeywordToken, PunctuatorToken, CommentToken, WhitespaceToken, LineTerminatorToken;
     var __o = __o,
         defineNode = __o["defineNode"],
         Node = __o["Node"];
@@ -37,7 +38,8 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
     (PunctuatorToken = defineNode(Token, "Punctuator", [], ["value"], (function(loc, value) {
         Token.call(this, loc, value);
     })));
-    (CommentToken = defineNode(Token, "Comment", [], ["value", "multiline", "linebreak"], (function(loc, value, multiline, linebreak) {
+    (CommentToken = defineNode(Token, "Comment", [], ["value", "multiline", "linebreak"], (function(loc, value,
+        multiline, linebreak) {
         Token.call(this, loc, value);
         (this.multiline = !!multiline);
         (this.linebreak = !!linebreak);

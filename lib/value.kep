@@ -15,7 +15,7 @@ in {
 Identifier = defineNode(Node, 'Identifier',
     [],
     ['name'],
-    function(loc, name) {
+    function \loc, name -> {
         Node.call(this, loc);
         this.name = name;
     });
@@ -26,7 +26,7 @@ Identifier = defineNode(Node, 'Identifier',
 Literal = defineNode(Node, 'Literal',
     [],
     ['kind', 'value'],
-    function(loc, kind, value) {
+    function \loc, kind, value -> {
         Node.call(this, loc);
         this.kind = kind;
         this.value = value;
@@ -38,7 +38,7 @@ Literal = defineNode(Node, 'Literal',
 ObjectValue = defineNode(Node, 'ObjectValue',
     ['key', 'value'],
     [],
-    function(loc, key, value) {
+    function \loc, key, value -> {
         Node.call(this, loc);
         this.key = key;
         this.value = value;

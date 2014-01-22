@@ -33,7 +33,7 @@ in {
 /**
  * @constructor
  */
-Expression = function() { };
+Expression = function \() -> { };
 Expression.prototype = new Node;
 
 /* Instances
@@ -44,7 +44,7 @@ Expression.prototype = new Node;
 ThisExpression = defineNode(Expression, 'ThisExpression',
     [],
     [],
-    function(loc) {
+    function \loc -> {
         Node.call(this, loc);
     });
 
@@ -54,7 +54,7 @@ ThisExpression = defineNode(Expression, 'ThisExpression',
 UnaryExpression = defineNode(Expression, 'UnaryExpression',
     ['argument'],
     ['operator'],
-    function(loc, operator, argument) {
+    function \loc, operator, argument -> {
         Node.call(this, loc);
         this.operator = operator;
         this.argument = argument;
@@ -66,7 +66,7 @@ UnaryExpression = defineNode(Expression, 'UnaryExpression',
 BinaryExpression = defineNode(Expression, 'BinaryExpression',
     ['left', 'right'],
     ['operator'],
-    function(loc, operator, left, right) {
+    function \loc, operator, left, right -> {
         Node.call(this, loc);
         this.operator = operator;
         this.left = left;
@@ -79,7 +79,7 @@ BinaryExpression = defineNode(Expression, 'BinaryExpression',
 AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
     ['left', 'right'],
     ['operator'],
-    function(loc, operator, left, right) {
+    function \loc, operator, left, right -> {
         Node.call(this, loc);
         this.operator = operator;
         this.left = left;
@@ -92,7 +92,7 @@ AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
 LogicalExpression = defineNode(Expression, 'LogicalExpression',
     ['left', 'right'],
     ['operator'],
-    function(loc, operator, left, right) {
+    function \loc, operator, left, right -> {
         Node.call(this, loc);
         this.operator = operator;
         this.left = left;
@@ -105,7 +105,7 @@ LogicalExpression = defineNode(Expression, 'LogicalExpression',
 ConditionalExpression = defineNode(Expression, 'ConditionalExpression',
     ['test', 'consequent', 'alternate'],
     [],
-    function(loc, test, consequent, alternate) {
+    function \loc, test, consequent, alternate -> {
         Node.call(this, loc);
         this.test = test;
         this.consequent = consequent;
@@ -118,7 +118,7 @@ ConditionalExpression = defineNode(Expression, 'ConditionalExpression',
 NewExpression = defineNode(Expression, 'NewExpression',
     ['callee', 'args'],
     [],
-    function(loc, callee, args) {
+    function \loc, callee, args -> {
         Node.call(this, loc);
         this.callee = callee;
         this.args = args;
@@ -130,7 +130,7 @@ NewExpression = defineNode(Expression, 'NewExpression',
 CallExpression = defineNode(Expression, 'CallExpression',
     ['callee', 'args'],
     [],
-    function(loc, callee, args) {
+    function \loc, callee, args -> {
         Node.call(this, loc);
         this.callee = callee;
         this.args = args;
@@ -142,7 +142,7 @@ CallExpression = defineNode(Expression, 'CallExpression',
 MemberExpression = defineNode(Expression, 'MemberExpression',
     ['object', 'property'],
     ['computed'],
-    function(loc, object, property, computed) {
+    function \loc, object, property, computed -> {
         Node.call(this, loc);
         this.object = object;
         this.property = property;
@@ -155,7 +155,7 @@ MemberExpression = defineNode(Expression, 'MemberExpression',
 FunctionExpression = defineNode(Expression, 'FunctionExpression',
     ['id', 'params', 'body'],
     [],
-    function(loc, id, params, body) {
+    function \loc, id, params, body -> {
         Node.call(this, loc);
         this.id = (id || null);
         this.params = params;
@@ -168,7 +168,7 @@ FunctionExpression = defineNode(Expression, 'FunctionExpression',
 ArrayExpression = defineNode(Expression, 'ArrayExpression',
     ['elements'],
     [],
-    function(loc, elements) {
+    function \loc, elements -> {
         Node.call(this, loc);
         this.elements = elements;
     });
@@ -179,7 +179,7 @@ ArrayExpression = defineNode(Expression, 'ArrayExpression',
 ObjectExpression = defineNode(Expression, 'ObjectExpression',
     ['properties'],
     [],
-    function(loc, properties) {
+    function \loc, properties -> {
         Node.call(this, loc);
         this.properties = properties;
     });
@@ -190,7 +190,7 @@ ObjectExpression = defineNode(Expression, 'ObjectExpression',
 LetExpression = defineNode(Expression, 'LetExpression',
     ['bindings', 'body'],
     [],
-    function(loc, bindings, body) {
+    function \loc, bindings, body -> {
         Node.call(this, loc);
         this.bindings = bindings;
         this.body = body;
@@ -202,7 +202,7 @@ LetExpression = defineNode(Expression, 'LetExpression',
 CurryExpression = defineNode(Expression, 'CurryExpression',
     ['base', 'args'],
     [],
-    function(loc, base, args) {
+    function \loc, base, args -> {
         Node.call(this, loc);
         this.base = base;
         this.args = args;
@@ -214,7 +214,7 @@ CurryExpression = defineNode(Expression, 'CurryExpression',
 UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
     [],
     ['op'],
-    function(loc, op) {
+    function \loc, op -> {
         Node.call(this, loc);
         this.op = op;
     });
@@ -225,7 +225,7 @@ UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
 BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
     [],
     ['op'],
-    function(loc, op) {
+    function \loc, op -> {
         Node.call(this, loc);
         this.op = op;
     });
@@ -236,7 +236,7 @@ BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
 TernaryOperatorExpression = defineNode(Expression, 'TernaryOperatorExpression',
      [],
     ['op'],
-    function(loc, op) {
+    function \loc, op -> {
         Node.call(this, loc);
         this.op = op;
     });

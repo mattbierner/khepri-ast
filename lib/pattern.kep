@@ -11,7 +11,8 @@ package (
     ArrayPattern
     ObjectPatternElement
     ObjectPattern
-    ArgumentsPattern,
+    ArgumentsPattern
+    SubPattern
     AsPattern)
 with 
     import 'khepri_ast/node' {defineNode Node}
@@ -22,7 +23,7 @@ in {
 /**
  * @constructor
  */
-Pattern = function(loc) {
+Pattern = function \loc -> {
     Node.call(this, loc);
 };
 Pattern.prototype = new Node;
@@ -35,7 +36,7 @@ Pattern.prototype = new Node;
 IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
     ['id'],
     [],
-    function(loc, id) {
+    function \loc, id -> {
         Pattern.call(this, loc);
         this.id = id;
     });
@@ -46,7 +47,7 @@ IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
 EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
     [],
     ['id'],
-    function(loc, id) {
+    function \loc, id -> {
         Pattern.call(this, loc);
         this.id = (id || null);
     });
@@ -57,7 +58,7 @@ EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
 SinkPattern = defineNode(Pattern, 'SinkPattern',
     [],
     [],
-    function(loc) {
+    function \loc -> {
         Pattern.call(this, loc);
     });
 
@@ -67,7 +68,7 @@ SinkPattern = defineNode(Pattern, 'SinkPattern',
 ImportPattern = defineNode(Node, 'ImportPattern',
     ['from', 'pattern'],
     [],
-    function(loc, from, pattern) {
+    function \loc, from, pattern -> {
         Node.call(this, loc);
         this.from = from;
         this.pattern = pattern;
@@ -79,7 +80,7 @@ ImportPattern = defineNode(Node, 'ImportPattern',
 ArrayPattern = defineNode(Pattern, 'ArrayPattern',
     ['elements'],
     [],
-    function(loc, elements) {
+    function \loc, elements -> {
         Pattern.call(this, loc);
         this.elements = elements;
     });
@@ -90,7 +91,7 @@ ArrayPattern = defineNode(Pattern, 'ArrayPattern',
 ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
     ['key', 'target'],
     [],
-    function(loc, key, target) {
+    function \loc, key, target -> {
         Pattern.call(this, loc);
         this.key = key;
         this.target = (target || null);
@@ -102,7 +103,7 @@ ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
 ObjectPattern = defineNode(Pattern, 'ObjectPattern',
     ['elements'],
     [],
-    function(loc, elements) {
+    function \loc, elements -> {
         Pattern.call(this, loc);
         this.elements = elements;
     });
@@ -113,7 +114,7 @@ ObjectPattern = defineNode(Pattern, 'ObjectPattern',
 AsPattern = defineNode(Pattern, 'AsPattern',
     ['id', 'target'],
     [],
-    function(loc, id, target) {
+    function \loc, id, target -> {
         Pattern.call(this, loc);
         this.id = id;
         this.target = target;
@@ -122,13 +123,26 @@ AsPattern = defineNode(Pattern, 'AsPattern',
 /**
  * @constructor
  */
-ArgumentsPattern = defineNode(Pattern, 'ArgumentsPattern',
+SubPattern = defineNode(Pattern, 'SubPattern',
     ['id', 'elements'],
     [],
-    function(loc, id, elements) {
+    function \loc, id, elements -> {
         Pattern.call(this, loc);
         this.id = id;
         this.elements = elements;
+    });
+
+/**
+ * @constructor
+ */
+ArgumentsPattern = defineNode(Pattern, 'ArgumentsPattern',
+    ['id', 'elements', 'self'],
+    [],
+    function \loc, id, elements, self -> {
+        Pattern.call(this, loc);
+        this.id = id;
+        this.elements = elements;
+        this.self = self;
     });
 
 }

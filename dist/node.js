@@ -8,23 +8,23 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
     var __o = __o,
         registerNode = __o["registerNode"];
     var concatArgs = (function() {
-        {
-            var id = (function(x) {
-                return x;
-            });
-            return (function(arr, args) {
-                return arr.concat([].map.call(args, id));
-            });
-        }
-    })();
+        var id = (function(x) {
+            return x;
+        });
+        return (function(arr, args) {
+            return arr.concat([].map.call(args, id));
+        });
+    })
+        .call(this);
     var keys = Object.keys;
     var map = Function.prototype.call.bind(Array.prototype.map);
     var reduce = Function.prototype.call.bind(Array.prototype.reduce);
     var copy = (function(obj) {
         var out = Object.create(Object.getPrototypeOf(obj));
-        Object.getOwnPropertyNames(obj).forEach((function(i) {
-            (out[i] = obj[i]);
-        }));
+        Object.getOwnPropertyNames(obj)
+            .forEach((function(i) {
+                (out[i] = obj[i]);
+            }));
         return out;
     });
     var defineProperty = (function(obj, prop, descriptor) {
@@ -44,13 +44,14 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
     }));
     (construct = (function(proto, loc, ud, children, attributes) {
         var properties = ({});
-        Object.keys(children).forEach((function(key) {
-            (properties[key] = ({
-                "value": children[key],
-                "enumerable": true,
-                "configurable": true
+        Object.keys(children)
+            .forEach((function(key) {
+                (properties[key] = ({
+                    "value": children[key],
+                    "enumerable": true,
+                    "configurable": true
+                }));
             }));
-        }));
         proto.children.forEach((function(key) {
             (properties[key] = (properties[key] || ({
                 "value": null,
@@ -58,13 +59,14 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
                 "configurable": true
             })));
         }));
-        Object.keys(attributes).forEach((function(key) {
-            (properties[key] = ({
-                "value": attributes[key],
-                "enumerable": true,
-                "configurable": true
+        Object.keys(attributes)
+            .forEach((function(key) {
+                (properties[key] = ({
+                    "value": attributes[key],
+                    "enumerable": true,
+                    "configurable": true
+                }));
             }));
-        }));
         (properties.loc = ({
             "value": loc,
             "enumerable": false
@@ -84,19 +86,22 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
         base.children.forEach((function(key) {
             (allChildren[key] = base[key]);
         }));
-        Object.keys(children).forEach((function(key) {
-            (allChildren[key] = children[key]);
-        }));
+        Object.keys(children)
+            .forEach((function(key) {
+                (allChildren[key] = children[key]);
+            }));
         base.attributes.forEach((function(key) {
             (allAttributes[key] = base[key]);
         }));
-        Object.keys(attributes).forEach((function(key) {
-            (allAttributes[key] = attributes[key]);
-        }));
+        Object.keys(attributes)
+            .forEach((function(key) {
+                (allAttributes[key] = attributes[key]);
+            }));
         return reconstruct(base, allChildren, allAttributes);
     }));
     (setLoc = (function(base, loc) {
-        return construct(Object.getPrototypeOf(base), loc, base.ud, reduce(base.children, (function(o, key) {
+        return construct(Object.getPrototypeOf(base), loc, base.ud, reduce(base.children, (function(o,
+            key) {
             (o[key] = base[key]);
             return o;
         }), ({})), reduce(base.attributes, (function(o, key) {
@@ -105,7 +110,8 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
         }), ({})));
     }));
     (setUserData = (function(base, ud) {
-        return construct(Object.getPrototypeOf(base), base.loc, ud, reduce(base.children, (function(o, key) {
+        return construct(Object.getPrototypeOf(base), base.loc, ud, reduce(base.children, (function(o,
+            key) {
             (o[key] = base[key]);
             return o;
         }), ({})), reduce(base.attributes, (function(o, key) {
