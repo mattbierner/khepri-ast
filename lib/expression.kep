@@ -25,7 +25,7 @@ package (
     BinaryOperatorExpression,
     TernaryOperatorExpression)
 with 
-    import 'khepri_ast/node' {defineNode, Node}
+    import './node' {defineNode, Node}
 in {
 
 /* Base
@@ -33,7 +33,7 @@ in {
 /**
  * @constructor
  */
-Expression = function \() -> { };
+Expression = function \() =self-> { };
 Expression.prototype = new Node;
 
 /* Instances
@@ -44,8 +44,8 @@ Expression.prototype = new Node;
 ThisExpression = defineNode(Expression, 'ThisExpression',
     [],
     [],
-    function \loc -> {
-        Node.call(this, loc);
+    function \loc =self-> {
+        Node.call(self, loc);
     });
 
 /**
@@ -54,10 +54,10 @@ ThisExpression = defineNode(Expression, 'ThisExpression',
 UnaryExpression = defineNode(Expression, 'UnaryExpression',
     ['argument'],
     ['operator'],
-    function \loc, operator, argument -> {
-        Node.call(this, loc);
-        this.operator = operator;
-        this.argument = argument;
+    function \loc, operator, argument =self-> {
+        Node.call(self, loc);
+        self.operator = operator;
+        self.argument = argument;
     });
 
 /**
@@ -66,11 +66,11 @@ UnaryExpression = defineNode(Expression, 'UnaryExpression',
 BinaryExpression = defineNode(Expression, 'BinaryExpression',
     ['left', 'right'],
     ['operator'],
-    function \loc, operator, left, right -> {
-        Node.call(this, loc);
-        this.operator = operator;
-        this.left = left;
-        this.right = right;
+    function \loc, operator, left, right =self-> {
+        Node.call(self, loc);
+        self.operator = operator;
+        self.left = left;
+        self.right = right;
     });
 
 /**
@@ -79,11 +79,11 @@ BinaryExpression = defineNode(Expression, 'BinaryExpression',
 AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
     ['left', 'right'],
     ['operator'],
-    function \loc, operator, left, right -> {
-        Node.call(this, loc);
-        this.operator = operator;
-        this.left = left;
-        this.right = right;
+    function \loc, operator, left, right =self-> {
+        Node.call(self, loc);
+        self.operator = operator;
+        self.left = left;
+        self.right = right;
     });
 
 /**
@@ -92,11 +92,11 @@ AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
 LogicalExpression = defineNode(Expression, 'LogicalExpression',
     ['left', 'right'],
     ['operator'],
-    function \loc, operator, left, right -> {
-        Node.call(this, loc);
-        this.operator = operator;
-        this.left = left;
-        this.right = right;
+    function \loc, operator, left, right =self-> {
+        Node.call(self, loc);
+        self.operator = operator;
+        self.left = left;
+        self.right = right;
     });
 
 /**
@@ -105,11 +105,11 @@ LogicalExpression = defineNode(Expression, 'LogicalExpression',
 ConditionalExpression = defineNode(Expression, 'ConditionalExpression',
     ['test', 'consequent', 'alternate'],
     [],
-    function \loc, test, consequent, alternate -> {
-        Node.call(this, loc);
-        this.test = test;
-        this.consequent = consequent;
-        this.alternate = alternate;
+    function \loc, test, consequent, alternate =self-> {
+        Node.call(self, loc);
+        self.test = test;
+        self.consequent = consequent;
+        self.alternate = alternate;
     });
 
 /**
@@ -118,10 +118,10 @@ ConditionalExpression = defineNode(Expression, 'ConditionalExpression',
 NewExpression = defineNode(Expression, 'NewExpression',
     ['callee', 'args'],
     [],
-    function \loc, callee, args -> {
-        Node.call(this, loc);
-        this.callee = callee;
-        this.args = args;
+    function \loc, callee, args =self-> {
+        Node.call(self, loc);
+        self.callee = callee;
+        self.args = args;
     });
 
 /**
@@ -130,10 +130,10 @@ NewExpression = defineNode(Expression, 'NewExpression',
 CallExpression = defineNode(Expression, 'CallExpression',
     ['callee', 'args'],
     [],
-    function \loc, callee, args -> {
-        Node.call(this, loc);
-        this.callee = callee;
-        this.args = args;
+    function \loc, callee, args =self-> {
+        Node.call(self, loc);
+        self.callee = callee;
+        self.args = args;
     });
 
 /**
@@ -142,11 +142,11 @@ CallExpression = defineNode(Expression, 'CallExpression',
 MemberExpression = defineNode(Expression, 'MemberExpression',
     ['object', 'property'],
     ['computed'],
-    function \loc, object, property, computed -> {
-        Node.call(this, loc);
-        this.object = object;
-        this.property = property;
-        this.computed = computed;
+    function \loc, object, property, computed =self-> {
+        Node.call(self, loc);
+        self.object = object;
+        self.property = property;
+        self.computed = computed;
     });
 
 /**
@@ -155,11 +155,11 @@ MemberExpression = defineNode(Expression, 'MemberExpression',
 FunctionExpression = defineNode(Expression, 'FunctionExpression',
     ['id', 'params', 'body'],
     [],
-    function \loc, id, params, body -> {
-        Node.call(this, loc);
-        this.id = (id || null);
-        this.params = params;
-        this.body = body;
+    function \loc, id, params, body =self-> {
+        Node.call(self, loc);
+        self.id = (id || null);
+        self.params = params;
+        self.body = body;
     });
 
 /**
@@ -168,9 +168,9 @@ FunctionExpression = defineNode(Expression, 'FunctionExpression',
 ArrayExpression = defineNode(Expression, 'ArrayExpression',
     ['elements'],
     [],
-    function \loc, elements -> {
-        Node.call(this, loc);
-        this.elements = elements;
+    function \loc, elements =self-> {
+        Node.call(self, loc);
+        self.elements = elements;
     });
 
 /**
@@ -179,9 +179,9 @@ ArrayExpression = defineNode(Expression, 'ArrayExpression',
 ObjectExpression = defineNode(Expression, 'ObjectExpression',
     ['properties'],
     [],
-    function \loc, properties -> {
-        Node.call(this, loc);
-        this.properties = properties;
+    function \loc, properties =self-> {
+        Node.call(self, loc);
+        self.properties = properties;
     });
 
 /** 
@@ -190,10 +190,10 @@ ObjectExpression = defineNode(Expression, 'ObjectExpression',
 LetExpression = defineNode(Expression, 'LetExpression',
     ['bindings', 'body'],
     [],
-    function \loc, bindings, body -> {
-        Node.call(this, loc);
-        this.bindings = bindings;
-        this.body = body;
+    function \loc, bindings, body =self-> {
+        Node.call(self, loc);
+        self.bindings = bindings;
+        self.body = body;
     });
 
 /** 
@@ -202,10 +202,10 @@ LetExpression = defineNode(Expression, 'LetExpression',
 CurryExpression = defineNode(Expression, 'CurryExpression',
     ['base', 'args'],
     [],
-    function \loc, base, args -> {
-        Node.call(this, loc);
-        this.base = base;
-        this.args = args;
+    function \loc, base, args =self-> {
+        Node.call(self, loc);
+        self.base = base;
+        self.args = args;
     });
 
 /** 
@@ -214,9 +214,9 @@ CurryExpression = defineNode(Expression, 'CurryExpression',
 UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
     [],
     ['op'],
-    function \loc, op -> {
-        Node.call(this, loc);
-        this.op = op;
+    function \loc, op =self-> {
+        Node.call(self, loc);
+        self.op = op;
     });
 
 /** 
@@ -225,9 +225,9 @@ UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
 BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
     [],
     ['op'],
-    function \loc, op -> {
-        Node.call(this, loc);
-        this.op = op;
+    function \loc, op =self-> {
+        Node.call(self, loc);
+        self.op = op;
     });
 
 /** 
@@ -236,9 +236,9 @@ BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
 TernaryOperatorExpression = defineNode(Expression, 'TernaryOperatorExpression',
      [],
     ['op'],
-    function \loc, op -> {
-        Node.call(this, loc);
-        this.op = op;
+    function \loc, op =self-> {
+        Node.call(self, loc);
+        self.op = op;
     });
 
 }

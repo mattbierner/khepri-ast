@@ -2,36 +2,36 @@
  * THIS FILE IS AUTO GENERATED from 'lib/node.kep'
  * DO NOT EDIT
 */
-define(["require", "exports", "khepri_ast/serialization"], (function(require, exports, __o) {
+define(["require", "exports", "./serialization"], (function(require, exports, __o) {
     "use strict";
-    var Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode;
-    var __o = __o,
-        registerNode = __o["registerNode"];
-    var concatArgs = (function() {
-        var id = (function(x) {
-            return x;
+    var registerNode = __o["registerNode"],
+        Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode,
+            concatArgs = (function() {
+                var id = (function(x) {
+                    return x;
+                });
+                return (function(arr, args) {
+                    return arr.concat([].map.call(args, id));
+                });
+            })(),
+        keys = Object.keys,
+        map = Function.prototype.call.bind(Array.prototype.map),
+        reduce = Function.prototype.call.bind(Array.prototype.reduce),
+        copy = (function(obj) {
+            var out = Object.create(Object.getPrototypeOf(obj));
+            Object.getOwnPropertyNames(obj)
+                .forEach((function(i) {
+                    var self = this;
+                    (out[i] = obj[i]);
+                }));
+            return out;
+        }),
+        defineProperty = (function(obj, prop, descriptor) {
+            return Object.defineProperty(copy(obj), prop, descriptor);
         });
-        return (function(arr, args) {
-            return arr.concat([].map.call(args, id));
-        });
-    })
-        .call(this);
-    var keys = Object.keys;
-    var map = Function.prototype.call.bind(Array.prototype.map);
-    var reduce = Function.prototype.call.bind(Array.prototype.reduce);
-    var copy = (function(obj) {
-        var out = Object.create(Object.getPrototypeOf(obj));
-        Object.getOwnPropertyNames(obj)
-            .forEach((function(i) {
-                (out[i] = obj[i]);
-            }));
-        return out;
-    });
-    var defineProperty = (function(obj, prop, descriptor) {
-        return Object.defineProperty(copy(obj), prop, descriptor);
-    });
     (Node = (function(loc, ud) {
-        Object.defineProperties(this, ({
+        var self = this;
+        Object.defineProperties(self, ({
             "loc": ({
                 "value": loc,
                 "enumerable": false
@@ -61,6 +61,7 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
         }));
         Object.keys(attributes)
             .forEach((function(key) {
+                var self = this;
                 (properties[key] = ({
                     "value": attributes[key],
                     "enumerable": true,
@@ -86,14 +87,14 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
         base.children.forEach((function(key) {
             (allChildren[key] = base[key]);
         }));
-        Object.keys(children)
+        if (children) Object.keys(children)
             .forEach((function(key) {
                 (allChildren[key] = children[key]);
             }));
         base.attributes.forEach((function(key) {
             (allAttributes[key] = base[key]);
         }));
-        Object.keys(attributes)
+        if (attributes) Object.keys(attributes)
             .forEach((function(key) {
                 (allAttributes[key] = attributes[key]);
             }));
@@ -157,4 +158,4 @@ define(["require", "exports", "khepri_ast/serialization"], (function(require, ex
     (exports.modifyData = modifyData);
     (exports.setData = setData);
     (exports.defineNode = defineNode);
-}))
+}));

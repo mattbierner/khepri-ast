@@ -2,89 +2,105 @@
  * THIS FILE IS AUTO GENERATED from 'lib/statement.kep'
  * DO NOT EDIT
 */
-define(["require", "exports", "khepri_ast/node"], (function(require, exports, __o) {
+define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement,
+    var defineNode = __o["defineNode"],
+        Node = __o["Node"],
+        Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement,
             IfStatement, BreakStatement, ContinueStatement, SwitchStatement, ReturnStatement, ThrowStatement,
             TryStatement, WhileStatement, DoWhileStatement, ForStatement;
-    var __o = __o,
-        defineNode = __o["defineNode"],
-        Node = __o["Node"];
-    (Statement = (function() {}));
+    (Statement = (function() {
+        var self = this;
+    }));
     (Statement.prototype = new(Node)());
     (EmptyStatement = defineNode(Statement, "EmptyStatement", [], [], (function(loc) {
-        Node.call(this, loc);
+        var self = this;
+        Node.call(self, loc);
     })));
     (DebuggerStatement = defineNode(Statement, "DebuggerStatement", [], [], (function(loc) {
-        Node.call(this, loc);
+        var self = this;
+        Node.call(self, loc);
     })));
     (BlockStatement = defineNode(Statement, "BlockStatement", ["body"], [], (function(loc, body) {
-        Node.call(this, loc);
-        (this.body = body);
+        var self = this;
+        Node.call(self, loc);
+        (self.body = body);
     })));
     (ExpressionStatement = defineNode(Statement, "ExpressionStatement", ["expression"], [], (function(loc,
         expression) {
-        Node.call(this, loc);
-        (this.expression = expression);
+        var self = this;
+        Node.call(self, loc);
+        (self.expression = expression);
     })));
     (IfStatement = defineNode(Statement, "IfStatement", ["test", "consequent", "alternate"], [], (function(loc,
         test, consequent, alternate) {
-        Node.call(this, loc);
-        (this.test = test);
-        (this.consequent = consequent);
-        (this.alternate = (alternate || null));
+        var self = this;
+        Node.call(self, loc);
+        (self.test = test);
+        (self.consequent = consequent);
+        (self.alternate = (alternate || null));
     })));
     (WithStatement = defineNode(Statement, "WithStatement", ["bindings", "body"], [], (function(loc, bindings,
         body) {
-        Node.call(this, loc);
-        (this.bindings = bindings);
-        (this.body = body);
+        var self = this;
+        Node.call(self, loc);
+        (self.bindings = bindings);
+        (self.body = body);
     })));
     (BreakStatement = defineNode(Statement, "BreakStatement", [], [], (function(loc) {
-        Node.call(this, loc);
+        var self = this;
+        Node.call(self, loc);
     })));
     (ContinueStatement = defineNode(Statement, "ContinueStatement", [], [], (function(loc) {
-        Node.call(this, loc);
+        var self = this;
+        Node.call(self, loc);
     })));
     (SwitchStatement = defineNode(Statement, "SwitchStatement", ["discriminant", "cases"], [], (function(loc,
         discriminant, cases) {
-        Node.call(this, loc);
-        (this.discriminant = discriminant);
-        (this.cases = cases);
+        var self = this;
+        Node.call(self, loc);
+        (self.discriminant = discriminant);
+        (self.cases = cases);
     })));
     (ReturnStatement = defineNode(Statement, "ReturnStatement", ["argument"], [], (function(loc, argument) {
-        Node.call(this, loc);
-        (this.argument = (argument || null));
+        var self = this;
+        Node.call(self, loc);
+        (self.argument = (argument || null));
     })));
     (ThrowStatement = defineNode(Statement, "ThrowStatement", ["argument"], [], (function(loc, argument) {
-        Node.call(this, loc);
-        (this.argument = argument);
+        var self = this;
+        Node.call(self, loc);
+        (self.argument = argument);
     })));
     (TryStatement = defineNode(Statement, "TryStatement", ["block", "handler", "finalizer"], [], (function(loc,
         block, handler, finalizer) {
-        Node.call(this, loc);
-        (this.block = block);
-        (this.handler = handler);
-        (this.finalizer = finalizer);
+        var self = this;
+        Node.call(self, loc);
+        (self.block = block);
+        (self.handler = handler);
+        (self.finalizer = finalizer);
     })));
     (WhileStatement = defineNode(Statement, "WhileStatement", ["test", "body"], [], (function(loc, test, body) {
-        Node.call(this, loc);
-        (this.test = test);
-        (this.body = body);
+        var self = this;
+        Node.call(self, loc);
+        (self.test = test);
+        (self.body = body);
     })));
     (DoWhileStatement = defineNode(Statement, "DoWhileStatement", ["body", "test"], [], (function(loc, body,
         test) {
-        Node.call(this, loc);
-        (this.test = test);
-        (this.body = body);
+        var self = this;
+        Node.call(self, loc);
+        (self.test = test);
+        (self.body = body);
     })));
     (ForStatement = defineNode(Statement, "ForStatement", ["init", "test", "update", "body"], [], (function(loc,
         init, test, update, body) {
-        Node.call(this, loc);
-        (this.init = (init || null));
-        (this.test = (test || null));
-        (this.update = (update || null));
-        (this.body = body);
+        var self = this;
+        Node.call(self, loc);
+        (self.init = (init || null));
+        (self.test = (test || null));
+        (self.update = (update || null));
+        (self.body = body);
     })));
     (exports.Statement = Statement);
     (exports.EmptyStatement = EmptyStatement);
@@ -102,4 +118,4 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
     (exports.WhileStatement = WhileStatement);
     (exports.DoWhileStatement = DoWhileStatement);
     (exports.ForStatement = ForStatement);
-}))
+}));

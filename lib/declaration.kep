@@ -12,7 +12,7 @@ package (
     StaticDeclaration
     StaticDeclarator)
 with
-    import 'khepri_ast/node' {defineNode Node}
+    import './node' {defineNode Node}
 in {
 
 /* Base
@@ -31,9 +31,9 @@ Declaration.prototype = new Node;
 VariableDeclaration = defineNode(Declaration, 'VariableDeclaration',
     ['declarations'],
     [],
-    function \loc, declarations -> {
-        Node.call(this, loc);
-        this.declarations = declarations;
+    function \loc, declarations =self-> {
+        Node.call(self, loc);
+        self.declarations = declarations;
     });
 
 /**
@@ -42,10 +42,10 @@ VariableDeclaration = defineNode(Declaration, 'VariableDeclaration',
 VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
     ['id', 'init'],
     [],
-    function \loc, id, init -> {
-        Node.call(this, loc);
-        this.id = id;
-        this.init = (init || null);
+    function \loc, id, init =self-> {
+        Node.call(self, loc);
+        self.id = id;
+        self.init = (init || null);
     });
 
 /**
@@ -54,10 +54,10 @@ VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
 Binding = defineNode(Declaration, 'Binding',
     ['pattern', 'value'],
     [],
-    function \loc, pattern, value -> {
-        Node.call(this, loc);
-        this.pattern = pattern;
-        this.value = value;
+    function \loc, pattern, value =self-> {
+        Node.call(self, loc);
+        self.pattern = pattern;
+        self.value = value;
     });
 
 /**
@@ -66,9 +66,9 @@ Binding = defineNode(Declaration, 'Binding',
 StaticDeclaration = defineNode(Declaration, 'StaticDeclaration',
     ['declarations'],
     [],
-    function \loc, declarations -> {
-        Node.call(this, loc);
-        this.declarations = declarations;
+    function \loc, declarations =self-> {
+        Node.call(self, loc);
+        self.declarations = declarations;
     });
 
 /**
@@ -77,10 +77,10 @@ StaticDeclaration = defineNode(Declaration, 'StaticDeclaration',
 StaticDeclarator =  defineNode(Declaration, 'StaticDeclarator',
     ['id', 'init'],
     [],
-    function \loc, id, init -> {
-        Node.call(this, loc);
-        this.id = id;
-        this.init = init;
+    function \loc, id, init =self-> {
+        Node.call(self, loc);
+        self.id = id;
+        self.init = init;
     });
 
 }

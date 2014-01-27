@@ -6,7 +6,7 @@ package (
     PackageExport,
     PackageExports)
 with 
-    import 'khepri_ast/node' {defineNode, Node}
+    import './node' {defineNode, Node}
 in {
 
 /**
@@ -15,10 +15,10 @@ in {
 PackageExport = defineNode(Node, 'PackageExport',
     ['id', 'alias'],
     [],
-    function \loc, id, alias -> {
-        Node.call(this, loc);
-        this.id = id;
-        this.alias = alias;
+    function \loc, id, alias =self-> {
+        Node.call(self, loc);
+        self.id = id;
+        self.alias = alias;
     });
 
 /**
@@ -27,9 +27,9 @@ PackageExport = defineNode(Node, 'PackageExport',
 PackageExports = defineNode(Node, 'PackageExports',
     ['exports'],
     [],
-    function \loc, exports -> {
-        Node.call(this, loc);
-        this.exports = exports;
+    function \loc, exports =self-> {
+        Node.call(self, loc);
+        self.exports = exports;
     });
 
 /**
@@ -38,10 +38,10 @@ PackageExports = defineNode(Node, 'PackageExports',
 Package = defineNode(Node, 'Package',
     ['exports', 'body'],
     [],
-    function \loc, exports, body -> {
-        Node.call(this, loc);
-        this.exports = exports;
-        this.body = body;
+    function \loc, exports, body =self-> {
+        Node.call(self, loc);
+        self.exports = exports;
+        self.body = body;
     });
 
 }

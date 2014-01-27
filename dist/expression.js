@@ -2,114 +2,132 @@
  * THIS FILE IS AUTO GENERATED from 'lib/expression.kep'
  * DO NOT EDIT
 */
-define(["require", "exports", "khepri_ast/node"], (function(require, exports, __o) {
+define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
+    var defineNode = __o["defineNode"],
+        Node = __o["Node"],
+        Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
             ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression,
             ArrayExpression, ObjectExpression, LetExpression, CurryExpression, UnaryOperatorExpression,
             BinaryOperatorExpression, TernaryOperatorExpression;
-    var __o = __o,
-        defineNode = __o["defineNode"],
-        Node = __o["Node"];
-    (Expression = (function() {}));
+    (Expression = (function() {
+        var self = this;
+    }));
     (Expression.prototype = new(Node)());
     (ThisExpression = defineNode(Expression, "ThisExpression", [], [], (function(loc) {
-        Node.call(this, loc);
+        var self = this;
+        Node.call(self, loc);
     })));
     (UnaryExpression = defineNode(Expression, "UnaryExpression", ["argument"], ["operator"], (function(loc,
         operator, argument) {
-        Node.call(this, loc);
-        (this.operator = operator);
-        (this.argument = argument);
+        var self = this;
+        Node.call(self, loc);
+        (self.operator = operator);
+        (self.argument = argument);
     })));
     (BinaryExpression = defineNode(Expression, "BinaryExpression", ["left", "right"], ["operator"], (function(
         loc, operator, left, right) {
-        Node.call(this, loc);
-        (this.operator = operator);
-        (this.left = left);
-        (this.right = right);
+        var self = this;
+        Node.call(self, loc);
+        (self.operator = operator);
+        (self.left = left);
+        (self.right = right);
     })));
     (AssignmentExpression = defineNode(Expression, "AssignmentExpression", ["left", "right"], ["operator"], (
         function(loc, operator, left, right) {
-            Node.call(this, loc);
-            (this.operator = operator);
-            (this.left = left);
-            (this.right = right);
+            var self = this;
+            Node.call(self, loc);
+            (self.operator = operator);
+            (self.left = left);
+            (self.right = right);
         })));
     (LogicalExpression = defineNode(Expression, "LogicalExpression", ["left", "right"], ["operator"], (function(
         loc, operator, left, right) {
-        Node.call(this, loc);
-        (this.operator = operator);
-        (this.left = left);
-        (this.right = right);
+        var self = this;
+        Node.call(self, loc);
+        (self.operator = operator);
+        (self.left = left);
+        (self.right = right);
     })));
     (ConditionalExpression = defineNode(Expression, "ConditionalExpression", ["test", "consequent", "alternate"], [], (
         function(loc, test, consequent, alternate) {
-            Node.call(this, loc);
-            (this.test = test);
-            (this.consequent = consequent);
-            (this.alternate = alternate);
+            var self = this;
+            Node.call(self, loc);
+            (self.test = test);
+            (self.consequent = consequent);
+            (self.alternate = alternate);
         })));
     (NewExpression = defineNode(Expression, "NewExpression", ["callee", "args"], [], (function(loc, callee,
         args) {
-        Node.call(this, loc);
-        (this.callee = callee);
-        (this.args = args);
+        var self = this;
+        Node.call(self, loc);
+        (self.callee = callee);
+        (self.args = args);
     })));
     (CallExpression = defineNode(Expression, "CallExpression", ["callee", "args"], [], (function(loc, callee,
         args) {
-        Node.call(this, loc);
-        (this.callee = callee);
-        (this.args = args);
+        var self = this;
+        Node.call(self, loc);
+        (self.callee = callee);
+        (self.args = args);
     })));
     (MemberExpression = defineNode(Expression, "MemberExpression", ["object", "property"], ["computed"], (
         function(loc, object, property, computed) {
-            Node.call(this, loc);
-            (this.object = object);
-            (this.property = property);
-            (this.computed = computed);
+            var self = this;
+            Node.call(self, loc);
+            (self.object = object);
+            (self.property = property);
+            (self.computed = computed);
         })));
     (FunctionExpression = defineNode(Expression, "FunctionExpression", ["id", "params", "body"], [], (function(
         loc, id, params, body) {
-        Node.call(this, loc);
-        (this.id = (id || null));
-        (this.params = params);
-        (this.body = body);
+        var self = this;
+        Node.call(self, loc);
+        (self.id = (id || null));
+        (self.params = params);
+        (self.body = body);
     })));
     (ArrayExpression = defineNode(Expression, "ArrayExpression", ["elements"], [], (function(loc, elements) {
-        Node.call(this, loc);
-        (this.elements = elements);
+        var self = this;
+        Node.call(self, loc);
+        (self.elements = elements);
     })));
     (ObjectExpression = defineNode(Expression, "ObjectExpression", ["properties"], [], (function(loc,
         properties) {
-        Node.call(this, loc);
-        (this.properties = properties);
+        var self = this;
+        Node.call(self, loc);
+        (self.properties = properties);
     })));
     (LetExpression = defineNode(Expression, "LetExpression", ["bindings", "body"], [], (function(loc, bindings,
         body) {
-        Node.call(this, loc);
-        (this.bindings = bindings);
-        (this.body = body);
+        var self = this;
+        Node.call(self, loc);
+        (self.bindings = bindings);
+        (self.body = body);
     })));
     (CurryExpression = defineNode(Expression, "CurryExpression", ["base", "args"], [], (function(loc, base,
         args) {
-        Node.call(this, loc);
-        (this.base = base);
-        (this.args = args);
+        var self = this;
+        Node.call(self, loc);
+        (self.base = base);
+        (self.args = args);
     })));
     (UnaryOperatorExpression = defineNode(Expression, "UnaryOperatorExpression", [], ["op"], (function(loc, op) {
-        Node.call(this, loc);
-        (this.op = op);
+        var self = this;
+        Node.call(self, loc);
+        (self.op = op);
     })));
     (BinaryOperatorExpression = defineNode(Expression, "BinaryOperatorExpression", [], ["op"], (function(loc,
         op) {
-        Node.call(this, loc);
-        (this.op = op);
+        var self = this;
+        Node.call(self, loc);
+        (self.op = op);
     })));
     (TernaryOperatorExpression = defineNode(Expression, "TernaryOperatorExpression", [], ["op"], (function(loc,
         op) {
-        Node.call(this, loc);
-        (this.op = op);
+        var self = this;
+        Node.call(self, loc);
+        (self.op = op);
     })));
     (exports.Expression = Expression);
     (exports.ThisExpression = ThisExpression);
@@ -129,4 +147,4 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
     (exports.UnaryOperatorExpression = UnaryOperatorExpression);
     (exports.BinaryOperatorExpression = BinaryOperatorExpression);
     (exports.TernaryOperatorExpression = TernaryOperatorExpression);
-}))
+}));

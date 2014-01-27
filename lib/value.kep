@@ -6,7 +6,7 @@ package (
     Literal,
     ObjectValue)
 with 
-    import 'khepri_ast/node' {defineNode, Node}
+    import './node' {defineNode, Node}
 in {
 
 /**
@@ -15,9 +15,9 @@ in {
 Identifier = defineNode(Node, 'Identifier',
     [],
     ['name'],
-    function \loc, name -> {
-        Node.call(this, loc);
-        this.name = name;
+    function \loc, name =self-> {
+        Node.call(self, loc);
+        self.name = name;
     });
 
 /**
@@ -26,10 +26,10 @@ Identifier = defineNode(Node, 'Identifier',
 Literal = defineNode(Node, 'Literal',
     [],
     ['kind', 'value'],
-    function \loc, kind, value -> {
-        Node.call(this, loc);
-        this.kind = kind;
-        this.value = value;
+    function \loc, kind, value =self-> {
+        Node.call(self, loc);
+        self.kind = kind;
+        self.value = value;
     });
 
 /**
@@ -38,10 +38,10 @@ Literal = defineNode(Node, 'Literal',
 ObjectValue = defineNode(Node, 'ObjectValue',
     ['key', 'value'],
     [],
-    function \loc, key, value -> {
-        Node.call(this, loc);
-        this.key = key;
-        this.value = value;
+    function \loc, key, value =self-> {
+        Node.call(self, loc);
+        self.key = key;
+        self.value = value;
     });
 
 }

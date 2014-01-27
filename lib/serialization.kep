@@ -9,7 +9,7 @@ package (
     serialize,
     unserialize)
 with
-    import 'khepri_ast/node' khepri_node
+    import './node' khepri_node
 in {
     
 var keys = Object.keys;
@@ -42,7 +42,7 @@ serialize = let
             return node;
         
         if (Array.isArray(node))
-            return map(node, function \x -> { return _serialize(x, locSerializer, udSerializer); });
+            return map(node, \x -> _serialize(x, locSerializer, udSerializer));
         
         if (!(node instanceof khepri_node.Node))
             return node;
@@ -51,28 +51,28 @@ serialize = let
             'type': node.type,
             'loc': locSerializer(node.loc),
             'ud': udSerializer(node.ud),
-            'children': reduce(node.children, function \o, childKey -> {
+            'children': reduce(node.children, \o, childKey -> {
                 o[childKey] = _serialize(node[childKey], locSerializer, udSerializer);
                 return o;
             }, {}),
-            'attributes': reduce(node.attributes, function \o, key -> {
+            'attributes': reduce(node.attributes, \o, key -> {
                 o[key] = node[key];
                 return o;
             }, {})
         };
     }
 in
-    function \node, locSerializer, udSerializer -> {
-        var program = _serialize(
+    \node, locSerializer, udSerializer -> let
+        program = _serialize(
             node,
             locSerializer || id,
-            udSerializer || id);
-        return {
-            'version': '2.1.0',
-            'kind': 'ecma',
-            'program': program
-        };
-    };
+            udSerializer || id)
+        in
+            ({
+                'version': '2.1.0',
+                'kind': 'ecma',
+                'program': program
+            });
 
 /**
  * Unserialize a data to an AST.
@@ -82,12 +82,12 @@ in
  * @param [udSerializer] Function that unserializes user data objects.
  */
 unserialize = let
-    _unserialize = function \data, locUnserializer, udUnserializer -> {
+    _unserialize = \data, locUnserializer, udUnserializer -> {
         if (!data)
             return data;
         
         if (Array.isArray(data))
-            return map(data, function \x -> { return _unserialize(x, locUnserializer, udUnserializer); });
+            return map(data, \x -> _unserialize(x, locUnserializer, udUnserializer));
         
         var ctor = typeMap[data.type];
         if (!ctor)
@@ -98,14 +98,14 @@ unserialize = let
         
         var children = reduce(
             keys(data.children),
-            function \o, c -> {
+            \o, c -> {
                 o[c] = _unserialize(data.children[c], locUnserializer, udUnserializer);
                 return o;
             }, {});
         
         var attributes = reduce(
             keys(data.attributes),
-            function \o, c -> {
+            \o, c -> {
                 o[c] = data.attributes[c];
                 return o;
             }, {});

@@ -18,15 +18,15 @@ package (
     WhitespaceToken,
     LineTerminatorToken)
 with
-    import 'khepri_ast/node' {defineNode, Node}
+    import './node' {defineNode, Node}
 in {
 
 /**
  * @constructor
  */
-Token = function \loc, value -> {
-    Node.call(this, loc);
-    this.value = value;
+Token = function \loc, value =self-> {
+    Node.call(self, loc);
+    self.value = value;
 };
 Token.prototype = new Node;
 
@@ -38,8 +38,8 @@ Token.prototype = new Node;
 StringToken = defineNode(Token, 'String',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -48,8 +48,8 @@ StringToken = defineNode(Token, 'String',
 NumberToken = defineNode(Token, 'Number',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -58,8 +58,8 @@ NumberToken = defineNode(Token, 'Number',
 RegularExpressionToken = defineNode(Token, 'RegularExpression',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -68,8 +68,8 @@ RegularExpressionToken = defineNode(Token, 'RegularExpression',
 BooleanToken = defineNode(Token, 'Boolean',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -78,8 +78,8 @@ BooleanToken = defineNode(Token, 'Boolean',
 NullToken = defineNode(Token, 'Null',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -88,8 +88,8 @@ NullToken = defineNode(Token, 'Null',
 IdentifierToken = defineNode(Token, 'Identifier',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -98,8 +98,8 @@ IdentifierToken = defineNode(Token, 'Identifier',
 KeywordToken = defineNode(Token, 'Keyword',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -108,8 +108,8 @@ KeywordToken = defineNode(Token, 'Keyword',
 PunctuatorToken = defineNode(Token, 'Punctuator',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -118,10 +118,10 @@ PunctuatorToken = defineNode(Token, 'Punctuator',
 CommentToken = defineNode(Token, 'Comment',
     [],
     ['value', 'multiline', 'linebreak'],
-    function \loc, value, multiline, linebreak -> {
-        Token.call(this, loc, value);
-        this.multiline = !!multiline;
-        this.linebreak = !!linebreak;
+    function \loc, value, multiline, linebreak =self-> {
+        Token.call(self, loc, value);
+        self.multiline = !!multiline;
+        self.linebreak = !!linebreak;
     });
 
 /**
@@ -130,8 +130,8 @@ CommentToken = defineNode(Token, 'Comment',
 WhitespaceToken = defineNode(Token, 'Whitespace',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 
 /**
@@ -140,7 +140,7 @@ WhitespaceToken = defineNode(Token, 'Whitespace',
 LineTerminatorToken = defineNode(Token, 'LineTerminator',
     [],
     ['value'],
-    function \loc, value -> {
-        Token.call(this, loc, value);
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
     });
 }

@@ -1,5 +1,8 @@
 # ChangeLog #
 
+# 3.2.1 - January 26, 2014
+* Fixed paths.
+
 # 3.2.0 - January 22, 2014
 * Renamed `ArgumentsPattern` to `SubPattern`.
 * Added `self` value to new `ArgumentsPattern`.

@@ -6,7 +6,7 @@ package (
     SwitchCase
     CatchClause)
 with 
-    import 'khepri_ast/node' {defineNode, Node}
+    import './node' {defineNode Node}
 in {
 
 /* Base
@@ -25,10 +25,10 @@ Clause.prototype = new Node;
 SwitchCase = defineNode(Clause, 'SwitchCase',
     ['test', 'consequent'],
     [],
-    function \loc, test, consequent -> {
-        Node.call(this, loc);
-        this.test = (test || null);
-        this.consequent = consequent;
+    function \loc, test, consequent =self-> {
+        Node.call(self, loc);
+        self.test = (test || null);
+        self.consequent = consequent;
     });
 
 /**
@@ -37,10 +37,10 @@ SwitchCase = defineNode(Clause, 'SwitchCase',
 CatchClause = defineNode(Clause, 'CatchClause',
     ['param', 'body'],
     [],
-    function \loc, param, body -> {
-        Node.call(this, loc);
-        this.param = param;
-        this.body = body;
+    function \loc, param, body =self-> {
+        Node.call(self, loc);
+        self.param = param;
+        self.body = body;
     });
 
 }

@@ -23,13 +23,13 @@ package (
     DoWhileStatement,
     ForStatement)
 with
-    import 'khepri_ast/node' {defineNode, Node}
+    import './node' {defineNode, Node}
 in {
 
 /**
  * @constructor
  */
-Statement = function \() -> { };
+Statement = function \() =self-> { };
 Statement.prototype = new Node;
 
 /**
@@ -38,8 +38,8 @@ Statement.prototype = new Node;
 EmptyStatement = defineNode(Statement, "EmptyStatement",
     [],
     [],
-    function \loc -> {
-        Node.call(this, loc);
+    function \loc =self-> {
+        Node.call(self, loc);
     });
 
 /**
@@ -48,8 +48,8 @@ EmptyStatement = defineNode(Statement, "EmptyStatement",
 DebuggerStatement = defineNode(Statement, "DebuggerStatement",
     [],
     [],
-    function \loc -> {
-        Node.call(this, loc);
+    function \loc =self-> {
+        Node.call(self, loc);
     });
 
 /**
@@ -58,9 +58,9 @@ DebuggerStatement = defineNode(Statement, "DebuggerStatement",
 BlockStatement = defineNode(Statement, "BlockStatement",
     ['body'],
     [],
-    function \loc, body -> {
-        Node.call(this, loc);
-        this.body = body;
+    function \loc, body =self-> {
+        Node.call(self, loc);
+        self.body = body;
     });
 
 /**
@@ -69,9 +69,9 @@ BlockStatement = defineNode(Statement, "BlockStatement",
 ExpressionStatement =  defineNode(Statement, "ExpressionStatement",
     ['expression'],
     [],
-    function \loc, expression -> {
-        Node.call(this, loc);
-        this.expression = expression;
+    function \loc, expression =self-> {
+        Node.call(self, loc);
+        self.expression = expression;
     });
 
 /**
@@ -80,11 +80,11 @@ ExpressionStatement =  defineNode(Statement, "ExpressionStatement",
 IfStatement = defineNode(Statement, "IfStatement",
     ['test', 'consequent', 'alternate'],
     [],
-    function \loc, test, consequent, alternate -> {
-        Node.call(this, loc);
-        this.test = test;
-        this.consequent = consequent;
-        this.alternate = (alternate || null);
+    function \loc, test, consequent, alternate =self-> {
+        Node.call(self, loc);
+        self.test = test;
+        self.consequent = consequent;
+        self.alternate = (alternate || null);
     });
 
 /**
@@ -93,10 +93,10 @@ IfStatement = defineNode(Statement, "IfStatement",
 WithStatement = defineNode(Statement, "WithStatement",
     ['bindings', 'body'],
     [],
-    function \loc, bindings, body -> {
-        Node.call(this, loc);
-        this.bindings = bindings;
-        this.body = body;
+    function \loc, bindings, body =self-> {
+        Node.call(self, loc);
+        self.bindings = bindings;
+        self.body = body;
     });
 
 /**
@@ -105,8 +105,8 @@ WithStatement = defineNode(Statement, "WithStatement",
 BreakStatement = defineNode(Statement, "BreakStatement",
     [],
     [],
-    function \loc -> {
-        Node.call(this, loc);
+    function \loc =self-> {
+        Node.call(self, loc);
     });
 
 /**
@@ -115,8 +115,8 @@ BreakStatement = defineNode(Statement, "BreakStatement",
 ContinueStatement = defineNode(Statement, "ContinueStatement",
     [],
     [],
-    function \loc -> {
-        Node.call(this, loc);
+    function \loc =self-> {
+        Node.call(self, loc);
     });
 
 /**
@@ -125,10 +125,10 @@ ContinueStatement = defineNode(Statement, "ContinueStatement",
 SwitchStatement = defineNode(Statement, "SwitchStatement",
     ['discriminant', 'cases'],
     [],
-    function \loc, discriminant, cases -> {
-        Node.call(this, loc);
-        this.discriminant = discriminant;
-        this.cases = cases;
+    function \loc, discriminant, cases =self-> {
+        Node.call(self, loc);
+        self.discriminant = discriminant;
+        self.cases = cases;
     });
 
 /**
@@ -137,9 +137,9 @@ SwitchStatement = defineNode(Statement, "SwitchStatement",
 ReturnStatement = defineNode(Statement, "ReturnStatement",
     ['argument'],
     [],
-    function \loc, argument -> {
-        Node.call(this, loc);
-        this.argument = (argument || null);
+    function \loc, argument =self-> {
+        Node.call(self, loc);
+        self.argument = (argument || null);
     });
 
 /**
@@ -148,9 +148,9 @@ ReturnStatement = defineNode(Statement, "ReturnStatement",
 ThrowStatement = defineNode(Statement, "ThrowStatement",
     ['argument'],
     [],
-    function \loc, argument -> {
-        Node.call(this, loc);
-        this.argument = argument;
+    function \loc, argument =self-> {
+        Node.call(self, loc);
+        self.argument = argument;
     });
 
 /**
@@ -159,11 +159,11 @@ ThrowStatement = defineNode(Statement, "ThrowStatement",
 TryStatement = defineNode(Statement, "TryStatement",
     ['block', 'handler', 'finalizer'],
     [],
-    function \loc, block, handler, finalizer -> {
-        Node.call(this, loc);
-        this.block = block;
-        this.handler = handler;
-        this.finalizer = finalizer;
+    function \loc, block, handler, finalizer =self-> {
+        Node.call(self, loc);
+        self.block = block;
+        self.handler = handler;
+        self.finalizer = finalizer;
     });
 
 /**
@@ -172,10 +172,10 @@ TryStatement = defineNode(Statement, "TryStatement",
 WhileStatement = defineNode(Statement, "WhileStatement",
     ['test', 'body'],
     [],
-    function \loc, test, body -> {
-        Node.call(this, loc);
-        this.test = test;
-        this.body = body;
+    function \loc, test, body =self-> {
+        Node.call(self, loc);
+        self.test = test;
+        self.body = body;
     });
 
 /**
@@ -184,10 +184,10 @@ WhileStatement = defineNode(Statement, "WhileStatement",
 DoWhileStatement = defineNode(Statement, "DoWhileStatement",
     ['body', 'test'],
     [],
-    function \loc, body, test -> {
-        Node.call(this, loc);
-        this.test = test;
-        this.body = body;
+    function \loc, body, test =self-> {
+        Node.call(self, loc);
+        self.test = test;
+        self.body = body;
     });
 
 /**
@@ -196,12 +196,12 @@ DoWhileStatement = defineNode(Statement, "DoWhileStatement",
 ForStatement = defineNode(Statement, "ForStatement",
     ['init', 'test', 'update', 'body'],
     [],
-    function \loc, init, test, update, body -> {
-        Node.call(this, loc);
-        this.init = (init || null);
-        this.test = (test || null);
-        this.update = (update || null);
-        this.body = body;
+    function \loc, init, test, update, body =self-> {
+        Node.call(self, loc);
+        self.init = (init || null);
+        self.test = (test || null);
+        self.update = (update || null);
+        self.body = body;
     });
 
 }

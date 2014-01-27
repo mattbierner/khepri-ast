@@ -1,10 +1,12 @@
-"use strict";
-var __o = require("khepri_ast/node"),
-    defineNode = __o["defineNode"],
-    Node = __o["Node"],
-    Program;
-(Program = defineNode(Node, "Program", ["body"], [], (function(loc, body) {
-    Node.call(this, loc);
-    (this.body = body);
-})));
-(exports.Program = Program);
+define(["require", "exports", "./node"], (function(require, exports, __o) {
+    "use strict";
+    var defineNode = __o["defineNode"],
+        Node = __o["Node"],
+        Program;
+    (Program = defineNode(Node, "Program", ["body"], [], (function(loc, body) {
+        var self = this;
+        Node.call(self, loc);
+        (self.body = body);
+    })));
+    (exports.Program = Program);
+}));

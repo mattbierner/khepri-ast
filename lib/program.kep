@@ -4,7 +4,7 @@
 package (
     Program)
 with 
-    import 'khepri_ast/node' {defineNode, Node}
+    import './node' {defineNode, Node}
 in {
 
 /**
@@ -13,9 +13,9 @@ in {
 Program = defineNode(Node, 'Program',
     ['body'],
     [],
-    function \loc, body -> {
-        Node.call(this, loc);
-        this.body = body;
+    function \loc, body =self-> {
+        Node.call(self, loc);
+        self.body = body;
     });
 
 }

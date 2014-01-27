@@ -2,63 +2,73 @@
  * THIS FILE IS AUTO GENERATED from 'lib/pattern.kep'
  * DO NOT EDIT
 */
-define(["require", "exports", "khepri_ast/node"], (function(require, exports, __o) {
+define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern,
+    var defineNode = __o["defineNode"],
+        Node = __o["Node"],
+        Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern,
             ObjectPatternElement, ObjectPattern, ArgumentsPattern, SubPattern, AsPattern;
-    var __o = __o,
-        defineNode = __o["defineNode"],
-        Node = __o["Node"];
     (Pattern = (function(loc) {
-        Node.call(this, loc);
+        var self = this;
+        Node.call(self, loc);
     }));
     (Pattern.prototype = new(Node)());
     (IdentifierPattern = defineNode(Pattern, "IdentifierPattern", ["id"], [], (function(loc, id) {
-        Pattern.call(this, loc);
-        (this.id = id);
+        var self = this;
+        Pattern.call(self, loc);
+        (self.id = id);
     })));
     (EllipsisPattern = defineNode(Pattern, "EllipsisPattern", [], ["id"], (function(loc, id) {
-        Pattern.call(this, loc);
-        (this.id = (id || null));
+        var self = this;
+        Pattern.call(self, loc);
+        (self.id = (id || null));
     })));
     (SinkPattern = defineNode(Pattern, "SinkPattern", [], [], (function(loc) {
-        Pattern.call(this, loc);
+        var self = this;
+        Pattern.call(self, loc);
     })));
     (ImportPattern = defineNode(Node, "ImportPattern", ["from", "pattern"], [], (function(loc, from, pattern) {
-        Node.call(this, loc);
-        (this.from = from);
-        (this.pattern = pattern);
+        var self = this;
+        Node.call(self, loc);
+        (self.from = from);
+        (self.pattern = pattern);
     })));
     (ArrayPattern = defineNode(Pattern, "ArrayPattern", ["elements"], [], (function(loc, elements) {
-        Pattern.call(this, loc);
-        (this.elements = elements);
+        var self = this;
+        Pattern.call(self, loc);
+        (self.elements = elements);
     })));
     (ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], [], (function(loc,
         key, target) {
-        Pattern.call(this, loc);
-        (this.key = key);
-        (this.target = (target || null));
+        var self = this;
+        Pattern.call(self, loc);
+        (self.key = key);
+        (self.target = (target || null));
     })));
     (ObjectPattern = defineNode(Pattern, "ObjectPattern", ["elements"], [], (function(loc, elements) {
-        Pattern.call(this, loc);
-        (this.elements = elements);
+        var self = this;
+        Pattern.call(self, loc);
+        (self.elements = elements);
     })));
     (AsPattern = defineNode(Pattern, "AsPattern", ["id", "target"], [], (function(loc, id, target) {
-        Pattern.call(this, loc);
-        (this.id = id);
-        (this.target = target);
+        var self = this;
+        Pattern.call(self, loc);
+        (self.id = id);
+        (self.target = target);
     })));
     (SubPattern = defineNode(Pattern, "SubPattern", ["id", "elements"], [], (function(loc, id, elements) {
-        Pattern.call(this, loc);
-        (this.id = id);
-        (this.elements = elements);
+        var self = this;
+        Pattern.call(self, loc);
+        (self.id = id);
+        (self.elements = elements);
     })));
     (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements", "self"], [], (function(loc,
         id, elements, self) {
-        Pattern.call(this, loc);
-        (this.id = id);
-        (this.elements = elements);
-        (this.self = self);
+        var T = this;
+        Pattern.call(T, loc);
+        (T.id = id);
+        (T.elements = elements);
+        (T.self = self);
     })));
     (exports.Pattern = Pattern);
     (exports.IdentifierPattern = IdentifierPattern);
@@ -71,4 +81,4 @@ define(["require", "exports", "khepri_ast/node"], (function(require, exports, __
     (exports.ArgumentsPattern = ArgumentsPattern);
     (exports.SubPattern = SubPattern);
     (exports.AsPattern = AsPattern);
-}))
+}));
