@@ -30,7 +30,7 @@ in {
  * @constructor
  */
 Statement = function \() =self-> { };
-Statement.prototype = new Node;
+Statement.prototype = new Node();
 
 /**
  * @constructor

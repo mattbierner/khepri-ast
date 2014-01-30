@@ -17,7 +17,6 @@ var __o = require("./serialization"),
         var out = Object.create(Object.getPrototypeOf(obj));
         Object.getOwnPropertyNames(obj)
             .forEach((function(i) {
-                var self = this;
                 (out[i] = obj[i]);
             }));
         return out;

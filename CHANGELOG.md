@@ -1,5 +1,8 @@
 # ChangeLog #
 
+# 3.3.0 - January 30, 2014
+* Added `TupleExpression`.
+
 # 3.2.1 - January 26, 2014
 * Fixed paths.
 

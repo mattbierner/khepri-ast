@@ -21,7 +21,7 @@ in {
  * @constructor
  */
 Declaration = function \() -> { };
-Declaration.prototype = new Node;
+Declaration.prototype = new Node();
 
 /* Instances
  ******************************************************************************/

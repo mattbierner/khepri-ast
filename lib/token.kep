@@ -2,20 +2,20 @@
  * @fileOverview Khepri 5.1 lex tokens.
  */
 package (
-    Token,
+    Token
     
-    StringToken,
-    NumberToken,
-    RegularExpressionToken,
-    BooleanToken,
-    NullToken,
+    StringToken
+    NumberToken
+    RegularExpressionToken
+    BooleanToken
+    NullToken
     
-    IdentifierToken,
-    KeywordToken,
-    PunctuatorToken,
+    IdentifierToken
+    KeywordToken
+    PunctuatorToken
     
-    CommentToken,
-    WhitespaceToken,
+    CommentToken
+    WhitespaceToken
     LineTerminatorToken)
 with
     import './node' {defineNode, Node}
@@ -28,7 +28,7 @@ Token = function \loc, value =self-> {
     Node.call(self, loc);
     self.value = value;
 };
-Token.prototype = new Node;
+Token.prototype = new Node();
 
 /* Instances
  ******************************************************************************/

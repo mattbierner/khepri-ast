@@ -2,27 +2,29 @@
  * @fileOverview Khepri expression AST nodes.
  */
 package (
-    Expression,
+    Expression
     
-    ThisExpression,
-    UnaryExpression,
-    BinaryExpression,
-    AssignmentExpression,
-    LogicalExpression,
-    ConditionalExpression,
-    NewExpression,
-    CallExpression,
-    MemberExpression,
+    ThisExpression
+    UnaryExpression
+    BinaryExpression
+    AssignmentExpression
+    LogicalExpression
+    ConditionalExpression
+    NewExpression
+    CallExpression
+    MemberExpression
     
-    FunctionExpression,
-    ArrayExpression,
-    ObjectExpression,
+    FunctionExpression
+    ArrayExpression
+    ObjectExpression
     
     LetExpression,
     
     CurryExpression,
-    UnaryOperatorExpression,
-    BinaryOperatorExpression,
+    TupleExpression
+    
+    UnaryOperatorExpression
+    BinaryOperatorExpression
     TernaryOperatorExpression)
 with 
     import './node' {defineNode, Node}
@@ -34,7 +36,7 @@ in {
  * @constructor
  */
 Expression = function \() =self-> { };
-Expression.prototype = new Node;
+Expression.prototype = new Node();
 
 /* Instances
  ******************************************************************************/
@@ -206,6 +208,17 @@ CurryExpression = defineNode(Expression, 'CurryExpression',
         Node.call(self, loc);
         self.base = base;
         self.args = args;
+    });
+
+/** 
+ * @constructor
+ */
+TupleExpression = defineNode(Expression, 'TupleExpression',
+    ['elements'],
+    [],
+    function \loc, elements =self-> {
+        Node.call(self, loc);
+        self.elements = elements;
     });
 
 /** 

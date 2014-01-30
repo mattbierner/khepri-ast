@@ -4,8 +4,8 @@ var __o = require("./node"),
     Node = __o["Node"],
     Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
         ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-        ObjectExpression, LetExpression, CurryExpression, UnaryOperatorExpression, BinaryOperatorExpression,
-        TernaryOperatorExpression;
+        ObjectExpression, LetExpression, CurryExpression, TupleExpression, UnaryOperatorExpression,
+        BinaryOperatorExpression, TernaryOperatorExpression;
 (Expression = (function() {
     var self = this;
 }));
@@ -103,6 +103,11 @@ var __o = require("./node"),
     (self.base = base);
     (self.args = args);
 })));
+(TupleExpression = defineNode(Expression, "TupleExpression", ["elements"], [], (function(loc, elements) {
+    var self = this;
+    Node.call(self, loc);
+    (self.elements = elements);
+})));
 (UnaryOperatorExpression = defineNode(Expression, "UnaryOperatorExpression", [], ["op"], (function(loc, op) {
     var self = this;
     Node.call(self, loc);
@@ -133,6 +138,7 @@ var __o = require("./node"),
 (exports.ObjectExpression = ObjectExpression);
 (exports.LetExpression = LetExpression);
 (exports.CurryExpression = CurryExpression);
+(exports.TupleExpression = TupleExpression);
 (exports.UnaryOperatorExpression = UnaryOperatorExpression);
 (exports.BinaryOperatorExpression = BinaryOperatorExpression);
 (exports.TernaryOperatorExpression = TernaryOperatorExpression);

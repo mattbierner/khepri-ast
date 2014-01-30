@@ -11,11 +11,11 @@ var khepri_node = require("./node"),
     (typeMap[type] = ctor);
 }));
 var _serialize = (function(node, locSerializer, udSerializer) {
-    if (!node) return node;
+    if ((!node)) return node;
     if (Array.isArray(node)) return map(node, (function(x) {
         return _serialize(x, locSerializer, udSerializer);
     }));
-    if (!(node instanceof khepri_node.Node)) return node;
+    if ((!(node instanceof khepri_node.Node))) return node;
     return ({
         "type": node.type,
         "loc": locSerializer(node.loc),
@@ -39,12 +39,12 @@ var _serialize = (function(node, locSerializer, udSerializer) {
     });
 }));
 var _unserialize = (function(data, locUnserializer, udUnserializer) {
-    if (!data) return data;
+    if ((!data)) return data;
     if (Array.isArray(data)) return map(data, (function(x) {
         return _unserialize(x, locUnserializer, udUnserializer);
     }));
     var ctor = typeMap[data.type];
-    if (!ctor) return data;
+    if ((!ctor)) return data;
     var loc = locUnserializer(data.loc),
         ud = udUnserializer(data.ud),
         children = reduce(keys(data.children), (function(o, c) {

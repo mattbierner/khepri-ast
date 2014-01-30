@@ -1,3 +1,7 @@
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/node.kep'
+ * DO NOT EDIT
+*/
 define(["require", "exports", "./serialization"], (function(require, exports, __o) {
     "use strict";
     var registerNode = __o["registerNode"],
@@ -17,7 +21,6 @@ define(["require", "exports", "./serialization"], (function(require, exports, __
             var out = Object.create(Object.getPrototypeOf(obj));
             Object.getOwnPropertyNames(obj)
                 .forEach((function(i) {
-                    var self = this;
                     (out[i] = obj[i]);
                 }));
             return out;

@@ -46,8 +46,8 @@ var __o = require("./node"),
     linebreak) {
     var self = this;
     Token.call(self, loc, value);
-    (self.multiline = !!multiline);
-    (self.linebreak = !!linebreak);
+    (self.multiline = (!(!multiline)));
+    (self.linebreak = (!(!linebreak)));
 })));
 (WhitespaceToken = defineNode(Token, "Whitespace", [], ["value"], (function(loc, value) {
     var self = this;
