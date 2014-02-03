@@ -21,7 +21,7 @@ package (
     LetExpression,
     
     CurryExpression,
-    TupleExpression
+    ApplyExpression
     
     UnaryOperatorExpression
     BinaryOperatorExpression
@@ -213,12 +213,13 @@ CurryExpression = defineNode(Expression, 'CurryExpression',
 /** 
  * @constructor
  */
-TupleExpression = defineNode(Expression, 'TupleExpression',
-    ['elements'],
+ApplyExpression = defineNode(Expression, 'ApplyExpression',
+    ['callee', 'arg'],
     [],
-    function \loc, elements =self-> {
+    function \loc, callee, arg =self-> {
         Node.call(self, loc);
-        self.elements = elements;
+        self.callee = callee;
+        self.arg = arg;
     });
 
 /** 

@@ -1,5 +1,9 @@
 # ChangeLog #
 
+# 3.4.0 - Feb 3, 2014
+* Removed `TupleExpression`.
+* Added `ApplyExpression`.
+
 # 3.3.0 - January 30, 2014
 * Added `TupleExpression`.
 

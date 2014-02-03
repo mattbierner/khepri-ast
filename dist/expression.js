@@ -8,7 +8,7 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         Node = __o["Node"],
         Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
             ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression,
-            ArrayExpression, ObjectExpression, LetExpression, CurryExpression, TupleExpression,
+            ArrayExpression, ObjectExpression, LetExpression, CurryExpression, ApplyExpression,
             UnaryOperatorExpression, BinaryOperatorExpression, TernaryOperatorExpression;
     (Expression = (function() {
         var self = this;
@@ -112,10 +112,12 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.base = base);
         (self.args = args);
     })));
-    (TupleExpression = defineNode(Expression, "TupleExpression", ["elements"], [], (function(loc, elements) {
+    (ApplyExpression = defineNode(Expression, "ApplyExpression", ["callee", "arg"], [], (function(loc, callee,
+        arg) {
         var self = this;
         Node.call(self, loc);
-        (self.elements = elements);
+        (self.callee = callee);
+        (self.arg = arg);
     })));
     (UnaryOperatorExpression = defineNode(Expression, "UnaryOperatorExpression", [], ["op"], (function(loc, op) {
         var self = this;
@@ -149,7 +151,7 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
     (exports.ObjectExpression = ObjectExpression);
     (exports.LetExpression = LetExpression);
     (exports.CurryExpression = CurryExpression);
-    (exports.TupleExpression = TupleExpression);
+    (exports.ApplyExpression = ApplyExpression);
     (exports.UnaryOperatorExpression = UnaryOperatorExpression);
     (exports.BinaryOperatorExpression = BinaryOperatorExpression);
     (exports.TernaryOperatorExpression = TernaryOperatorExpression);
