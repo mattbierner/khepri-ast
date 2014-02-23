@@ -1,5 +1,8 @@
 # ChangeLog #
 
+# 3.5.1 - Feb 3, 2014
+* Moved `recursive` to correctly be attribute instead of child.
+
 # 3.5.0 - Feb 3, 2014
 * Added `recursive` property to `Binding`.
 * Added `YieldExpression` and `DoExpression` for future use.

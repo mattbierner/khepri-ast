@@ -22,7 +22,7 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.id = id);
         (self.init = (init || null));
     })));
-    (Binding = defineNode(Declaration, "Binding", ["pattern", "value", "recursive"], [], (function(loc, pattern,
+    (Binding = defineNode(Declaration, "Binding", ["pattern", "value"], ["recursive"], (function(loc, pattern,
         value, recursive) {
         var self = this;
         Node.call(self, loc);
