@@ -18,7 +18,9 @@ package (
     ArrayExpression
     ObjectExpression
     
-    LetExpression,
+    LetExpression
+    DoExpression
+    YieldExpression
     
     CurryExpression,
     ApplyExpression
@@ -196,6 +198,29 @@ LetExpression = defineNode(Expression, 'LetExpression',
         Node.call(self, loc);
         self.bindings = bindings;
         self.body = body;
+    });
+
+/**
+ * @constructor
+ */
+DoExpression = defineNode(Expression, 'LetExpression',
+    ['bindings', 'body'],
+    [],
+    function \loc, bindings, body =self-> {
+        Node.call(self, loc);
+        self.bindings = bindings;
+        self.body = body;
+    });
+
+/**
+ * @constructor
+ */
+YieldExpression = defineNode(Expression, 'LetExpression',
+    ['arg'],
+    [],
+    function \loc, arg =self-> {
+        Node.call(self, loc);
+        self.arg = arg;
     });
 
 /** 

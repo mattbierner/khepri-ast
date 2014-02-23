@@ -52,12 +52,13 @@ VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
  * @constructor
  */
 Binding = defineNode(Declaration, 'Binding',
-    ['pattern', 'value'],
+    ['pattern', 'value', 'recursive'],
     [],
-    function \loc, pattern, value =self-> {
+    function \loc, pattern, value, recursive =self-> {
         Node.call(self, loc);
         self.pattern = pattern;
         self.value = value;
+        self.recursive = recursive;
     });
 
 /**

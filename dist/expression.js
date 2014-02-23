@@ -8,8 +8,8 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         Node = __o["Node"],
         Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
             ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression,
-            ArrayExpression, ObjectExpression, LetExpression, CurryExpression, ApplyExpression,
-            UnaryOperatorExpression, BinaryOperatorExpression, TernaryOperatorExpression;
+            ArrayExpression, ObjectExpression, LetExpression, DoExpression, YieldExpression, CurryExpression,
+            ApplyExpression, UnaryOperatorExpression, BinaryOperatorExpression, TernaryOperatorExpression;
     (Expression = (function() {
         var self = this;
     }));
@@ -105,6 +105,18 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.bindings = bindings);
         (self.body = body);
     })));
+    (DoExpression = defineNode(Expression, "LetExpression", ["bindings", "body"], [], (function(loc, bindings,
+        body) {
+        var self = this;
+        Node.call(self, loc);
+        (self.bindings = bindings);
+        (self.body = body);
+    })));
+    (YieldExpression = defineNode(Expression, "LetExpression", ["arg"], [], (function(loc, arg) {
+        var self = this;
+        Node.call(self, loc);
+        (self.arg = arg);
+    })));
     (CurryExpression = defineNode(Expression, "CurryExpression", ["base", "args"], [], (function(loc, base,
         args) {
         var self = this;
@@ -150,6 +162,8 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
     (exports.ArrayExpression = ArrayExpression);
     (exports.ObjectExpression = ObjectExpression);
     (exports.LetExpression = LetExpression);
+    (exports.DoExpression = DoExpression);
+    (exports.YieldExpression = YieldExpression);
     (exports.CurryExpression = CurryExpression);
     (exports.ApplyExpression = ApplyExpression);
     (exports.UnaryOperatorExpression = UnaryOperatorExpression);

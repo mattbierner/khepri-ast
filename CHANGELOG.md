@@ -1,5 +1,9 @@
 # ChangeLog #
 
+# 3.5.0 - Feb 3, 2014
+* Added `recursive` property to `Binding`.
+* Added `YieldExpression` and `DoExpression` for future use.
+
 # 3.4.0 - Feb 3, 2014
 * Removed `TupleExpression`.
 * Added `ApplyExpression`.
