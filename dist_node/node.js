@@ -1,15 +1,12 @@
 "use strict";
 var __o = require("./serialization"),
     registerNode = __o["registerNode"],
-    Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode, concatArgs = (
-        function() {
-            var id = (function(x) {
-                return x;
-            });
-            return (function(arr, args) {
-                return arr.concat([].map.call(args, id));
-            });
-        })(),
+    Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode, id, concatArgs =
+        ((id = (function(x) {
+        return x;
+    })), (function(arr, args) {
+        return arr.concat([].map.call(args, id));
+    })),
     keys = Object.keys,
     map = Function.prototype.call.bind(Array.prototype.map),
     reduce = Function.prototype.call.bind(Array.prototype.reduce),

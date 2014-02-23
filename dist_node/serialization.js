@@ -31,14 +31,12 @@ var _serialize = (function(node, locSerializer, udSerializer) {
     });
 });
 (serialize = (function(node, locSerializer, udSerializer) {
-    return (function() {
-        var program = _serialize(node, (locSerializer || id), (udSerializer || id));
-        return ({
-            "version": "2.1.0",
-            "kind": "ecma",
-            "program": program
-        });
-    })();
+    var program = _serialize(node, (locSerializer || id), (udSerializer || id));
+    return ({
+        "version": "2.1.0",
+        "kind": "ecma",
+        "program": program
+    });
 }));
 var _unserialize = (function(data, locUnserializer, udUnserializer) {
     if ((!data)) return data;

@@ -4,8 +4,8 @@ var __o = require("./node"),
     Node = __o["Node"],
     Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
         ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-        ObjectExpression, LetExpression, CurryExpression, ApplyExpression, UnaryOperatorExpression,
-        BinaryOperatorExpression, TernaryOperatorExpression;
+        ObjectExpression, LetExpression, DoExpression, YieldExpression, CurryExpression, ApplyExpression,
+        UnaryOperatorExpression, BinaryOperatorExpression, TernaryOperatorExpression;
 (Expression = (function() {
     var self = this;
 }));
@@ -97,6 +97,17 @@ var __o = require("./node"),
     (self.bindings = bindings);
     (self.body = body);
 })));
+(DoExpression = defineNode(Expression, "LetExpression", ["bindings", "body"], [], (function(loc, bindings, body) {
+    var self = this;
+    Node.call(self, loc);
+    (self.bindings = bindings);
+    (self.body = body);
+})));
+(YieldExpression = defineNode(Expression, "LetExpression", ["arg"], [], (function(loc, arg) {
+    var self = this;
+    Node.call(self, loc);
+    (self.arg = arg);
+})));
 (CurryExpression = defineNode(Expression, "CurryExpression", ["base", "args"], [], (function(loc, base, args) {
     var self = this;
     Node.call(self, loc);
@@ -138,6 +149,8 @@ var __o = require("./node"),
 (exports.ArrayExpression = ArrayExpression);
 (exports.ObjectExpression = ObjectExpression);
 (exports.LetExpression = LetExpression);
+(exports.DoExpression = DoExpression);
+(exports.YieldExpression = YieldExpression);
 (exports.CurryExpression = CurryExpression);
 (exports.ApplyExpression = ApplyExpression);
 (exports.UnaryOperatorExpression = UnaryOperatorExpression);

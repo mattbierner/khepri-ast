@@ -16,11 +16,13 @@ var __o = require("./node"),
     (self.id = id);
     (self.init = (init || null));
 })));
-(Binding = defineNode(Declaration, "Binding", ["pattern", "value"], [], (function(loc, pattern, value) {
+(Binding = defineNode(Declaration, "Binding", ["pattern", "value"], ["recursive"], (function(loc, pattern, value,
+    recursive) {
     var self = this;
     Node.call(self, loc);
     (self.pattern = pattern);
     (self.value = value);
+    (self.recursive = recursive);
 })));
 (StaticDeclaration = defineNode(Declaration, "StaticDeclaration", ["declarations"], [], (function(loc, declarations) {
     var self = this;

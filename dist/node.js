@@ -1,19 +1,12 @@
-/*
- * THIS FILE IS AUTO GENERATED from 'lib/node.kep'
- * DO NOT EDIT
-*/
 define(["require", "exports", "./serialization"], (function(require, exports, __o) {
     "use strict";
     var registerNode = __o["registerNode"],
-        Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode,
-            concatArgs = (function() {
-                var id = (function(x) {
-                    return x;
-                });
-                return (function(arr, args) {
-                    return arr.concat([].map.call(args, id));
-                });
-            })(),
+        Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode, id,
+            concatArgs = ((id = (function(x) {
+                return x;
+            })), (function(arr, args) {
+                return arr.concat([].map.call(args, id));
+            })),
         keys = Object.keys,
         map = Function.prototype.call.bind(Array.prototype.map),
         reduce = Function.prototype.call.bind(Array.prototype.reduce),
