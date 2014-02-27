@@ -41,11 +41,13 @@ VariableDeclaration = defineNode(Declaration, 'VariableDeclaration',
  */
 VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
     ['id', 'init'],
-    [],
-    function \loc, id, init =self-> {
+    ['immutable', 'recursive'],
+    function \loc, id, init, immutable, recursive =self-> {
         Node.call(self, loc);
         self.id = id;
         self.init = (init || null);
+        self.immutable = !!immutable;
+        self.recursive = recursive.
     });
 
 /**

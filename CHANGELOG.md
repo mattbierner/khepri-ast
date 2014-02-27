@@ -1,5 +1,9 @@
 # ChangeLog #
 
+# 3.6.0 - Feb 26, 2014
+* Moved position into library
+* Added `immutable` and `recursive` attributes to variable declarations.
+
 # 3.5.2 - Feb 23, 2014
 * Republish
 
