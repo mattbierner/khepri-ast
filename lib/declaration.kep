@@ -47,7 +47,7 @@ VariableDeclarator = defineNode(Declaration, 'VariableDeclarator',
         self.id = id;
         self.init = (init || null);
         self.immutable = !!immutable;
-        self.recursive = recursive.
+        self.recursive = recursive;
     });
 
 /**

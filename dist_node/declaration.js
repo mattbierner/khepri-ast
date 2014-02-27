@@ -1,3 +1,7 @@
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/declaration.kep'
+ * DO NOT EDIT
+*/
 "use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
@@ -10,12 +14,15 @@ var __o = require("./node"),
     Node.call(self, loc);
     (self.declarations = declarations);
 })));
-(VariableDeclarator = defineNode(Declaration, "VariableDeclarator", ["id", "init"], [], (function(loc, id, init) {
-    var self = this;
-    Node.call(self, loc);
-    (self.id = id);
-    (self.init = (init || null));
-})));
+(VariableDeclarator = defineNode(Declaration, "VariableDeclarator", ["id", "init"], ["immutable", "recursive"], (
+    function(loc, id, init, immutable, recursive) {
+        var self = this;
+        Node.call(self, loc);
+        (self.id = id);
+        (self.init = (init || null));
+        (self.immutable = (!(!immutable)));
+        (self.recursive = recursive);
+    })));
 (Binding = defineNode(Declaration, "Binding", ["pattern", "value"], ["recursive"], (function(loc, pattern, value,
     recursive) {
     var self = this;
