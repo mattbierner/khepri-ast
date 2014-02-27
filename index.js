@@ -5,6 +5,7 @@ module.exports = {
     'node': require('./dist_node/node'),
     'package': require('./dist_node/package'),
     'pattern': require('./dist_node/pattern'),
+    'position': require('./dist_node/position'),
     'program': require('./dist_node/program'),
     'serialization': require('./dist_node/serialization'),
     'statement': require('./dist_node/statement'),

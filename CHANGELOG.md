@@ -1,5 +1,8 @@
 # ChangeLog #
 
+# 3.6.1 - Feb 26, 2014
+* Added position to index.js.
+
 # 3.6.0 - Feb 26, 2014
 * Moved position into library
 * Added `immutable` and `recursive` attributes to variable declarations.
