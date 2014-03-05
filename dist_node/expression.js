@@ -1,3 +1,7 @@
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/expression.kep'
+ * DO NOT EDIT
+*/
 "use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
@@ -97,9 +101,11 @@ var __o = require("./node"),
     (self.bindings = bindings);
     (self.body = body);
 })));
-(DoExpression = defineNode(Expression, "LetExpression", ["bindings", "body"], [], (function(loc, bindings, body) {
+(DoExpression = defineNode(Expression, "DoExpression", ["monad", "bindings", "body"], [], (function(loc, monad,
+    bindings, body) {
     var self = this;
     Node.call(self, loc);
+    (self.monad = monad);
     (self.bindings = bindings);
     (self.body = body);
 })));

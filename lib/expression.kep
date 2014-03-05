@@ -20,6 +20,7 @@ package (
     
     LetExpression
     DoExpression
+    YieldExpression
     
     CurryExpression,
     ApplyExpression
