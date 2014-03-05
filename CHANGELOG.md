@@ -1,5 +1,8 @@
 # ChangeLog #
 
+# 3.6.2 - March 4, 2014
+* Added missing `monad` parameter for `DoExpression`.
+
 # 3.6.1 - Feb 26, 2014
 * Added position to index.js.
 

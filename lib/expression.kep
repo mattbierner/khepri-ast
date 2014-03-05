@@ -20,7 +20,6 @@ package (
     
     LetExpression
     DoExpression
-    YieldExpression
     
     CurryExpression,
     ApplyExpression
@@ -203,11 +202,12 @@ LetExpression = defineNode(Expression, 'LetExpression',
 /**
  * @constructor
  */
-DoExpression = defineNode(Expression, 'LetExpression',
-    ['bindings', 'body'],
+DoExpression = defineNode(Expression, 'DoExpression',
+    ['monad', 'bindings', 'body'],
     [],
-    function \loc, bindings, body =self-> {
+    function \loc, monad, bindings, body =self-> {
         Node.call(self, loc);
+        self.monad = monad;
         self.bindings = bindings;
         self.body = body;
     });
