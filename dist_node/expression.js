@@ -1,15 +1,14 @@
 /*
  * THIS FILE IS AUTO GENERATED from 'lib/expression.kep'
  * DO NOT EDIT
-*/
-"use strict";
+*/"use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
     Node = __o["Node"],
     Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
         ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-        ObjectExpression, LetExpression, DoExpression, YieldExpression, CurryExpression, ApplyExpression,
-        UnaryOperatorExpression, BinaryOperatorExpression, TernaryOperatorExpression;
+        ObjectExpression, LetExpression, CurryExpression, ApplyExpression, UnaryOperatorExpression,
+        BinaryOperatorExpression, TernaryOperatorExpression;
 (Expression = (function() {
     var self = this;
 }));
@@ -101,19 +100,6 @@ var __o = require("./node"),
     (self.bindings = bindings);
     (self.body = body);
 })));
-(DoExpression = defineNode(Expression, "DoExpression", ["monad", "bindings", "body"], [], (function(loc, monad,
-    bindings, body) {
-    var self = this;
-    Node.call(self, loc);
-    (self.monad = monad);
-    (self.bindings = bindings);
-    (self.body = body);
-})));
-(YieldExpression = defineNode(Expression, "LetExpression", ["arg"], [], (function(loc, arg) {
-    var self = this;
-    Node.call(self, loc);
-    (self.arg = arg);
-})));
 (CurryExpression = defineNode(Expression, "CurryExpression", ["base", "args"], [], (function(loc, base, args) {
     var self = this;
     Node.call(self, loc);
@@ -131,34 +117,34 @@ var __o = require("./node"),
     Node.call(self, loc);
     (self.op = op);
 })));
-(BinaryOperatorExpression = defineNode(Expression, "BinaryOperatorExpression", [], ["op"], (function(loc, op) {
+(BinaryOperatorExpression = defineNode(Expression, "BinaryOperatorExpression", [], ["op", "flipped"], (function(loc, op,
+    flipped) {
     var self = this;
     Node.call(self, loc);
     (self.op = op);
+    (self.flipped = flipped);
 })));
 (TernaryOperatorExpression = defineNode(Expression, "TernaryOperatorExpression", [], ["op"], (function(loc, op) {
     var self = this;
     Node.call(self, loc);
     (self.op = op);
 })));
-(exports.Expression = Expression);
-(exports.ThisExpression = ThisExpression);
-(exports.UnaryExpression = UnaryExpression);
-(exports.BinaryExpression = BinaryExpression);
-(exports.AssignmentExpression = AssignmentExpression);
-(exports.LogicalExpression = LogicalExpression);
-(exports.ConditionalExpression = ConditionalExpression);
-(exports.NewExpression = NewExpression);
-(exports.CallExpression = CallExpression);
-(exports.MemberExpression = MemberExpression);
-(exports.FunctionExpression = FunctionExpression);
-(exports.ArrayExpression = ArrayExpression);
-(exports.ObjectExpression = ObjectExpression);
-(exports.LetExpression = LetExpression);
-(exports.DoExpression = DoExpression);
-(exports.YieldExpression = YieldExpression);
-(exports.CurryExpression = CurryExpression);
-(exports.ApplyExpression = ApplyExpression);
-(exports.UnaryOperatorExpression = UnaryOperatorExpression);
-(exports.BinaryOperatorExpression = BinaryOperatorExpression);
-(exports.TernaryOperatorExpression = TernaryOperatorExpression);
+(exports["Expression"] = Expression);
+(exports["ThisExpression"] = ThisExpression);
+(exports["UnaryExpression"] = UnaryExpression);
+(exports["BinaryExpression"] = BinaryExpression);
+(exports["AssignmentExpression"] = AssignmentExpression);
+(exports["LogicalExpression"] = LogicalExpression);
+(exports["ConditionalExpression"] = ConditionalExpression);
+(exports["NewExpression"] = NewExpression);
+(exports["CallExpression"] = CallExpression);
+(exports["MemberExpression"] = MemberExpression);
+(exports["FunctionExpression"] = FunctionExpression);
+(exports["ArrayExpression"] = ArrayExpression);
+(exports["ObjectExpression"] = ObjectExpression);
+(exports["LetExpression"] = LetExpression);
+(exports["CurryExpression"] = CurryExpression);
+(exports["ApplyExpression"] = ApplyExpression);
+(exports["UnaryOperatorExpression"] = UnaryOperatorExpression);
+(exports["BinaryOperatorExpression"] = BinaryOperatorExpression);
+(exports["TernaryOperatorExpression"] = TernaryOperatorExpression);

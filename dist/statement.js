@@ -1,4 +1,7 @@
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/statement.kep'
+ * DO NOT EDIT
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
     var defineNode = __o["defineNode"],
         Node = __o["Node"],
@@ -98,20 +101,20 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.update = (update || null));
         (self.body = body);
     })));
-    (exports.Statement = Statement);
-    (exports.EmptyStatement = EmptyStatement);
-    (exports.DebuggerStatement = DebuggerStatement);
-    (exports.WithStatement = WithStatement);
-    (exports.BlockStatement = BlockStatement);
-    (exports.ExpressionStatement = ExpressionStatement);
-    (exports.IfStatement = IfStatement);
-    (exports.BreakStatement = BreakStatement);
-    (exports.ContinueStatement = ContinueStatement);
-    (exports.SwitchStatement = SwitchStatement);
-    (exports.ReturnStatement = ReturnStatement);
-    (exports.ThrowStatement = ThrowStatement);
-    (exports.TryStatement = TryStatement);
-    (exports.WhileStatement = WhileStatement);
-    (exports.DoWhileStatement = DoWhileStatement);
-    (exports.ForStatement = ForStatement);
+    (exports["Statement"] = Statement);
+    (exports["EmptyStatement"] = EmptyStatement);
+    (exports["DebuggerStatement"] = DebuggerStatement);
+    (exports["WithStatement"] = WithStatement);
+    (exports["BlockStatement"] = BlockStatement);
+    (exports["ExpressionStatement"] = ExpressionStatement);
+    (exports["IfStatement"] = IfStatement);
+    (exports["BreakStatement"] = BreakStatement);
+    (exports["ContinueStatement"] = ContinueStatement);
+    (exports["SwitchStatement"] = SwitchStatement);
+    (exports["ReturnStatement"] = ReturnStatement);
+    (exports["ThrowStatement"] = ThrowStatement);
+    (exports["TryStatement"] = TryStatement);
+    (exports["WhileStatement"] = WhileStatement);
+    (exports["DoWhileStatement"] = DoWhileStatement);
+    (exports["ForStatement"] = ForStatement);
 }));

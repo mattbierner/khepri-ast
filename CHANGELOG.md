@@ -1,10 +1,14 @@
 # ChangeLog #
 
+# 3.7.0 - March 24, 2014
+* Removed `DoExpression` and `YieldExpression` for now.
+* Added `flipped` attribute to `BinaryOperatorExpression`.
+
 # 3.6.2 - March 4, 2014
 * Added missing `monad` parameter for `DoExpression`.
 
 # 3.6.1 - Feb 26, 2014
-* Added position to index.js.
+* Added position to `index.js`.
 
 # 3.6.0 - Feb 26, 2014
 * Moved position into library

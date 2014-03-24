@@ -3,24 +3,24 @@
  * SpiderMonkey Parser API.
  */
 package (
-    Statement,
+    Statement
     
-    EmptyStatement,
-    DebuggerStatement,
-    WithStatement,
-    BlockStatement,
-    ExpressionStatement,
-    IfStatement,
-    BreakStatement,
-    ContinueStatement,
-    SwitchStatement,
-    ReturnStatement,
+    EmptyStatement
+    DebuggerStatement
+    WithStatement
+    BlockStatement
+    ExpressionStatement
+    IfStatement
+    BreakStatement
+    ContinueStatement
+    SwitchStatement
+    ReturnStatement
     
-    ThrowStatement,
-    TryStatement,
+    ThrowStatement
+    TryStatement
     
-    WhileStatement,
-    DoWhileStatement,
+    WhileStatement
+    DoWhileStatement
     ForStatement)
 with
     import './node' {defineNode, Node}

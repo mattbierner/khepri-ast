@@ -19,8 +19,6 @@ package (
     ObjectExpression
     
     LetExpression
-    DoExpression
-    YieldExpression
     
     CurryExpression,
     ApplyExpression
@@ -188,7 +186,7 @@ ObjectExpression = defineNode(Expression, 'ObjectExpression',
         self.properties = properties;
     });
 
-/** 
+/**
  * @constructor
  */
 LetExpression = defineNode(Expression, 'LetExpression',
@@ -203,30 +201,6 @@ LetExpression = defineNode(Expression, 'LetExpression',
 /**
  * @constructor
  */
-DoExpression = defineNode(Expression, 'DoExpression',
-    ['monad', 'bindings', 'body'],
-    [],
-    function \loc, monad, bindings, body =self-> {
-        Node.call(self, loc);
-        self.monad = monad;
-        self.bindings = bindings;
-        self.body = body;
-    });
-
-/**
- * @constructor
- */
-YieldExpression = defineNode(Expression, 'LetExpression',
-    ['arg'],
-    [],
-    function \loc, arg =self-> {
-        Node.call(self, loc);
-        self.arg = arg;
-    });
-
-/** 
- * @constructor
- */
 CurryExpression = defineNode(Expression, 'CurryExpression',
     ['base', 'args'],
     [],
@@ -236,7 +210,7 @@ CurryExpression = defineNode(Expression, 'CurryExpression',
         self.args = args;
     });
 
-/** 
+/**
  * @constructor
  */
 ApplyExpression = defineNode(Expression, 'ApplyExpression',
@@ -248,7 +222,7 @@ ApplyExpression = defineNode(Expression, 'ApplyExpression',
         self.arg = arg;
     });
 
-/** 
+/**
  * @constructor
  */
 UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
@@ -259,18 +233,19 @@ UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
         self.op = op;
     });
 
-/** 
+/**
  * @constructor
  */
 BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
     [],
-    ['op'],
-    function \loc, op =self-> {
+    ['op', 'flipped'],
+    function \loc, op flipped =self-> {
         Node.call(self, loc);
         self.op = op;
+        self.flipped = flipped;
     });
 
-/** 
+/**
  * @constructor
  */
 TernaryOperatorExpression = defineNode(Expression, 'TernaryOperatorExpression',
