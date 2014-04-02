@@ -19,25 +19,16 @@ with
     import './serialization' {registerNode}
 in {
 
-var concatArgs = let id = \x -> x in
-    \arr, args ->
-        arr.concat([].map.call(args, id));
+var keys := Object.keys;
 
-var keys = Object.keys;
-
-var map = Function.prototype.call.bind(Array.prototype.map);
-var reduce = Function.prototype.call.bind(Array.prototype.reduce);
-
-var copy = \obj -> {
-    var out = Object.create(Object.getPrototypeOf(obj));
-    Object.getOwnPropertyNames(obj).forEach(\i -> {
+var setProperty = \obj, prop, value -> {
+    var out = {};
+    var props := keys(obj);
+    for (var i = 0, len = props.length; i < len; i = i + 1)
         out.(i) = obj.(i);
-    });
+    out.(prop) = value;
     return out;
 };
-
-var defineProperty = \obj, prop, descriptor ->
-    Object.defineProperty(copy(obj), prop, descriptor);
 
 /* Node
  ******************************************************************************/
@@ -51,11 +42,13 @@ Node = function \loc, ud =self-> {
     Object.defineProperties(self, {
         'loc': {
             'value': loc,
-            'enumerable': false
+            'enumerable': false,
+            'writable': true
         },
         'ud': {
             'value': (ud || null),
-            'enumerable': false
+            'enumerable': false,
+            'writable': true
         }
     });
 };
@@ -75,48 +68,25 @@ Node = function \loc, ud =self-> {
  * 
  * @return New node.
  */
-construct = function \proto, loc, ud, children, attributes -> {
-    var properties = {};
+construct = function \base, loc, ud, children, attributes -> {
+    var obj = new (base.constructor)(loc);
+    obj.ud = ud;
     
     // Copy explicit children
-    Object.keys(children).forEach(\key -> {
-        properties.(key) = {
-            'value': children.(key),
-            'enumerable': true,
-            'configurable': true
-        };
-    });
+    var childs = base.children;
+    for (var i = 0, len = childs.length; i < len; i = i + 1)
+    with k = childs.(i) in {
+        obj.(k) = (children.(k) || null);
+    }
     
-    // Null remaining children
-    proto.children.forEach(\key-> {
-        properties.(key) = (properties.(key) || {
-            'value': null,
-            'enumerable': true,
-            'configurable': true
-        });
-    });
+    // Copy Attributes
+    var attrs = base.attributes;
+    for (var i = 0, len = attrs.length; i < len; i = i + 1)
+    with k = attrs.(i) in {
+        obj.(k) = (attributes.(k) || null);
+    }
     
-    Object.keys(attributes).forEach(\key =self-> {
-        properties.(key) = {
-            'value': attributes.(key),
-            'enumerable': true,
-            'configurable': true
-        };
-    });
-    
-    // Shallow copy other props
-    properties.loc = {
-        'value': loc,
-        'enumerable': false
-    };
-    properties.ud = {
-        'value': ud,
-        'enumerable': false
-    };
-    
-    return Object.create(
-        proto,
-        properties);
+    return obj;
 };
 
 /**
@@ -130,7 +100,7 @@ construct = function \proto, loc, ud, children, attributes -> {
  */
 reconstruct = \base, children, attributes ->
     construct(
-        Object.getPrototypeOf(base),
+        base,
         base.loc,
         base.ud,
         children,
@@ -150,31 +120,24 @@ reconstruct = \base, children, attributes ->
  * @return Modified node.
  */
 modify = function \base, children, attributes -> {
-    var allChildren = {},
-        allAttributes = {};
+    var obj = new (base.constructor)(base.loc);
+    obj.ud = base.ud;
     
-    base.children.forEach(\key -> {
-        allChildren.(key) = base.(key);
-    });
+    // Copy explicit children
+    var childs = base.children;
+    for (var i = 0, len = childs.length; i < len; i = i + 1)
+    with k = childs.(i) in {
+        obj.(k) = (children.(k) || base.(k));
+    }
     
-    if (children)
-        Object.keys(children).forEach(\key -> {
-            allChildren.(key) = children.(key);
-        });
+    // Copy Attributes
+    var attrs = base.attributes;
+    for (var i = 0, len = attrs.length; i < len; i = i + 1)
+    with k = attrs.(i) in {
+        obj.(k) = (attributes.(k) || base.(k));
+    }
     
-    base.attributes.forEach(\key -> {
-        allAttributes.(key) = base.(key);
-    });
-    
-    if (attributes)
-        Object.keys(attributes).forEach(\key -> {
-            allAttributes.(key) = attributes.(key);
-        });
-    
-    return reconstruct(
-        base,
-        allChildren,
-        allAttributes);
+    return obj;
 };
 
 /**
@@ -187,11 +150,11 @@ modify = function \base, children, attributes -> {
  */
 setLoc = \base, loc ->
     construct(
-        Object.getPrototypeOf(base),
+        base,
         loc,
         base.ud,
-        reduce(base.children, \o, key -> { o.(key) = base.(key); return o; }, {}),
-        reduce(base.attributes, \o, key -> { o.(key) = base.(key); return o; }, {}));
+        base,
+        base);
 
 /**
  * Set the user data of a node.
@@ -203,11 +166,11 @@ setLoc = \base, loc ->
  */
 setUserData = \base, ud ->
     construct(
-        Object.getPrototypeOf(base),
+        base,
         base.loc,
         ud,
-        reduce(base.children, \o, key -> { o.(key) = base.(key); return o; }, {}),
-        reduce(base.attributes, \o, key -> { o.(key) = base.(key); return o; }, {}));
+        base,
+        base);
 
 /* User Data
  ******************************************************************************/
@@ -220,9 +183,7 @@ setUserData = \base, ud ->
  * @return Value or null if none.
  */
 getData = \node, key ->
-    ?node.ud
-        :node.ud.(key)
-        :null;
+    (node.ud && node.ud.(key));
 
 /**
  * Modifies a user data entry.
@@ -234,14 +195,10 @@ getData = \node, key ->
  * @return Transformed node.
  */
 modifyData = \node, key, f ->
-    setUserData(
+    setData(
         node,
-        defineProperty(
-            (node.ud || {}),
-            key, {
-                'value': f(getData(node, key)),
-                'enumerable': true
-            }));
+        key,
+        f <| getData(node, key));
 
 /**
  * Set a user data entry.
@@ -252,8 +209,13 @@ modifyData = \node, key, f ->
  * 
  * @return Transformed node.
  */
-setData =  \node, key, value ->
-    modifyData(node, key, \() ->  value);
+setData = \node, key, value ->
+    setUserData(
+        node,
+        setProperty(
+            (node.ud || {}),
+            key,
+            value));
 
 /* Creation
  ******************************************************************************/
@@ -264,12 +226,14 @@ defineNode = \parent, type, children, attributes, ctor -> {
     ctor.prototype.children = children;
     ctor.prototype.attributes = attributes;
     ctor.prototype.type = ctor.type;
-    ctor.create = \args(...) ->
-        new (ctor.bind.apply(ctor, concatArgs([null], args)))();
+    
+    var Fwd = function \args =self->
+        ctor.apply(self, args);
+    Fwd.prototype = ctor.prototype;
+    ctor.create = \args(...) -> new Fwd(args);
     
     registerNode(type, ctor);
     return ctor;
 };
-
 
 }

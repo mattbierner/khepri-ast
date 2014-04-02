@@ -1,5 +1,9 @@
 # ChangeLog #
 
+## 3.8.0 - April 2, 2014
+* Improved performance of Node modification.
+* Changed node modification API to take base nodes instead of requiring prototype.
+
 # 3.7.0 - March 24, 2014
 * Removed `DoExpression` and `YieldExpression` for now.
 * Added `flipped` attribute to `BinaryOperatorExpression`.
