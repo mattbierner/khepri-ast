@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 3.8.1 - April 2, 2014
+* Fixed setData.
+
 ## 3.8.0 - April 2, 2014
 * Improved performance of Node modification.
 * Changed node modification API to take base nodes instead of requiring prototype.

@@ -1,8 +1,7 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/node.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/node.kep'
  * DO NOT EDIT
-*/
-"use strict";
+*/"use strict";
 var __o = require("./serialization"),
     registerNode = __o["registerNode"],
     Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode, keys = Object.keys,
@@ -12,7 +11,8 @@ var __o = require("./serialization"),
         for (var i = 0, len = props.length;
             (i < len);
             (i = (i + 1))) {
-            (out[i] = obj[i]);
+            var k = props[i];
+            (out[k] = obj[k]);
         }
         (out[prop] = value);
         return out;

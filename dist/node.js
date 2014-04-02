@@ -11,7 +11,10 @@
                 props = keys(obj);
             for (var i = 0, len = props.length;
                 (i < len);
-                (i = (i + 1)))(out[i] = obj[i]);
+                (i = (i + 1))) {
+                var k = props[i];
+                (out[k] = obj[k]);
+            }
             (out[prop] = value);
             return out;
         });
