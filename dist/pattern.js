@@ -1,4 +1,7 @@
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/pattern.kep'
+ * DO NOT EDIT
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
     var defineNode = __o["defineNode"],
         Node = __o["Node"],
@@ -14,7 +17,7 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         Pattern.call(self, loc);
         (self.id = id);
     })));
-    (EllipsisPattern = defineNode(Pattern, "EllipsisPattern", [], ["id"], (function(loc, id) {
+    (EllipsisPattern = defineNode(Pattern, "EllipsisPattern", ["id"], [], (function(loc, id) {
         var self = this;
         Pattern.call(self, loc);
         (self.id = (id || null));
@@ -66,15 +69,15 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (T.elements = elements);
         (T.self = self);
     })));
-    (exports.Pattern = Pattern);
-    (exports.IdentifierPattern = IdentifierPattern);
-    (exports.EllipsisPattern = EllipsisPattern);
-    (exports.SinkPattern = SinkPattern);
-    (exports.ImportPattern = ImportPattern);
-    (exports.ArrayPattern = ArrayPattern);
-    (exports.ObjectPatternElement = ObjectPatternElement);
-    (exports.ObjectPattern = ObjectPattern);
-    (exports.ArgumentsPattern = ArgumentsPattern);
-    (exports.SubPattern = SubPattern);
-    (exports.AsPattern = AsPattern);
+    (exports["Pattern"] = Pattern);
+    (exports["IdentifierPattern"] = IdentifierPattern);
+    (exports["EllipsisPattern"] = EllipsisPattern);
+    (exports["SinkPattern"] = SinkPattern);
+    (exports["ImportPattern"] = ImportPattern);
+    (exports["ArrayPattern"] = ArrayPattern);
+    (exports["ObjectPatternElement"] = ObjectPatternElement);
+    (exports["ObjectPattern"] = ObjectPattern);
+    (exports["ArgumentsPattern"] = ArgumentsPattern);
+    (exports["SubPattern"] = SubPattern);
+    (exports["AsPattern"] = AsPattern);
 }));

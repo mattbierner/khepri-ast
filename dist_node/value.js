@@ -1,3 +1,7 @@
+/*
+ * THIS FILE IS AUTO GENERATED FROM 'lib/value.kep'
+ * DO NOT EDIT
+*/
 "use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
@@ -20,6 +24,6 @@ var __o = require("./node"),
     (self.key = key);
     (self.value = value);
 })));
-(exports.Identifier = Identifier);
-(exports.Literal = Literal);
-(exports.ObjectValue = ObjectValue);
+(exports["Identifier"] = Identifier);
+(exports["Literal"] = Literal);
+(exports["ObjectValue"] = ObjectValue);

@@ -1,3 +1,7 @@
+/*
+ * THIS FILE IS AUTO GENERATED FROM 'lib/clause.kep'
+ * DO NOT EDIT
+*/
 "use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
@@ -17,6 +21,6 @@ var __o = require("./node"),
     (self.param = param);
     (self.body = body);
 })));
-(exports.Clause = Clause);
-(exports.SwitchCase = SwitchCase);
-(exports.CatchClause = CatchClause);
+(exports["Clause"] = Clause);
+(exports["SwitchCase"] = SwitchCase);
+(exports["CatchClause"] = CatchClause);

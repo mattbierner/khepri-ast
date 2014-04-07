@@ -1,5 +1,5 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/declaration.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/declaration.kep'
  * DO NOT EDIT
 */
 "use strict";
@@ -42,9 +42,9 @@ var __o = require("./node"),
     (self.id = id);
     (self.init = init);
 })));
-(exports.Declaration = Declaration);
-(exports.VariableDeclaration = VariableDeclaration);
-(exports.VariableDeclarator = VariableDeclarator);
-(exports.Binding = Binding);
-(exports.StaticDeclaration = StaticDeclaration);
-(exports.StaticDeclarator = StaticDeclarator);
+(exports["Declaration"] = Declaration);
+(exports["VariableDeclaration"] = VariableDeclaration);
+(exports["VariableDeclarator"] = VariableDeclarator);
+(exports["Binding"] = Binding);
+(exports["StaticDeclaration"] = StaticDeclaration);
+(exports["StaticDeclarator"] = StaticDeclarator);

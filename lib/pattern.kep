@@ -45,8 +45,8 @@ IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
  * @constructor
  */
 EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
-    [],
     ['id'],
+    [],
     function \loc, id =self-> {
         Pattern.call(self, loc);
         self.id = (id || null);

@@ -1,4 +1,7 @@
-"use strict";
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/pattern.kep'
+ * DO NOT EDIT
+*/"use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
     Node = __o["Node"],
@@ -14,7 +17,7 @@ var __o = require("./node"),
     Pattern.call(self, loc);
     (self.id = id);
 })));
-(EllipsisPattern = defineNode(Pattern, "EllipsisPattern", [], ["id"], (function(loc, id) {
+(EllipsisPattern = defineNode(Pattern, "EllipsisPattern", ["id"], [], (function(loc, id) {
     var self = this;
     Pattern.call(self, loc);
     (self.id = (id || null));
@@ -65,14 +68,14 @@ var __o = require("./node"),
     (T.elements = elements);
     (T.self = self);
 })));
-(exports.Pattern = Pattern);
-(exports.IdentifierPattern = IdentifierPattern);
-(exports.EllipsisPattern = EllipsisPattern);
-(exports.SinkPattern = SinkPattern);
-(exports.ImportPattern = ImportPattern);
-(exports.ArrayPattern = ArrayPattern);
-(exports.ObjectPatternElement = ObjectPatternElement);
-(exports.ObjectPattern = ObjectPattern);
-(exports.ArgumentsPattern = ArgumentsPattern);
-(exports.SubPattern = SubPattern);
-(exports.AsPattern = AsPattern);
+(exports["Pattern"] = Pattern);
+(exports["IdentifierPattern"] = IdentifierPattern);
+(exports["EllipsisPattern"] = EllipsisPattern);
+(exports["SinkPattern"] = SinkPattern);
+(exports["ImportPattern"] = ImportPattern);
+(exports["ArrayPattern"] = ArrayPattern);
+(exports["ObjectPatternElement"] = ObjectPatternElement);
+(exports["ObjectPattern"] = ObjectPattern);
+(exports["ArgumentsPattern"] = ArgumentsPattern);
+(exports["SubPattern"] = SubPattern);
+(exports["AsPattern"] = AsPattern);

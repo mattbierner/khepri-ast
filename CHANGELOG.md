@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 3.9.0 - April 7, 2014
+* Fixed `EllipsisPattern` having `id` as an attribute instead of an child.
+
 ## 3.8.1 - April 2, 2014
 * Fixed setData.
 
