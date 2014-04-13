@@ -40,7 +40,7 @@ var setProperty = \obj, prop, value -> {
  * @param loc Location.
  * @param ud UserData
  */
-Node = function \loc, ud =self-> {
+Node := function \loc, ud =self-> {
     Object.defineProperties(self, {
         'loc': {
             'value': loc,
@@ -121,7 +121,7 @@ reconstruct = \base, children, attributes ->
  * 
  * @return Modified node.
  */
-modify = function \base, children, attributes -> {
+modify := \base children attributes -> {
     var obj = new (base.constructor)(base.loc);
     obj.ud = base.ud;
     
@@ -129,14 +129,18 @@ modify = function \base, children, attributes -> {
     var childs = base.children;
     for (var i = 0, len = childs.length; i < len; i = i + 1)
     with k = childs.(i) in {
-        obj.(k) = (children.(k) || base.(k));
+        obj.(k) = ?children && children.hasOwnProperty(k)
+            :children.(k)
+            :base.(k);
     }
     
     // Copy Attributes
     var attrs = base.attributes;
     for (var i = 0, len = attrs.length; i < len; i = i + 1)
     with k = attrs.(i) in {
-        obj.(k) = (attributes.(k) || base.(k));
+        obj.(k) = ?attributes && attributes.hasOwnProperty(k)
+            :attributes.(k)
+            :base.(k);
     }
     
     return obj;

@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 3.9.1 - April 13, 2014
+* Fixed potentially incorrect reconstruction with modify for falsy values.
+
 ## 3.9.0 - April 7, 2014
 * Fixed `EllipsisPattern` having `id` as an attribute instead of an child.
 
