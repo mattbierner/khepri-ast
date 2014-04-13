@@ -1,4 +1,7 @@
-define(["require", "exports", "./node"], (function(require, exports, khepri_node) {
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/serialization.kep'
+ * DO NOT EDIT
+*/define(["require", "exports", "./node"], (function(require, exports, khepri_node) {
     "use strict";
     var registerNode, serialize, unserialize, keys = Object.keys,
         map = Function.prototype.call.bind(Array.prototype.map),
@@ -60,7 +63,7 @@ define(["require", "exports", "./node"], (function(require, exports, khepri_node
     (unserialize = (function(data, locSerializer, udSerializer) {
         return _unserialize(data.program, (locSerializer || id), (udSerializer || id));
     }));
-    (exports.registerNode = registerNode);
-    (exports.serialize = serialize);
-    (exports.unserialize = unserialize);
+    (exports["registerNode"] = registerNode);
+    (exports["serialize"] = serialize);
+    (exports["unserialize"] = unserialize);
 }));

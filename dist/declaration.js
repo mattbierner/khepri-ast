@@ -1,5 +1,5 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/declaration.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/declaration.kep'
  * DO NOT EDIT
 */
 define(["require", "exports", "./node"], (function(require, exports, __o) {
@@ -45,10 +45,10 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.id = id);
         (self.init = init);
     })));
-    (exports.Declaration = Declaration);
-    (exports.VariableDeclaration = VariableDeclaration);
-    (exports.VariableDeclarator = VariableDeclarator);
-    (exports.Binding = Binding);
-    (exports.StaticDeclaration = StaticDeclaration);
-    (exports.StaticDeclarator = StaticDeclarator);
+    (exports["Declaration"] = Declaration);
+    (exports["VariableDeclaration"] = VariableDeclaration);
+    (exports["VariableDeclarator"] = VariableDeclarator);
+    (exports["Binding"] = Binding);
+    (exports["StaticDeclaration"] = StaticDeclaration);
+    (exports["StaticDeclarator"] = StaticDeclarator);
 }));

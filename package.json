@@ -14,5 +14,11 @@
   "main": "index.js",
   
   "author": "Matt Bierner",
-  "license": "MIT"
+  "license": "MIT",
+  
+    "scripts": {
+        "build": "npm run build-amd && npm run build-node",
+        "build-amd": "khepri lib -o dist",
+        "build-node": "khepri lib -o dist_node --package_manager=node"
+    }
 }

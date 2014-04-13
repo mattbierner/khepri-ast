@@ -1,8 +1,7 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/clause.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/clause.kep'
  * DO NOT EDIT
-*/
-"use strict";
+*/"use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
     Node = __o["Node"],

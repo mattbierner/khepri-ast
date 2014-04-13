@@ -1,7 +1,8 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/node.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/node.kep'
  * DO NOT EDIT
-*/define(["require", "exports", "./serialization"], (function(require, exports, __o) {
+*/
+define(["require", "exports", "./serialization"], (function(require, exports, __o) {
     "use strict";
     var registerNode = __o["registerNode"],
         Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode,
@@ -63,14 +64,14 @@
             (i < len);
             (i = (i + 1))) {
             var k = childs[i];
-            (obj[k] = (children[k] || base[k]));
+            (obj[k] = ((children && children.hasOwnProperty(k)) ? children[k] : base[k]));
         }
         var attrs = base.attributes;
         for (var i0 = 0, len0 = attrs.length;
             (i0 < len0);
             (i0 = (i0 + 1))) {
             var k0 = attrs[i0];
-            (obj[k0] = (attributes[k0] || base[k0]));
+            (obj[k0] = ((attributes && attributes.hasOwnProperty(k0)) ? attributes[k0] : base[k0]));
         }
         return obj;
     }));

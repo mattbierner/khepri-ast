@@ -1,3 +1,7 @@
+/*
+ * THIS FILE IS AUTO GENERATED FROM 'lib/token.kep'
+ * DO NOT EDIT
+*/
 define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
     var defineNode = __o["defineNode"],
@@ -57,16 +61,16 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         var self = this;
         Token.call(self, loc, value);
     })));
-    (exports.Token = Token);
-    (exports.StringToken = StringToken);
-    (exports.NumberToken = NumberToken);
-    (exports.RegularExpressionToken = RegularExpressionToken);
-    (exports.BooleanToken = BooleanToken);
-    (exports.NullToken = NullToken);
-    (exports.IdentifierToken = IdentifierToken);
-    (exports.KeywordToken = KeywordToken);
-    (exports.PunctuatorToken = PunctuatorToken);
-    (exports.CommentToken = CommentToken);
-    (exports.WhitespaceToken = WhitespaceToken);
-    (exports.LineTerminatorToken = LineTerminatorToken);
+    (exports["Token"] = Token);
+    (exports["StringToken"] = StringToken);
+    (exports["NumberToken"] = NumberToken);
+    (exports["RegularExpressionToken"] = RegularExpressionToken);
+    (exports["BooleanToken"] = BooleanToken);
+    (exports["NullToken"] = NullToken);
+    (exports["IdentifierToken"] = IdentifierToken);
+    (exports["KeywordToken"] = KeywordToken);
+    (exports["PunctuatorToken"] = PunctuatorToken);
+    (exports["CommentToken"] = CommentToken);
+    (exports["WhitespaceToken"] = WhitespaceToken);
+    (exports["LineTerminatorToken"] = LineTerminatorToken);
 }));

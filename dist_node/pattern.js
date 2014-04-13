@@ -1,7 +1,8 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/pattern.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/pattern.kep'
  * DO NOT EDIT
-*/"use strict";
+*/
+"use strict";
 var __o = require("./node"),
     defineNode = __o["defineNode"],
     Node = __o["Node"],

@@ -1,4 +1,7 @@
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/clause.kep'
+ * DO NOT EDIT
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
     var defineNode = __o["defineNode"],
         Node = __o["Node"],
@@ -17,7 +20,7 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.param = param);
         (self.body = body);
     })));
-    (exports.Clause = Clause);
-    (exports.SwitchCase = SwitchCase);
-    (exports.CatchClause = CatchClause);
+    (exports["Clause"] = Clause);
+    (exports["SwitchCase"] = SwitchCase);
+    (exports["CatchClause"] = CatchClause);
 }));

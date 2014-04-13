@@ -1,4 +1,7 @@
-"use strict";
+/*
+ * THIS FILE IS AUTO GENERATED from 'lib/serialization.kep'
+ * DO NOT EDIT
+*/"use strict";
 var khepri_node = require("./node"),
     registerNode, serialize, unserialize, keys = Object.keys,
     map = Function.prototype.call.bind(Array.prototype.map),
@@ -60,6 +63,6 @@ var _unserialize = (function(data, locUnserializer, udUnserializer) {
 (unserialize = (function(data, locSerializer, udSerializer) {
     return _unserialize(data.program, (locSerializer || id), (udSerializer || id));
 }));
-(exports.registerNode = registerNode);
-(exports.serialize = serialize);
-(exports.unserialize = unserialize);
+(exports["registerNode"] = registerNode);
+(exports["serialize"] = serialize);
+(exports["unserialize"] = unserialize);

@@ -1,5 +1,5 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/position.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/position.kep'
  * DO NOT EDIT
 */
 define(["require", "exports"], (function(require, exports) {
@@ -37,6 +37,6 @@ define(["require", "exports"], (function(require, exports) {
         return new(SourceLocation)(((s1.start.compare(s2.start) > 0) ? s2.start : s1.start), ((s1.end.compare(
             s2.end) > 0) ? s1.end : s2.end));
     }));
-    (exports.SourcePosition = SourcePosition);
-    (exports.SourceLocation = SourceLocation);
+    (exports["SourcePosition"] = SourcePosition);
+    (exports["SourceLocation"] = SourceLocation);
 }));
