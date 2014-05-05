@@ -1,11 +1,13 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/pattern.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/pattern.kep'
  * DO NOT EDIT
-*/"use strict";
+*/
+"use strict";
 var __o = require("./node"),
+    defineNode = __o["defineNode"],
+    Node = __o["Node"],
     Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern, ObjectPatternElement,
-        ObjectPattern, ArgumentsPattern, AsPattern, defineNode = __o["defineNode"],
-    Node = __o["Node"];
+        ObjectPattern, ArgumentsPattern, AsPattern;
 (Pattern = (function(loc) {
     var self = this;
     Node.call(self, loc);

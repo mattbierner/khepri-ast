@@ -1,7 +1,8 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/serialization.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/serialization.kep'
  * DO NOT EDIT
-*/"use strict";
+*/
+"use strict";
 var khepri_node = require("./node"),
     registerNode, serialize, unserialize, keys = Object.keys,
     map = Function.prototype.call.bind(Array.prototype.map),

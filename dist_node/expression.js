@@ -1,12 +1,14 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/expression.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/expression.kep'
  * DO NOT EDIT
-*/"use strict";
+*/
+"use strict";
 var __o = require("./node"),
+    defineNode = __o["defineNode"],
+    Node = __o["Node"],
     Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
         ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-        ObjectExpression, LetExpression, CurryExpression, ApplyExpression, defineNode = __o["defineNode"],
-    Node = __o["Node"];
+        ObjectExpression, LetExpression, CurryExpression, ApplyExpression;
 (Expression = (function() {
     var self = this;
 }));

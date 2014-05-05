@@ -1,12 +1,14 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/statement.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/statement.kep'
  * DO NOT EDIT
-*/define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/
+define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement,
+    var defineNode = __o["defineNode"],
+        Node = __o["Node"],
+        Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement,
             IfStatement, BreakStatement, ContinueStatement, SwitchStatement, ReturnStatement, ThrowStatement,
-            TryStatement, WhileStatement, DoWhileStatement, ForStatement, defineNode = __o["defineNode"],
-        Node = __o["Node"];
+            TryStatement, WhileStatement, DoWhileStatement, ForStatement;
     (Statement = (function() {
         var self = this;
     }));

@@ -11,21 +11,21 @@
         Node.call(self, loc);
         (self.name = name);
     })));
-    (UnaryOperator = defineNode(Node, "UnaryOperator", [], ["name"], (function(loc, op) {
+    (UnaryOperator = defineNode(Node, "UnaryOperator", [], ["name"], (function(loc, name) {
         var self = this;
         Node.call(self, loc);
-        (self.op = op);
+        (self.name = name);
     })));
-    (BinaryOperator = defineNode(Node, "BinaryOperator", [], ["name", "flipped"], (function(loc, op, flipped) {
+    (BinaryOperator = defineNode(Node, "BinaryOperator", [], ["name", "flipped"], (function(loc, name, flipped) {
         var self = this;
         Node.call(self, loc);
-        (self.op = op);
+        (self.name = name);
         (self.flipped = flipped);
     })));
-    (TernaryOperator = defineNode(Node, "TernaryOperator", [], ["name"], (function(loc, op) {
+    (TernaryOperator = defineNode(Node, "TernaryOperator", [], ["name"], (function(loc, name) {
         var self = this;
         Node.call(self, loc);
-        (self.op = op);
+        (self.name = name);
     })));
     (Literal = defineNode(Node, "Literal", [], ["kind", "value"], (function(loc, kind, value) {
         var self = this;

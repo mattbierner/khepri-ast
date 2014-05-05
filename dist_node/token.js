@@ -1,12 +1,13 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/token.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/token.kep'
  * DO NOT EDIT
-*/"use strict";
+*/
+"use strict";
 var __o = require("./node"),
+    defineNode = __o["defineNode"],
+    Node = __o["Node"],
     Token, StringToken, NumberToken, RegularExpressionToken, BooleanToken, NullToken, IdentifierToken, KeywordToken,
-        PunctuatorToken, OperatorToken, CommentToken, WhitespaceToken, LineTerminatorToken, defineNode = __o[
-            "defineNode"],
-    Node = __o["Node"];
+        PunctuatorToken, OperatorToken, CommentToken, WhitespaceToken, LineTerminatorToken;
 (Token = (function(loc, value) {
     var self = this;
     Node.call(self, loc);

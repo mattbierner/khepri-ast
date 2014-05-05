@@ -1,7 +1,8 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/serialization.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/serialization.kep'
  * DO NOT EDIT
-*/define(["require", "exports", "./node"], (function(require, exports, khepri_node) {
+*/
+define(["require", "exports", "./node"], (function(require, exports, khepri_node) {
     "use strict";
     var registerNode, serialize, unserialize, keys = Object.keys,
         map = Function.prototype.call.bind(Array.prototype.map),
