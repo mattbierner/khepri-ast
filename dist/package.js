@@ -1,12 +1,10 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/package.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/package.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Package, PackageExport, PackageExports;
+    var Package, PackageExport, PackageExports, defineNode = __o["defineNode"],
+        Node = __o["Node"];
     (PackageExport = defineNode(Node, "PackageExport", ["id", "alias"], [], (function(loc, id, alias) {
         var self = this;
         Node.call(self, loc);

@@ -2,8 +2,8 @@
  * @fileOverview Khepri package AST nodes.
  */
 package (
-    Package,
-    PackageExport,
+    Package
+    PackageExport
     PackageExports)
 with 
     import './node' {defineNode, Node}

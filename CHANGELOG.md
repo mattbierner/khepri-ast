@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 3.10.0 - May 5, 2014
+* Added optional file field to `SourceLocation`
+
 ## 3.9.1 - April 13, 2014
 * Fixed potentially incorrect reconstruction with modify for falsy values.
 
