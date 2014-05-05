@@ -3,10 +3,11 @@
  * DO NOT EDIT
 */"use strict";
 var SourcePosition, SourceLocation;
-(SourcePosition = (function(line, column) {
+(SourcePosition = (function(line, column, file) {
     var self = this;
     (self.line = line);
     (self.column = column);
+    (self.file = file);
 }));
 (SourcePosition.initial = new(SourcePosition)(1, 0));
 (SourcePosition.prototype.increment = (function(tok) {

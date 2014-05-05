@@ -11,9 +11,10 @@ package (
 /**
  * Point in source code.
  */
-SourcePosition = function \line column =self-> {
+SourcePosition = function \line column file =self-> {
     self.line = line;
     self.column = column;
+    self.file = file;
 };
 
 /**
