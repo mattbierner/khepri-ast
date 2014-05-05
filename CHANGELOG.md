@@ -1,5 +1,10 @@
 # ChangeLog #
 
+## 4.0.0 - May 5, 2014
+* Added `OperatorToken` to distinguish punctuators that are used as operators.
+* Moved operator expressions to value package.
+* Removed `SubPattern`
+
 ## 3.10.2 - May 5, 2014
 * Fixed `SourceLocation.toString`.
 

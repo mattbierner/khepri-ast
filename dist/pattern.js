@@ -1,13 +1,11 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/pattern.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/pattern.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern,
-            ObjectPatternElement, ObjectPattern, ArgumentsPattern, SubPattern, AsPattern;
+    var Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern,
+            ObjectPatternElement, ObjectPattern, ArgumentsPattern, AsPattern, defineNode = __o["defineNode"],
+        Node = __o["Node"];
     (Pattern = (function(loc) {
         var self = this;
         Node.call(self, loc);
@@ -56,12 +54,6 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.id = id);
         (self.target = target);
     })));
-    (SubPattern = defineNode(Pattern, "SubPattern", ["id", "elements"], [], (function(loc, id, elements) {
-        var self = this;
-        Pattern.call(self, loc);
-        (self.id = id);
-        (self.elements = elements);
-    })));
     (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements", "self"], [], (function(loc,
         id, elements, self) {
         var T = this;
@@ -79,6 +71,5 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
     (exports["ObjectPatternElement"] = ObjectPatternElement);
     (exports["ObjectPattern"] = ObjectPattern);
     (exports["ArgumentsPattern"] = ArgumentsPattern);
-    (exports["SubPattern"] = SubPattern);
     (exports["AsPattern"] = AsPattern);
 }));

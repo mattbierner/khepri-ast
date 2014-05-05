@@ -1,15 +1,12 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/expression.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/expression.kep'
  * DO NOT EDIT
-*/
-"use strict";
+*/"use strict";
 var __o = require("./node"),
-    defineNode = __o["defineNode"],
-    Node = __o["Node"],
     Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
         ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-        ObjectExpression, LetExpression, CurryExpression, ApplyExpression, UnaryOperatorExpression,
-        BinaryOperatorExpression, TernaryOperatorExpression;
+        ObjectExpression, LetExpression, CurryExpression, ApplyExpression, defineNode = __o["defineNode"],
+    Node = __o["Node"];
 (Expression = (function() {
     var self = this;
 }));
@@ -113,23 +110,6 @@ var __o = require("./node"),
     (self.callee = callee);
     (self.arg = arg);
 })));
-(UnaryOperatorExpression = defineNode(Expression, "UnaryOperatorExpression", [], ["op"], (function(loc, op) {
-    var self = this;
-    Node.call(self, loc);
-    (self.op = op);
-})));
-(BinaryOperatorExpression = defineNode(Expression, "BinaryOperatorExpression", [], ["op", "flipped"], (function(loc, op,
-    flipped) {
-    var self = this;
-    Node.call(self, loc);
-    (self.op = op);
-    (self.flipped = flipped);
-})));
-(TernaryOperatorExpression = defineNode(Expression, "TernaryOperatorExpression", [], ["op"], (function(loc, op) {
-    var self = this;
-    Node.call(self, loc);
-    (self.op = op);
-})));
 (exports["Expression"] = Expression);
 (exports["ThisExpression"] = ThisExpression);
 (exports["UnaryExpression"] = UnaryExpression);
@@ -146,6 +126,3 @@ var __o = require("./node"),
 (exports["LetExpression"] = LetExpression);
 (exports["CurryExpression"] = CurryExpression);
 (exports["ApplyExpression"] = ApplyExpression);
-(exports["UnaryOperatorExpression"] = UnaryOperatorExpression);
-(exports["BinaryOperatorExpression"] = BinaryOperatorExpression);
-(exports["TernaryOperatorExpression"] = TernaryOperatorExpression);

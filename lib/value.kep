@@ -2,9 +2,14 @@
  * @fileOverview Khepri value AST nodes.
  */
 package (
-    Identifier,
-    Literal,
-    ObjectValue)
+    Literal
+    
+    ObjectValue
+    
+    Identifier
+    UnaryOperator
+    BinaryOperator
+    TernaryOperator)
 with 
     import './node' {defineNode, Node}
 in {
@@ -18,6 +23,41 @@ Identifier = defineNode(Node, 'Identifier',
     function \loc, name =self-> {
         Node.call(self, loc);
         self.name = name;
+    });
+
+
+/**
+ * @constructor
+ */
+UnaryOperator = defineNode(Node, 'UnaryOperator',
+    [],
+    ['op'],
+    function \loc op =self-> {
+        Node.call(self, loc);
+        self.op = op;
+    });
+
+/**
+ * @constructor
+ */
+BinaryOperator = defineNode(Node, 'BinaryOperator',
+    [],
+    ['op', 'flipped'],
+    function \loc op flipped =self-> {
+        Node.call(self, loc);
+        self.op = op;
+        self.flipped = flipped;
+    });
+
+/**
+ * @constructor
+ */
+TernaryOperator = defineNode(Node, 'TernaryOperator',
+     [],
+    ['op'],
+    function \loc op =self-> {
+        Node.call(self, loc);
+        self.op = op;
     });
 
 /**
@@ -38,7 +78,7 @@ Literal = defineNode(Node, 'Literal',
 ObjectValue = defineNode(Node, 'ObjectValue',
     ['key', 'value'],
     [],
-    function \loc, key, value =self-> {
+    function \loc key value =self-> {
         Node.call(self, loc);
         self.key = key;
         self.value = value;

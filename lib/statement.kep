@@ -1,6 +1,5 @@
 /**
  * @fileOverview Khepri statement AST nodes.
- * SpiderMonkey Parser API.
  */
 package (
     Statement

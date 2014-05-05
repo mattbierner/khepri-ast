@@ -1,5 +1,5 @@
 /**
- * @fileOverview Khepri 5.1 lex tokens.
+ * @fileOverview Khepri lex tokens.
  */
 package (
     Token
@@ -13,6 +13,7 @@ package (
     IdentifierToken
     KeywordToken
     PunctuatorToken
+    OperatorToken
     
     CommentToken
     WhitespaceToken
@@ -83,7 +84,7 @@ NullToken = defineNode(Token, 'Null',
     });
 
 /**
- * 
+ * @constructor
  */
 IdentifierToken = defineNode(Token, 'Identifier',
     [],
@@ -103,9 +104,19 @@ KeywordToken = defineNode(Token, 'Keyword',
     });
 
 /**
- * 
+ * @constructor
  */
 PunctuatorToken = defineNode(Token, 'Punctuator',
+    [],
+    ['value'],
+    function \loc, value =self-> {
+        Token.call(self, loc, value);
+    });
+
+/**
+ * @constructor
+ */
+OperatorToken = defineNode(Token, 'Operator',
     [],
     ['value'],
     function \loc, value =self-> {

@@ -1,15 +1,13 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/expression.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/expression.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
+    var Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
             ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression,
-            ArrayExpression, ObjectExpression, LetExpression, CurryExpression, ApplyExpression,
-            UnaryOperatorExpression, BinaryOperatorExpression, TernaryOperatorExpression;
+            ArrayExpression, ObjectExpression, LetExpression, CurryExpression, ApplyExpression, defineNode =
+            __o["defineNode"],
+        Node = __o["Node"];
     (Expression = (function() {
         var self = this;
     }));
@@ -119,24 +117,6 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         (self.callee = callee);
         (self.arg = arg);
     })));
-    (UnaryOperatorExpression = defineNode(Expression, "UnaryOperatorExpression", [], ["op"], (function(loc, op) {
-        var self = this;
-        Node.call(self, loc);
-        (self.op = op);
-    })));
-    (BinaryOperatorExpression = defineNode(Expression, "BinaryOperatorExpression", [], ["op", "flipped"], (
-        function(loc, op, flipped) {
-            var self = this;
-            Node.call(self, loc);
-            (self.op = op);
-            (self.flipped = flipped);
-        })));
-    (TernaryOperatorExpression = defineNode(Expression, "TernaryOperatorExpression", [], ["op"], (function(loc,
-        op) {
-        var self = this;
-        Node.call(self, loc);
-        (self.op = op);
-    })));
     (exports["Expression"] = Expression);
     (exports["ThisExpression"] = ThisExpression);
     (exports["UnaryExpression"] = UnaryExpression);
@@ -153,7 +133,4 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
     (exports["LetExpression"] = LetExpression);
     (exports["CurryExpression"] = CurryExpression);
     (exports["ApplyExpression"] = ApplyExpression);
-    (exports["UnaryOperatorExpression"] = UnaryOperatorExpression);
-    (exports["BinaryOperatorExpression"] = BinaryOperatorExpression);
-    (exports["TernaryOperatorExpression"] = TernaryOperatorExpression);
 }));

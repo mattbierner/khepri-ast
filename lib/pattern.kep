@@ -12,7 +12,6 @@ package (
     ObjectPatternElement
     ObjectPattern
     ArgumentsPattern
-    SubPattern
     AsPattern)
 with 
     import './node' {defineNode Node}
@@ -118,18 +117,6 @@ AsPattern = defineNode(Pattern, 'AsPattern',
         Pattern.call(self, loc);
         self.id = id;
         self.target = target;
-    });
-
-/**
- * @constructor
- */
-SubPattern = defineNode(Pattern, 'SubPattern',
-    ['id', 'elements'],
-    [],
-    function \loc, id, elements =self-> {
-        Pattern.call(self, loc);
-        self.id = id;
-        self.elements = elements;
     });
 
 /**

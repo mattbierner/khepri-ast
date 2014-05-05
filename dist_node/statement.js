@@ -1,14 +1,12 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/statement.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/statement.kep'
  * DO NOT EDIT
-*/
-"use strict";
+*/"use strict";
 var __o = require("./node"),
-    defineNode = __o["defineNode"],
-    Node = __o["Node"],
     Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement, IfStatement,
         BreakStatement, ContinueStatement, SwitchStatement, ReturnStatement, ThrowStatement, TryStatement,
-        WhileStatement, DoWhileStatement, ForStatement;
+        WhileStatement, DoWhileStatement, ForStatement, defineNode = __o["defineNode"],
+    Node = __o["Node"];
 (Statement = (function() {
     var self = this;
 }));

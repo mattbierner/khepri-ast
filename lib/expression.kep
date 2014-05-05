@@ -21,11 +21,7 @@ package (
     LetExpression
     
     CurryExpression,
-    ApplyExpression
-    
-    UnaryOperatorExpression
-    BinaryOperatorExpression
-    TernaryOperatorExpression)
+    ApplyExpression)
 with 
     import './node' {defineNode, Node}
 in {
@@ -220,40 +216,6 @@ ApplyExpression = defineNode(Expression, 'ApplyExpression',
         Node.call(self, loc);
         self.callee = callee;
         self.arg = arg;
-    });
-
-/**
- * @constructor
- */
-UnaryOperatorExpression = defineNode(Expression, 'UnaryOperatorExpression',
-    [],
-    ['op'],
-    function \loc, op =self-> {
-        Node.call(self, loc);
-        self.op = op;
-    });
-
-/**
- * @constructor
- */
-BinaryOperatorExpression = defineNode(Expression, 'BinaryOperatorExpression',
-    [],
-    ['op', 'flipped'],
-    function \loc, op flipped =self-> {
-        Node.call(self, loc);
-        self.op = op;
-        self.flipped = flipped;
-    });
-
-/**
- * @constructor
- */
-TernaryOperatorExpression = defineNode(Expression, 'TernaryOperatorExpression',
-     [],
-    ['op'],
-    function \loc, op =self-> {
-        Node.call(self, loc);
-        self.op = op;
     });
 
 }
