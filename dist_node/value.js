@@ -10,18 +10,18 @@ var __o = require("./node"),
     Node.call(self, loc);
     (self.name = name);
 })));
-(UnaryOperator = defineNode(Node, "UnaryOperator", [], ["op"], (function(loc, op) {
+(UnaryOperator = defineNode(Node, "UnaryOperator", [], ["name"], (function(loc, op) {
     var self = this;
     Node.call(self, loc);
     (self.op = op);
 })));
-(BinaryOperator = defineNode(Node, "BinaryOperator", [], ["op", "flipped"], (function(loc, op, flipped) {
+(BinaryOperator = defineNode(Node, "BinaryOperator", [], ["name", "flipped"], (function(loc, op, flipped) {
     var self = this;
     Node.call(self, loc);
     (self.op = op);
     (self.flipped = flipped);
 })));
-(TernaryOperator = defineNode(Node, "TernaryOperator", [], ["op"], (function(loc, op) {
+(TernaryOperator = defineNode(Node, "TernaryOperator", [], ["name"], (function(loc, op) {
     var self = this;
     Node.call(self, loc);
     (self.op = op);

@@ -31,7 +31,7 @@ Identifier = defineNode(Node, 'Identifier',
  */
 UnaryOperator = defineNode(Node, 'UnaryOperator',
     [],
-    ['op'],
+    ['name'],
     function \loc op =self-> {
         Node.call(self, loc);
         self.op = op;
@@ -42,7 +42,7 @@ UnaryOperator = defineNode(Node, 'UnaryOperator',
  */
 BinaryOperator = defineNode(Node, 'BinaryOperator',
     [],
-    ['op', 'flipped'],
+    ['name', 'flipped'],
     function \loc op flipped =self-> {
         Node.call(self, loc);
         self.op = op;
@@ -53,8 +53,8 @@ BinaryOperator = defineNode(Node, 'BinaryOperator',
  * @constructor
  */
 TernaryOperator = defineNode(Node, 'TernaryOperator',
-     [],
-    ['op'],
+    [],
+    ['name'],
     function \loc op =self-> {
         Node.call(self, loc);
         self.op = op;
