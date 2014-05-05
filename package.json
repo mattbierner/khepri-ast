@@ -1,6 +1,6 @@
 {
   "name": "khepri-ast",
-  "version": "3.10.1",
+  "version": "3.10.2",
   "description": "Khepri AST nodes",
   "repository": {
     "type": "git",
@@ -8,8 +8,7 @@
   },
   "keywords": [
     "khepri",
-    "ast"
-  ],
+    "ast"],
   
   "main": "index.js",
   

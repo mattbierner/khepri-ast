@@ -10,6 +10,10 @@ package (
 ////////////////////////////////////////
 /**
  * Point in source code.
+ * 
+ * @member line Line number.
+ * @member column Coliumn number.
+ * @member [file] File name.
  */
 SourcePosition = function \line column file =self-> {
     self.line = line;
@@ -52,9 +56,9 @@ SourceLocation = function \start end file =self-> {
 
 SourceLocation.prototype.toString = \ =self->
     '{'+
-    ?self.file
+    (?self.file
         :'file:' + self.file + ' '
-        :''
+        :'') +
     'start:' + self.start +
     ' end:' + self.end +
     '}';

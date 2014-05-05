@@ -32,8 +32,8 @@
     }));
     (SourceLocation.prototype.toString = (function() {
         var self = this;
-        return ("{" + (self.file ? (("file:" + self.file) + " ") : (((("" ("start:") + self.start) +
-            " end:") + self.end) + "}")));
+        return (((((("{" + (self.file ? (("file:" + self.file) + " ") : "")) + "start:") + self.start) +
+            " end:") + self.end) + "}");
     }));
     (SourceLocation.merge = (function(s1, s2) {
         return new(SourceLocation)((s1.start.compare(s2.start) ? s2.start : s1.start), (s1.end.compare(
