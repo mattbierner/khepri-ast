@@ -1,7 +1,7 @@
 {
   "name": "khepri-ast",
   "version": "3.10.0",
-  "description": "Khepri AST Nodes",
+  "description": "Khepri AST nodes",
   "repository": {
     "type": "git",
     "url": "git@github.com:mattbierner/khepri-ast.git"
