@@ -4,11 +4,9 @@
 package (
     Expression
     
-    ThisExpression
     UnaryExpression
     BinaryExpression
     AssignmentExpression
-    LogicalExpression
     ConditionalExpression
     NewExpression
     CallExpression
@@ -39,19 +37,9 @@ Expression.prototype = new Node();
 /**
  * @constructor
  */
-ThisExpression = defineNode(Expression, 'ThisExpression',
-    [],
-    [],
-    function \loc =self-> {
-        Node.call(self, loc);
-    });
-
-/**
- * @constructor
- */
 UnaryExpression = defineNode(Expression, 'UnaryExpression',
-    ['argument'],
-    ['operator'],
+    ['operator', 'argument'],
+    [],
     function \loc, operator, argument =self-> {
         Node.call(self, loc);
         self.operator = operator;
@@ -62,9 +50,9 @@ UnaryExpression = defineNode(Expression, 'UnaryExpression',
  * @constructor
  */
 BinaryExpression = defineNode(Expression, 'BinaryExpression',
-    ['left', 'right'],
-    ['operator'],
-    function \loc, operator, left, right =self-> {
+    ['operator', 'left', 'right'],
+    [],
+    function \loc operator, left, right =self-> {
         Node.call(self, loc);
         self.operator = operator;
         self.left = left;
@@ -75,19 +63,6 @@ BinaryExpression = defineNode(Expression, 'BinaryExpression',
  * @constructor
  */
 AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
-    ['left', 'right'],
-    ['operator'],
-    function \loc, operator, left, right =self-> {
-        Node.call(self, loc);
-        self.operator = operator;
-        self.left = left;
-        self.right = right;
-    });
-
-/**
- * @constructor
- */
-LogicalExpression = defineNode(Expression, 'LogicalExpression',
     ['left', 'right'],
     ['operator'],
     function \loc, operator, left, right =self-> {

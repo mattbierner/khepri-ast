@@ -1,5 +1,9 @@
 # ChangeLog #
 
+## 4.1.0 - May 5, 2014
+* Fixed `BinaryExpression` and `UnaryExpression` marking `operator` as `attribute`
+  instead of `child`.
+
 ## 4.0.0 - May 5, 2014
 * Added `OperatorToken` to distinguish punctuators that are used as operators.
 * Moved operator expressions to value package.

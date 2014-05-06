@@ -1,38 +1,24 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/expression.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/expression.kep'
  * DO NOT EDIT
-*/
-"use strict";
+*/"use strict";
 var __o = require("./node"),
-    defineNode = __o["defineNode"],
-    Node = __o["Node"],
-    Expression, ThisExpression, UnaryExpression, BinaryExpression, AssignmentExpression, LogicalExpression,
-        ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-        ObjectExpression, LetExpression, CurryExpression, ApplyExpression;
+    Expression, UnaryExpression, BinaryExpression, AssignmentExpression, ConditionalExpression, NewExpression,
+        CallExpression, MemberExpression, FunctionExpression, ArrayExpression, ObjectExpression, LetExpression,
+        CurryExpression, ApplyExpression, defineNode = __o["defineNode"],
+    Node = __o["Node"];
 (Expression = (function() {
     var self = this;
 }));
 (Expression.prototype = new(Node)());
-(ThisExpression = defineNode(Expression, "ThisExpression", [], [], (function(loc) {
-    var self = this;
-    Node.call(self, loc);
-})));
-(UnaryExpression = defineNode(Expression, "UnaryExpression", ["argument"], ["operator"], (function(loc, operator,
+(UnaryExpression = defineNode(Expression, "UnaryExpression", ["operator", "argument"], [], (function(loc, operator,
     argument) {
     var self = this;
     Node.call(self, loc);
     (self.operator = operator);
     (self.argument = argument);
 })));
-(BinaryExpression = defineNode(Expression, "BinaryExpression", ["left", "right"], ["operator"], (function(loc, operator,
-    left, right) {
-    var self = this;
-    Node.call(self, loc);
-    (self.operator = operator);
-    (self.left = left);
-    (self.right = right);
-})));
-(AssignmentExpression = defineNode(Expression, "AssignmentExpression", ["left", "right"], ["operator"], (function(loc,
+(BinaryExpression = defineNode(Expression, "BinaryExpression", ["operator", "left", "right"], [], (function(loc,
     operator, left, right) {
     var self = this;
     Node.call(self, loc);
@@ -40,7 +26,7 @@ var __o = require("./node"),
     (self.left = left);
     (self.right = right);
 })));
-(LogicalExpression = defineNode(Expression, "LogicalExpression", ["left", "right"], ["operator"], (function(loc,
+(AssignmentExpression = defineNode(Expression, "AssignmentExpression", ["left", "right"], ["operator"], (function(loc,
     operator, left, right) {
     var self = this;
     Node.call(self, loc);
@@ -113,11 +99,9 @@ var __o = require("./node"),
     (self.arg = arg);
 })));
 (exports["Expression"] = Expression);
-(exports["ThisExpression"] = ThisExpression);
 (exports["UnaryExpression"] = UnaryExpression);
 (exports["BinaryExpression"] = BinaryExpression);
 (exports["AssignmentExpression"] = AssignmentExpression);
-(exports["LogicalExpression"] = LogicalExpression);
 (exports["ConditionalExpression"] = ConditionalExpression);
 (exports["NewExpression"] = NewExpression);
 (exports["CallExpression"] = CallExpression);

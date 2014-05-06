@@ -1,14 +1,12 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/statement.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/statement.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement,
-            IfStatement, BreakStatement, ContinueStatement, SwitchStatement, ReturnStatement, ThrowStatement,
-            TryStatement, WhileStatement, DoWhileStatement, ForStatement;
+    var Statement, EmptyStatement, DebuggerStatement, WithStatement, BlockStatement, ExpressionStatement,
+            IfStatement, SwitchStatement, BreakStatement, ContinueStatement, ReturnStatement, ThrowStatement,
+            TryStatement, WhileStatement, DoWhileStatement, ForStatement, defineNode = __o["defineNode"],
+        Node = __o["Node"];
     (Statement = (function() {
         var self = this;
     }));
@@ -109,9 +107,9 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
     (exports["BlockStatement"] = BlockStatement);
     (exports["ExpressionStatement"] = ExpressionStatement);
     (exports["IfStatement"] = IfStatement);
+    (exports["SwitchStatement"] = SwitchStatement);
     (exports["BreakStatement"] = BreakStatement);
     (exports["ContinueStatement"] = ContinueStatement);
-    (exports["SwitchStatement"] = SwitchStatement);
     (exports["ReturnStatement"] = ReturnStatement);
     (exports["ThrowStatement"] = ThrowStatement);
     (exports["TryStatement"] = TryStatement);

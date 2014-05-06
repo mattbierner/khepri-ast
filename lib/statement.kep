@@ -10,11 +10,10 @@ package (
     BlockStatement
     ExpressionStatement
     IfStatement
+    SwitchStatement
     BreakStatement
     ContinueStatement
-    SwitchStatement
     ReturnStatement
-    
     ThrowStatement
     TryStatement
     
