@@ -5,7 +5,7 @@
 var __o = require("./node"),
     Expression, UnaryExpression, BinaryExpression, AssignmentExpression, ConditionalExpression, NewExpression,
         CallExpression, MemberExpression, FunctionExpression, ArrayExpression, ObjectExpression, LetExpression,
-        CurryExpression, ApplyExpression, defineNode = __o["defineNode"],
+        OperatorExpression, CurryExpression, ApplyExpression, defineNode = __o["defineNode"],
     Node = __o["Node"];
 (Expression = (function() {
     var self = this;
@@ -86,6 +86,13 @@ var __o = require("./node"),
     (self.bindings = bindings);
     (self.body = body);
 })));
+(OperatorExpression = defineNode(Node, "OperatorExpression", ["operator"], ["flipped"], (function(loc, operator,
+    flipped) {
+    var self = this;
+    Node.call(self, loc);
+    (self.operator = operator);
+    (self.flipped = flipped);
+})));
 (CurryExpression = defineNode(Expression, "CurryExpression", ["base", "args"], [], (function(loc, base, args) {
     var self = this;
     Node.call(self, loc);
@@ -110,5 +117,6 @@ var __o = require("./node"),
 (exports["ArrayExpression"] = ArrayExpression);
 (exports["ObjectExpression"] = ObjectExpression);
 (exports["LetExpression"] = LetExpression);
+(exports["OperatorExpression"] = OperatorExpression);
 (exports["CurryExpression"] = CurryExpression);
 (exports["ApplyExpression"] = ApplyExpression);

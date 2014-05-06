@@ -5,7 +5,8 @@
     "use strict";
     var Expression, UnaryExpression, BinaryExpression, AssignmentExpression, ConditionalExpression,
             NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-            ObjectExpression, LetExpression, CurryExpression, ApplyExpression, defineNode = __o["defineNode"],
+            ObjectExpression, LetExpression, OperatorExpression, CurryExpression, ApplyExpression, defineNode =
+            __o["defineNode"],
         Node = __o["Node"];
     (Expression = (function() {
         var self = this;
@@ -90,6 +91,13 @@
         (self.bindings = bindings);
         (self.body = body);
     })));
+    (OperatorExpression = defineNode(Node, "OperatorExpression", ["operator"], ["flipped"], (function(loc,
+        operator, flipped) {
+        var self = this;
+        Node.call(self, loc);
+        (self.operator = operator);
+        (self.flipped = flipped);
+    })));
     (CurryExpression = defineNode(Expression, "CurryExpression", ["base", "args"], [], (function(loc, base,
         args) {
         var self = this;
@@ -116,6 +124,7 @@
     (exports["ArrayExpression"] = ArrayExpression);
     (exports["ObjectExpression"] = ObjectExpression);
     (exports["LetExpression"] = LetExpression);
+    (exports["OperatorExpression"] = OperatorExpression);
     (exports["CurryExpression"] = CurryExpression);
     (exports["ApplyExpression"] = ApplyExpression);
 }));
