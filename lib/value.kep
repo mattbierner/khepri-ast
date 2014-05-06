@@ -42,11 +42,10 @@ UnaryOperator = defineNode(Node, 'UnaryOperator',
  */
 BinaryOperator = defineNode(Node, 'BinaryOperator',
     [],
-    ['name', 'flipped'],
-    function \loc name flipped =self-> {
+    ['name'],
+    function \loc name =self-> {
         Node.call(self, loc);
         self.name = name;
-        self.flipped = flipped;
     });
 
 /**

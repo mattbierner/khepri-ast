@@ -15,11 +15,10 @@ var __o = require("./node"),
     Node.call(self, loc);
     (self.name = name);
 })));
-(BinaryOperator = defineNode(Node, "BinaryOperator", [], ["name", "flipped"], (function(loc, name, flipped) {
+(BinaryOperator = defineNode(Node, "BinaryOperator", [], ["name"], (function(loc, name) {
     var self = this;
     Node.call(self, loc);
     (self.name = name);
-    (self.flipped = flipped);
 })));
 (TernaryOperator = defineNode(Node, "TernaryOperator", [], ["name"], (function(loc, name) {
     var self = this;

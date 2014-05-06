@@ -1,5 +1,9 @@
 # ChangeLog #
 
+## 4.2.0 - May 6, 2014
+* Added `OperatorExpression` to better capture when an operator is used as
+  an expression.
+
 ## 4.1.3 - May 5, 2014
 * Fixed `SourceLocation.merge` for negative differences (damn C logic).
 
