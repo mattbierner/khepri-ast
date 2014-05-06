@@ -174,8 +174,8 @@ LetExpression = defineNode(Expression, 'LetExpression',
  * @constructor
  */
 OperatorExpression = defineNode(Node, 'OperatorExpression',
-    [],
-    ['operator', 'flipped'],
+    ['operator'],
+    ['flipped'],
     function \loc operator =self-> {
         Node.call(self, loc);
         self.operator = operator;
