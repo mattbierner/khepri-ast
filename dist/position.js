@@ -1,8 +1,7 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/position.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/position.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports"], (function(require, exports) {
+*/define(["require", "exports"], (function(require, exports) {
     "use strict";
     var SourcePosition, SourceLocation;
     (SourcePosition = (function(line, column, file) {
@@ -37,8 +36,8 @@ define(["require", "exports"], (function(require, exports) {
             " end:") + self.end) + "}");
     }));
     (SourceLocation.merge = (function(s1, s2) {
-        return new(SourceLocation)((s1.start.compare(s2.start) ? s2.start : s1.start), (s1.end.compare(
-            s2.end) ? s1.end : s2.end), (s1.file || s2.file));
+        return new(SourceLocation)(((s1.start.compare(s2.start) > 0) ? s2.start : s1.start), ((s1.end.compare(
+            s2.end) > 0) ? s1.end : s2.end), (s1.file || s2.file));
     }));
     (exports["SourcePosition"] = SourcePosition);
     (exports["SourceLocation"] = SourceLocation);

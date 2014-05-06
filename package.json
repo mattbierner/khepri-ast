@@ -1,6 +1,6 @@
 {
   "name": "khepri-ast",
-  "version": "4.1.2",
+  "version": "4.1.3",
   "description": "Khepri AST nodes",
   "repository": {
     "type": "git",

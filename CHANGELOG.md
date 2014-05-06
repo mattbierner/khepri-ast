@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 4.1.3 - May 5, 2014
+* Fixed `SourceLocation.merge` for negative differences (damn C logic).
+
 ## 4.1.0 - May 5, 2014
 * Fixed `BinaryExpression` and `UnaryExpression` marking `operator` as `attribute`
   instead of `child`.
