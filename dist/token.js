@@ -1,13 +1,12 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/token.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/token.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Token, StringToken, NumberToken, RegularExpressionToken, BooleanToken, NullToken, IdentifierToken,
-            KeywordToken, PunctuatorToken, OperatorToken, CommentToken, WhitespaceToken, LineTerminatorToken;
+    var Token, StringToken, NumberToken, RegularExpressionToken, BooleanToken, NullToken, IdentifierToken,
+            KeywordToken, PunctuatorToken, PrefixOperatorToken, InfixOperatorToken, CommentToken,
+            WhitespaceToken, LineTerminatorToken, defineNode = __o["defineNode"],
+        Node = __o["Node"];
     (Token = (function(loc, value) {
         var self = this;
         Node.call(self, loc);
@@ -46,16 +45,20 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
         var self = this;
         Token.call(self, loc, value);
     })));
-    (OperatorToken = defineNode(Token, "Operator", [], ["value"], (function(loc, value) {
+    (PrefixOperatorToken = defineNode(Token, "PrefixOperator", [], ["value", "base"], (function(loc, value,
+        base) {
         var self = this;
         Token.call(self, loc, value);
+        (self.base = base);
     })));
-    (CommentToken = defineNode(Token, "Comment", [], ["value", "multiline", "linebreak"], (function(loc, value,
-        multiline, linebreak) {
+    (InfixOperatorToken = defineNode(Token, "InfixOperator", [], ["value", "base"], (function(loc, value, base) {
         var self = this;
         Token.call(self, loc, value);
-        (self.multiline = (!(!multiline)));
-        (self.linebreak = (!(!linebreak)));
+        (self.base = base);
+    })));
+    (CommentToken = defineNode(Token, "Comment", [], ["value"], (function(loc, value) {
+        var self = this;
+        Token.call(self, loc, value);
     })));
     (WhitespaceToken = defineNode(Token, "Whitespace", [], ["value"], (function(loc, value) {
         var self = this;
@@ -74,7 +77,8 @@ define(["require", "exports", "./node"], (function(require, exports, __o) {
     (exports["IdentifierToken"] = IdentifierToken);
     (exports["KeywordToken"] = KeywordToken);
     (exports["PunctuatorToken"] = PunctuatorToken);
-    (exports["OperatorToken"] = OperatorToken);
+    (exports["PrefixOperatorToken"] = PrefixOperatorToken);
+    (exports["InfixOperatorToken"] = InfixOperatorToken);
     (exports["CommentToken"] = CommentToken);
     (exports["WhitespaceToken"] = WhitespaceToken);
     (exports["LineTerminatorToken"] = LineTerminatorToken);

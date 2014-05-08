@@ -1,5 +1,9 @@
 # ChangeLog #
 
+## 4.3.0 - May 7, 2014
+* Added `PrefixOperatorToken` and `InfixOperatorToken` to capture types of
+  operators during lexing.
+
 ## 4.2.0 - May 6, 2014
 * Added `OperatorExpression` to better capture when an operator is used as
   an expression.

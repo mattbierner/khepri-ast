@@ -13,7 +13,8 @@ package (
     IdentifierToken
     KeywordToken
     PunctuatorToken
-    OperatorToken
+    PrefixOperatorToken
+    InfixOperatorToken
     
     CommentToken
     WhitespaceToken
@@ -116,11 +117,23 @@ PunctuatorToken = defineNode(Token, 'Punctuator',
 /**
  * @constructor
  */
-OperatorToken = defineNode(Token, 'Operator',
+PrefixOperatorToken = defineNode(Token, 'PrefixOperator',
     [],
-    ['value'],
-    function \loc, value =self-> {
+    ['value', 'base'],
+    function \loc value base =self-> {
         Token.call(self, loc, value);
+        self.base = base;
+    });
+
+/**
+ * @constructor
+ */
+InfixOperatorToken = defineNode(Token, 'InfixOperator',
+    [],
+    ['value', 'base'],
+    function \loc value base =self-> {
+        Token.call(self, loc, value);
+        self.base = base;
     });
 
 /**
@@ -128,11 +141,9 @@ OperatorToken = defineNode(Token, 'Operator',
  */
 CommentToken = defineNode(Token, 'Comment',
     [],
-    ['value', 'multiline', 'linebreak'],
-    function \loc, value, multiline, linebreak =self-> {
+    ['value'],
+    function \loc value =self-> {
         Token.call(self, loc, value);
-        self.multiline = !!multiline;
-        self.linebreak = !!linebreak;
     });
 
 /**
@@ -154,4 +165,5 @@ LineTerminatorToken = defineNode(Token, 'LineTerminator',
     function \loc, value =self-> {
         Token.call(self, loc, value);
     });
+
 }
