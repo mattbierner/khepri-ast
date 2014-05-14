@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 4.4.0 - May 14, 2014
+* Changed `AssignmentExpression` to have `immutable` attribute instead of `operator`.
+
 ## 4.3.0 - May 7, 2014
 * Added `PrefixOperatorToken` and `InfixOperatorToken` to capture types of
   operators during lexing.

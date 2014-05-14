@@ -26,13 +26,13 @@ var __o = require("./node"),
     (self.left = left);
     (self.right = right);
 })));
-(AssignmentExpression = defineNode(Expression, "AssignmentExpression", ["left", "right"], ["operator"], (function(loc,
-    operator, left, right) {
+(AssignmentExpression = defineNode(Expression, "AssignmentExpression", ["left", "right"], ["immutable"], (function(loc,
+    left, right, immutable) {
     var self = this;
     Node.call(self, loc);
-    (self.operator = operator);
     (self.left = left);
     (self.right = right);
+    (self.immutable = immutable);
 })));
 (ConditionalExpression = defineNode(Expression, "ConditionalExpression", ["test", "consequent", "alternate"], [], (
     function(loc, test, consequent, alternate) {

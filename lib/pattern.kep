@@ -22,9 +22,7 @@ in {
 /**
  * @constructor
  */
-Pattern = function \loc =self-> {
-    Node.call(self, loc);
-};
+Pattern = function \ =self-> { };
 Pattern.prototype = new Node();
 
 /* Instances
@@ -36,7 +34,7 @@ IdentifierPattern = defineNode(Pattern, 'IdentifierPattern',
     ['id'],
     [],
     function \loc, id =self-> {
-        Pattern.call(self, loc);
+        Node.call(self, loc);
         self.id = id;
     });
 
@@ -47,7 +45,7 @@ EllipsisPattern = defineNode(Pattern, 'EllipsisPattern',
     ['id'],
     [],
     function \loc, id =self-> {
-        Pattern.call(self, loc);
+        Node.call(self, loc);
         self.id = (id || null);
     });
 
@@ -58,7 +56,7 @@ SinkPattern = defineNode(Pattern, 'SinkPattern',
     [],
     [],
     function \loc =self-> {
-        Pattern.call(self, loc);
+        Node.call(self, loc);
     });
 
 /**
@@ -80,7 +78,7 @@ ArrayPattern = defineNode(Pattern, 'ArrayPattern',
     ['elements'],
     [],
     function \loc, elements =self-> {
-        Pattern.call(self, loc);
+        Node.call(self, loc);
         self.elements = elements;
     });
 
@@ -91,7 +89,7 @@ ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
     ['key', 'target'],
     [],
     function \loc, key, target =self-> {
-        Pattern.call(self, loc);
+        Node.call(self, loc);
         self.key = key;
         self.target = (target || null);
     });
@@ -103,7 +101,7 @@ ObjectPattern = defineNode(Pattern, 'ObjectPattern',
     ['elements'],
     [],
     function \loc, elements =self-> {
-        Pattern.call(self, loc);
+        Node.call(self, loc);
         self.elements = elements;
     });
 
@@ -114,7 +112,7 @@ AsPattern = defineNode(Pattern, 'AsPattern',
     ['id', 'target'],
     [],
     function \loc, id, target =self-> {
-        Pattern.call(self, loc);
+        Node.call(self, loc);
         self.id = id;
         self.target = target;
     });
@@ -126,7 +124,7 @@ ArgumentsPattern = defineNode(Pattern, 'ArgumentsPattern',
     ['id', 'elements', 'self'],
     [],
     function \loc, id, elements, self =T-> {
-        Pattern.call(T, loc);
+        Node.call(T, loc);
         T.id = id;
         T.elements = elements;
         T.self = self;

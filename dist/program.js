@@ -4,9 +4,8 @@
 */
 define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Program;
+    var Program, defineNode = __o["defineNode"],
+        Node = __o["Node"];
     (Program = defineNode(Node, "Program", ["body"], [], (function(loc, body) {
         var self = this;
         Node.call(self, loc);

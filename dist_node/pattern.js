@@ -1,31 +1,28 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/pattern.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/pattern.kep'
  * DO NOT EDIT
-*/
-"use strict";
+*/"use strict";
 var __o = require("./node"),
-    defineNode = __o["defineNode"],
-    Node = __o["Node"],
     Pattern, IdentifierPattern, EllipsisPattern, SinkPattern, ImportPattern, ArrayPattern, ObjectPatternElement,
-        ObjectPattern, ArgumentsPattern, AsPattern;
-(Pattern = (function(loc) {
+        ObjectPattern, ArgumentsPattern, AsPattern, defineNode = __o["defineNode"],
+    Node = __o["Node"];
+(Pattern = (function() {
     var self = this;
-    Node.call(self, loc);
 }));
 (Pattern.prototype = new(Node)());
 (IdentifierPattern = defineNode(Pattern, "IdentifierPattern", ["id"], [], (function(loc, id) {
     var self = this;
-    Pattern.call(self, loc);
+    Node.call(self, loc);
     (self.id = id);
 })));
 (EllipsisPattern = defineNode(Pattern, "EllipsisPattern", ["id"], [], (function(loc, id) {
     var self = this;
-    Pattern.call(self, loc);
+    Node.call(self, loc);
     (self.id = (id || null));
 })));
 (SinkPattern = defineNode(Pattern, "SinkPattern", [], [], (function(loc) {
     var self = this;
-    Pattern.call(self, loc);
+    Node.call(self, loc);
 })));
 (ImportPattern = defineNode(Node, "ImportPattern", ["from", "pattern"], [], (function(loc, from, pattern) {
     var self = this;
@@ -35,30 +32,30 @@ var __o = require("./node"),
 })));
 (ArrayPattern = defineNode(Pattern, "ArrayPattern", ["elements"], [], (function(loc, elements) {
     var self = this;
-    Pattern.call(self, loc);
+    Node.call(self, loc);
     (self.elements = elements);
 })));
 (ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], [], (function(loc, key, target) {
     var self = this;
-    Pattern.call(self, loc);
+    Node.call(self, loc);
     (self.key = key);
     (self.target = (target || null));
 })));
 (ObjectPattern = defineNode(Pattern, "ObjectPattern", ["elements"], [], (function(loc, elements) {
     var self = this;
-    Pattern.call(self, loc);
+    Node.call(self, loc);
     (self.elements = elements);
 })));
 (AsPattern = defineNode(Pattern, "AsPattern", ["id", "target"], [], (function(loc, id, target) {
     var self = this;
-    Pattern.call(self, loc);
+    Node.call(self, loc);
     (self.id = id);
     (self.target = target);
 })));
 (ArgumentsPattern = defineNode(Pattern, "ArgumentsPattern", ["id", "elements", "self"], [], (function(loc, id, elements,
     self) {
     var T = this;
-    Pattern.call(T, loc);
+    Node.call(T, loc);
     (T.id = id);
     (T.elements = elements);
     (T.self = self);

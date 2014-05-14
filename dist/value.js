@@ -1,7 +1,8 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/value.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/value.kep'
  * DO NOT EDIT
-*/define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/
+define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
     var Literal, ObjectValue, Identifier, UnaryOperator, BinaryOperator, TernaryOperator, defineNode = __o[
             "defineNode"],

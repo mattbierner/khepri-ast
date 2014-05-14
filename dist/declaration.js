@@ -1,13 +1,14 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/declaration.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/declaration.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Declaration, VariableDeclaration, VariableDeclarator, Binding, StaticDeclaration, StaticDeclarator;
-    (Declaration = (function() {}));
+    var Declaration, VariableDeclaration, VariableDeclarator, Binding, StaticDeclaration, StaticDeclarator,
+            defineNode = __o["defineNode"],
+        Node = __o["Node"];
+    (Declaration = (function() {
+        var self = this;
+    }));
     (Declaration.prototype = new(Node)());
     (VariableDeclaration = defineNode(Declaration, "VariableDeclaration", ["declarations"], [], (function(loc,
         declarations) {

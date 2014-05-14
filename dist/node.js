@@ -1,12 +1,11 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/node.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/node.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./serialization"], (function(require, exports, __o) {
+*/define(["require", "exports", "./serialization"], (function(require, exports, __o) {
     "use strict";
-    var registerNode = __o["registerNode"],
-        Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode,
-            keys = Object.keys,
+    var Node, construct, reconstruct, modify, setLoc, setUserData, getData, modifyData, setData, defineNode,
+            registerNode = __o["registerNode"],
+        keys = Object.keys,
         setProperty = (function(obj, prop, value) {
             var out = ({}),
                 props = keys(obj);
@@ -19,18 +18,17 @@ define(["require", "exports", "./serialization"], (function(require, exports, __
             (out[prop] = value);
             return out;
         });
-    (Node = (function(loc, ud) {
+    (Node = (function(loc) {
         var self = this;
         Object.defineProperties(self, ({
             "loc": ({
-                "value": loc,
-                "enumerable": false,
-                "writable": true
+                value: loc,
+                enumerable: false,
+                writable: true
             }),
             "ud": ({
-                "value": (ud || null),
-                "enumerable": false,
-                "writable": true
+                enumerable: false,
+                writable: true
             })
         }));
     }));

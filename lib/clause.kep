@@ -14,7 +14,7 @@ in {
 /**
  * @constructor
  */
-Clause := function \() -> { };
+Clause := function \ =self-> { };
 Clause.prototype = new Node();
 
 /* Instances

@@ -27,7 +27,7 @@ in {
 /**
  * @constructor
  */
-Statement = function \() =self-> { };
+Statement = function \ =self-> { };
 Statement.prototype = new Node();
 
 /**

@@ -30,7 +30,7 @@ in {
 /**
  * @constructor
  */
-Expression = function \() =self-> { };
+Expression = function \ =self-> { };
 Expression.prototype = new Node();
 
 /* Instances
@@ -65,12 +65,12 @@ BinaryExpression = defineNode(Expression, 'BinaryExpression',
  */
 AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
     ['left', 'right'],
-    ['operator'],
-    function \loc, operator, left, right =self-> {
+    ['immutable'],
+    function \loc left right immutable =self-> {
         Node.call(self, loc);
-        self.operator = operator;
         self.left = left;
         self.right = right;
+        self.immutable = immutable;
     });
 
 /**

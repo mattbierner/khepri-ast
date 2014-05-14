@@ -20,7 +20,7 @@ in {
 /**
  * @constructor
  */
-Declaration = function \() -> { };
+Declaration = function \ =self-> { };
 Declaration.prototype = new Node();
 
 /* Instances

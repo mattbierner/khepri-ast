@@ -1,7 +1,8 @@
 /*
- * THIS FILE IS AUTO GENERATED from 'lib/value.kep'
+ * THIS FILE IS AUTO GENERATED FROM 'lib/value.kep'
  * DO NOT EDIT
-*/"use strict";
+*/
+"use strict";
 var __o = require("./node"),
     Literal, ObjectValue, Identifier, UnaryOperator, BinaryOperator, TernaryOperator, defineNode = __o["defineNode"],
     Node = __o["Node"];

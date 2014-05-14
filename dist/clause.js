@@ -1,13 +1,13 @@
 /*
- * THIS FILE IS AUTO GENERATED FROM 'lib/clause.kep'
+ * THIS FILE IS AUTO GENERATED from 'lib/clause.kep'
  * DO NOT EDIT
-*/
-define(["require", "exports", "./node"], (function(require, exports, __o) {
+*/define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var defineNode = __o["defineNode"],
-        Node = __o["Node"],
-        Clause, SwitchCase, CatchClause;
-    (Clause = (function() {}));
+    var Clause, SwitchCase, CatchClause, defineNode = __o["defineNode"],
+        Node = __o["Node"];
+    (Clause = (function() {
+        var self = this;
+    }));
     (Clause.prototype = new(Node)());
     (SwitchCase = defineNode(Clause, "SwitchCase", ["test", "consequent"], [], (function(loc, test, consequent) {
         var self = this;
