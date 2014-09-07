@@ -30,16 +30,19 @@ var __o = require("./node"),
     (self.from = from);
     (self.pattern = pattern);
 })));
-(ArrayPattern = defineNode(Pattern, "ArrayPattern", ["elements"], [], (function(loc, elements) {
+(ArrayPattern = defineNode(Pattern, "ArrayPattern", ["elements"], ["checked"], (function(loc, elements, checked) {
     var self = this;
     Node.call(self, loc);
     (self.elements = elements);
+    (self.checked = (!(!checked)));
 })));
-(ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], [], (function(loc, key, target) {
+(ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], ["checked"], (function(loc, key,
+    target, checked) {
     var self = this;
     Node.call(self, loc);
     (self.key = key);
     (self.target = (target || null));
+    (self.checked = (!(!checked)));
 })));
 (ObjectPattern = defineNode(Pattern, "ObjectPattern", ["elements"], [], (function(loc, elements) {
     var self = this;

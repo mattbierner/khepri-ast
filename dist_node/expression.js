@@ -54,14 +54,15 @@ var __o = require("./node"),
     (self.callee = callee);
     (self.args = args);
 })));
-(MemberExpression = defineNode(Expression, "MemberExpression", ["object", "property"], ["computed"], (function(loc,
-    object, property, computed) {
-    var self = this;
-    Node.call(self, loc);
-    (self.object = object);
-    (self.property = property);
-    (self.computed = computed);
-})));
+(MemberExpression = defineNode(Expression, "MemberExpression", ["object", "property"], ["computed", "checked"], (
+    function(loc, object, property, computed, checked) {
+        var self = this;
+        Node.call(self, loc);
+        (self.object = object);
+        (self.property = property);
+        (self.computed = computed);
+        (self.checked = (!(!checked)));
+    })));
 (FunctionExpression = defineNode(Expression, "FunctionExpression", ["id", "params", "body"], [], (function(loc, id,
     params, body) {
     var self = this;

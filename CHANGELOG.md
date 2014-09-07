@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 4.5.0 - Sep 7, 2014
+* Added `checked` attribute to member expressions and object patterns.
+
 ## 4.4.0 - May 14, 2014
 * Changed `AssignmentExpression` to have `immutable` attribute instead of `operator`.
 
