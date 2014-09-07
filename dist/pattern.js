@@ -37,18 +37,19 @@
         (self.elements = elements);
         (self.checked = (!(!checked)));
     })));
-    (ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], ["checked"], (
-        function(loc, key, target, checked) {
-            var self = this;
-            Node.call(self, loc);
-            (self.key = key);
-            (self.target = (target || null));
-            (self.checked = (!(!checked)));
-        })));
-    (ObjectPattern = defineNode(Pattern, "ObjectPattern", ["elements"], [], (function(loc, elements) {
+    (ObjectPatternElement = defineNode(Pattern, "ObjectPatternElement", ["key", "target"], [], (function(loc,
+        key, target, checked) {
+        var self = this;
+        Node.call(self, loc);
+        (self.key = key);
+        (self.target = (target || null));
+    })));
+    (ObjectPattern = defineNode(Pattern, "ObjectPattern", ["elements"], ["checked"], (function(loc, elements,
+        checked) {
         var self = this;
         Node.call(self, loc);
         (self.elements = elements);
+        (self.checked = (!(!checked)));
     })));
     (AsPattern = defineNode(Pattern, "AsPattern", ["id", "target"], [], (function(loc, id, target) {
         var self = this;

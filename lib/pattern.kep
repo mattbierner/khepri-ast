@@ -88,12 +88,11 @@ ArrayPattern = defineNode(Pattern, 'ArrayPattern',
  */
 ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
     ['key', 'target'],
-    ['checked'],
+    [],
     function \loc key target checked =self-> {
         Node.call(self, loc);
         self.key = key;
         self.target = (target || null);
-        self.checked = !!checked;
     });
 
 /**
@@ -101,10 +100,11 @@ ObjectPatternElement = defineNode(Pattern, 'ObjectPatternElement',
  */
 ObjectPattern = defineNode(Pattern, 'ObjectPattern',
     ['elements'],
-    [],
-    function \loc, elements =self-> {
+    ['checked'],
+    function \loc elements checked =self-> {
         Node.call(self, loc);
         self.elements = elements;
+        self.checked = !!checked;
     });
 
 /**
