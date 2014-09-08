@@ -11,6 +11,7 @@ package (
     NewExpression
     CallExpression
     MemberExpression
+    CheckedExpression
     
     FunctionExpression
     ArrayExpression
@@ -115,13 +116,24 @@ CallExpression = defineNode(Expression, 'CallExpression',
  */
 MemberExpression = defineNode(Expression, 'MemberExpression',
     ['object', 'property'],
-    ['computed', 'checked'],
-    function \loc object property computed checked =self-> {
+    ['computed'],
+    function \loc object property computed =self-> {
         Node.call(self, loc);
         self.object = object;
         self.property = property;
-        self.computed = computed;
-        self.checked = !!checked;
+        self.computed = !!computed;
+    });
+
+/**
+ * @constructor
+ */
+CheckedExpression = defineNode(Expression, 'CheckedExpression',
+    ['left', 'right'],
+    [],
+    function \loc left right =self-> {
+        Node.call(self, loc);
+        self.left = left;
+        self.right = right;
     });
 
 /**

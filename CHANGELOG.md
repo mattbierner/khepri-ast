@@ -1,5 +1,9 @@
 # ChangeLog #
 
+## 4.6.0 - Sep 7, 2014
+* Break checked member expression to the more general `CheckedExpression`
+** Removes checked attribute from member expression.
+
 ## 4.5.0 - Sep 7, 2014
 * Added `checked` attribute to member expressions and object patterns.
 
