@@ -1,5 +1,8 @@
 # ChangeLog #
 
+## 4.7.0 - Sep 8, 2014
+* Remove `CheckedExpression` in favor of using `BinaryExpression`.
+
 ## 4.6.0 - Sep 7, 2014
 * Break checked member expression to the more general `CheckedExpression`
 ** Removes checked attribute from member expression.

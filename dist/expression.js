@@ -4,9 +4,9 @@
 */define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
     var Expression, UnaryExpression, BinaryExpression, AssignmentExpression, ConditionalExpression,
-            NewExpression, CallExpression, MemberExpression, CheckedExpression, FunctionExpression,
-            ArrayExpression, ObjectExpression, LetExpression, OperatorExpression, CurryExpression,
-            ApplyExpression, defineNode = __o["defineNode"],
+            NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
+            ObjectExpression, LetExpression, OperatorExpression, CurryExpression, ApplyExpression, defineNode =
+            __o["defineNode"],
         Node = __o["Node"];
     (Expression = (function() {
         var self = this;
@@ -65,13 +65,6 @@
             (self.property = property);
             (self.computed = (!(!computed)));
         })));
-    (CheckedExpression = defineNode(Expression, "CheckedExpression", ["left", "right"], [], (function(loc, left,
-        right) {
-        var self = this;
-        Node.call(self, loc);
-        (self.left = left);
-        (self.right = right);
-    })));
     (FunctionExpression = defineNode(Expression, "FunctionExpression", ["id", "params", "body"], [], (function(
         loc, id, params, body) {
         var self = this;
@@ -127,7 +120,6 @@
     (exports["NewExpression"] = NewExpression);
     (exports["CallExpression"] = CallExpression);
     (exports["MemberExpression"] = MemberExpression);
-    (exports["CheckedExpression"] = CheckedExpression);
     (exports["FunctionExpression"] = FunctionExpression);
     (exports["ArrayExpression"] = ArrayExpression);
     (exports["ObjectExpression"] = ObjectExpression);
