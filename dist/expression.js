@@ -3,10 +3,10 @@
  * DO NOT EDIT
 */define(["require", "exports", "./node"], (function(require, exports, __o) {
     "use strict";
-    var Expression, UnaryExpression, BinaryExpression, AssignmentExpression, ConditionalExpression,
-            NewExpression, CallExpression, MemberExpression, FunctionExpression, ArrayExpression,
-            ObjectExpression, LetExpression, OperatorExpression, CurryExpression, ApplyExpression, defineNode =
-            __o["defineNode"],
+    var Expression, UnaryExpression, BinaryExpression, AssignmentExpression, DeleteExpression,
+            ConditionalExpression, NewExpression, CallExpression, MemberExpression, FunctionExpression,
+            ArrayExpression, ObjectExpression, LetExpression, OperatorExpression, CurryExpression,
+            ApplyExpression, defineNode = __o["defineNode"],
         Node = __o["Node"];
     (Expression = (function() {
         var self = this;
@@ -35,6 +35,11 @@
             (self.right = right);
             (self.immutable = immutable);
         })));
+    (DeleteExpression = defineNode(Expression, "DeleteExpression", ["argument"], [], (function(loc, argument) {
+        var self = this;
+        Node.call(self, loc);
+        (self.argument = argument);
+    })));
     (ConditionalExpression = defineNode(Expression, "ConditionalExpression", ["test", "consequent", "alternate"], [], (
         function(loc, test, consequent, alternate) {
             var self = this;
@@ -116,6 +121,7 @@
     (exports["UnaryExpression"] = UnaryExpression);
     (exports["BinaryExpression"] = BinaryExpression);
     (exports["AssignmentExpression"] = AssignmentExpression);
+    (exports["DeleteExpression"] = DeleteExpression);
     (exports["ConditionalExpression"] = ConditionalExpression);
     (exports["NewExpression"] = NewExpression);
     (exports["CallExpression"] = CallExpression);

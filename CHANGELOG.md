@@ -1,5 +1,9 @@
 # ChangeLog #
 
+## 4.8.0 - Sep 30, 2014
+* Added in `DeleteExpression` since `delete` is used differently than other unary
+  ops.
+
 ## 4.7.0 - Sep 8, 2014
 * Remove `CheckedExpression` in favor of using `BinaryExpression`.
 

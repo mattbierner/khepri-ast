@@ -7,6 +7,7 @@ package (
     UnaryExpression
     BinaryExpression
     AssignmentExpression
+    DeleteExpression
     ConditionalExpression
     NewExpression
     CallExpression
@@ -41,7 +42,7 @@ Expression.prototype = new Node();
 UnaryExpression = defineNode(Expression, 'UnaryExpression',
     ['operator', 'argument'],
     [],
-    function \loc, operator, argument =self-> {
+    function \loc operator argument =self-> {
         Node.call(self, loc);
         self.operator = operator;
         self.argument = argument;
@@ -71,6 +72,17 @@ AssignmentExpression = defineNode(Expression, 'AssignmentExpression',
         self.left = left;
         self.right = right;
         self.immutable = immutable;
+    });
+
+/**
+ * @constructor
+ */
+DeleteExpression = defineNode(Expression, 'DeleteExpression',
+    ['argument'],
+    [],
+    function \loc argument =self-> {
+        Node.call(self, loc);
+        self.argument = argument;
     });
 
 /**
